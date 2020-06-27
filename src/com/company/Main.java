@@ -40,6 +40,9 @@ public class Main {
                     System.out.println("     ****************************************");
                     break;
 
+                case 2:
+                    Market.Marketplace();
+                    break;
                 case 9:
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;
@@ -48,8 +51,9 @@ public class Main {
                         numberOfWeek = numberOfWeek+1;
                     }
 
+                    Market.setAlreadyOpenShop();
                     player.setTempSeeds();
-                    playerChose = menu(numberOfWeek,numberOfYear);
+                    break;
 
             }
             player.setTempSeeds();
@@ -69,7 +73,7 @@ public class Main {
         System.out.println("Actual Date: "+numberOfWeek+" week. Year "+numberOfYear);
         System.out.println("*                 MENU                 *");
         System.out.println("     1. Check stats.");
-        System.out.println("     2. ");
+        System.out.println("     2. Go to marketplace");
         System.out.println("     3. ");
         System.out.println("     9. Next week.");
         System.out.println("     0. Exit Game.");

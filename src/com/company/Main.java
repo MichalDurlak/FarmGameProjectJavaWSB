@@ -43,6 +43,11 @@ public class Main {
                 case 2:
                     Market.Marketplace();
                     break;
+
+                case 3:
+                    Farmland.buyFarmland(player.getCash());
+                    break;
+
                 case 9:
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;
@@ -51,6 +56,8 @@ public class Main {
                         numberOfWeek = numberOfWeek+1;
                     }
 
+                    Player.checkEndGame(player.farmland,player.animals,player.seeds);
+                    Farmland.setAlreadyOpenShopFarmland();
                     Market.setAlreadyOpenShop();
                     player.setTempSeeds();
                     break;
@@ -70,11 +77,12 @@ public class Main {
 
     public static int menu(int numberOfWeek, int numberOfYear){
         System.out.println();
+        System.out.println("     ****************************************");
         System.out.println("Actual Date: "+numberOfWeek+" week. Year "+numberOfYear);
         System.out.println("*                 MENU                 *");
         System.out.println("     1. Check stats.");
-        System.out.println("     2. Go to marketplace");
-        System.out.println("     3. ");
+        System.out.println("     2. Go to marketplace. ");
+        System.out.println("     3. Buy farmland. ");
         System.out.println("     9. Next week.");
         System.out.println("     0. Exit Game.");
         System.out.println("My Choice: ");

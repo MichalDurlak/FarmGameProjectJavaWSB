@@ -7,20 +7,23 @@ public class Player {
     int farmland,buildings, animals,seeds;
     private int cash;
     private int tempSeeds;
+    int buildingsTemp,animalsTemp;
+
+
 
     public Player(String name){
         this.name = name; // wprowadzenie imienia gracza
 
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        int rand = random.nextInt(1000,5000);
 
-        this.cash = rand;
+        this.cash = random.nextInt(1000,5000);
         this.farmland = 0;
         this.animals = 0;
         this.buildings = 0;
         this.seeds = 0;
         this.tempSeeds = 0;
-
+        this.buildingsTemp = 0;
+        this.animalsTemp = 0;
 
 
     }
@@ -58,5 +61,26 @@ public void setTempSeeds(){
 }
 public int getTempSeeds() {return tempSeeds;}
 
+    static int endFarmlandSize = 20;
+    static int endAnimalsSize = 5;
+    static int endSeedsSize = 5;
+    static int endFoodForAnimals = 0; // do poprawy
+
+public static void checkEndGame(int FarmlandSize, int AnimalsSize, int SeedsSize){
+
+
+    if (FarmlandSize == endFarmlandSize){
+
+    } else if (AnimalsSize == endAnimalsSize){
+
+    } else if (SeedsSize == endSeedsSize) {
+
+    }
+
+    System.out.println("     ****************************************");
+    System.out.println("!!!Congratulations you won the game!!!");
+    System.out.println("     ****************************************");
+    System.exit(0);
+}
 
 }

@@ -5,24 +5,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
+        int numberOfWeek = 1;
+        int numberOfYear = 2020;
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Name of player: ");
         String namePlayerScan = scanner.next();
-        startGame(namePlayerScan);
-    }
-
-
-    public static void startGame(String namePlayerScan){
-        int numberOfWeek = 52;
-        int numberOfYear = 2020;
-
         Player player = new Player(namePlayerScan);
-        Scanner scanner = new Scanner(System.in);
 
 
         System.out.println("Hello "+ namePlayerScan);
-
         System.out.println("Let the game begins");
         System.out.println("------------------------");
         System.out.println("Your balance: "+ player.getCash());
@@ -32,34 +24,48 @@ public class Main {
         System.out.println("Your seeds: "+player.seeds);
         System.out.println("------------------------");
 
+        int playerChose = menu(numberOfWeek,numberOfYear);
 
-        System.out.println("Actual Date: "+numberOfWeek+" week. Year "+numberOfYear);
-        System.out.println("1. ");
-        System.out.println("2. ");
-        System.out.println("2. ");
-        System.out.println("2. ");
-        System.out.println("2. ");
-        System.out.println("2. ");
-        System.out.println("9. Go to next week.");
+        while(playerChose!=0){
+            switch(playerChose){
+                case 9:
+                    if (numberOfWeek >= 52){
+                        numberOfWeek = 1;
+                        numberOfYear = numberOfYear +1;
+                    } else{
+                        numberOfWeek = numberOfWeek+1;
+                    }
 
-        System.out.println("My Choice: ");
-        int choose = scanner.nextInt();
-
-
-
-
-        if (choose == 9){
-            if (numberOfWeek >= 52){
-                numberOfWeek = 1;
-                numberOfYear = numberOfYear +1;
-            } else{
-                numberOfWeek = numberOfWeek+1;
+                break;
             }
+
+            playerChose = menu(numberOfWeek,numberOfYear);
+
         }
 
+        System.out.println("     ****************************************");
+        System.out.println("\n Good bye "+ namePlayerScan +".");
 
     }
 
+
+
+    public static int menu(int numberOfWeek, int numberOfYear){
+        System.out.println();
+        System.out.println("Actual Date: "+numberOfWeek+" week. Year "+numberOfYear);
+        System.out.println("*                 MENU                 *");
+        System.out.println("     1. ");
+        System.out.println("     2. ");
+        System.out.println("     3. ");
+        System.out.println("     9. Next week.");
+        System.out.println("     0. Exit Game.");
+        System.out.println("My Choice: ");
+        Scanner in = new Scanner(System.in);
+        int choose = in.nextInt();
+
+        return choose;
+
+    }
 
 
 }

@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.Scanner;
 
+import static com.company.Farmland.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -33,19 +35,29 @@ public class Main {
                     System.out.println("     ****************************************");
                     System.out.println("Your balance: "+ player.getCash()+"$");
                     System.out.println("Your farmland: "+ player.farmland+" hectare");
-                    System.out.println("Your animals: "+player.animals);
 
-                    System.out.println("Your buildings: "+player.buildings);
-                    System.out.println("Your seeds: "+player.seeds+" (max seeds: "+player.getTempSeeds()+", because you have "+player.buildings+" buildings.");
+                    System.out.println("Your animals: "+player.animals + "(Max. "+player.animalsMaxSize+") ");
+                    System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
+                    System.out.println("Your seeds: "+player.seeds+". "+ "(Max. "+player.seedsMaxSize+") ");
                     System.out.println("     ****************************************");
                     break;
 
                 case 2:
                     Market.Marketplace();
+
                     break;
 
                 case 3:
                     Farmland.buyFarmland(player.getCash());
+
+                    player.setCash(player.getCash()-placePriceTemp);
+                    player.farmland = player.farmland+placeSizeTemp;
+
+                    player.seedsMaxSize = player.seedsMaxSize+placeForSeedsTemp;
+                    player.buildingsMaxSize = player.buildingsMaxSize+placeForBuildingsTemp;
+                    player.animalsMaxSize = player.animalsMaxSize +placeForAnimalTemp;
+
+
                     break;
 
                 case 9:
@@ -59,11 +71,11 @@ public class Main {
                     Player.checkEndGame(player.farmland,player.animals,player.seeds);
                     Farmland.setAlreadyOpenShopFarmland();
                     Market.setAlreadyOpenShop();
-                    player.setTempSeeds();
+
                     break;
 
             }
-            player.setTempSeeds();
+
             playerChose = menu(numberOfWeek,numberOfYear);
 
         }

@@ -6,7 +6,7 @@ public class Player {
 
     String name;
     public int buildings, animals,seeds;
-    public double farmland;
+    private double farmland;
     private int cash;
 
 
@@ -65,7 +65,7 @@ public static void checkEndGame(double FarmlandSize, int AnimalsSize, int SeedsS
 }
 
 
-    public void setFarmland(int farmland) {
+    public void setFarmland(double farmland) {
         this.farmland = farmland;
     }
 
@@ -83,5 +83,11 @@ public static void checkEndGame(double FarmlandSize, int AnimalsSize, int SeedsS
 
     public void setCash(int cash){
         this.cash=cash;
+    }
+
+    public double getFarmland() {
+        this.farmland = this.farmland*100;
+        this.farmland = this.farmland/100;
+        return this.farmland;
     }
 }

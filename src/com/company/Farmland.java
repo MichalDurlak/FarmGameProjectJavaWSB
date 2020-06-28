@@ -20,6 +20,11 @@ public class Farmland {
 
 
     public static int buyFarmland(int cash){
+        placeForAnimalTemp = 0;
+        placeForSeedsTemp = 0;
+        placeForBuildingsTemp = 0;
+        placePriceTemp = 0;
+        placeSizeTemp = 0;
 
         if (getAlreadyOpenShopFarmland() == true) {
             System.out.println("You saw these prices: ");

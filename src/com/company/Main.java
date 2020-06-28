@@ -18,13 +18,14 @@ public class Main {
 
         System.out.println("Hello "+ namePlayerScan);
         System.out.println("Let the game begins");
-        System.out.println("------------------------");
-        System.out.println("Your balance: "+ player.getCash());
-        System.out.println("Your farmland: "+ player.farmland);
-        System.out.println("Your buildings: "+player.buildings);
-        System.out.println("Your animals: "+player.animals);
-        System.out.println("Your seeds: "+player.seeds);
-        System.out.println("------------------------");
+        System.out.println("     ****************************************");
+        System.out.println("Your balance: "+ player.getCash()+"$");
+        System.out.println("Your farmland: "+ player.getFarmland()+" hectare");
+
+        System.out.println("Your animals: "+player.animals + "(Max. "+player.animalsMaxSize+") ");
+        System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
+        System.out.println("Your seeds: "+player.seeds+". "+ "(Max. "+player.seedsMaxSize+") ");
+        System.out.println("     ****************************************");
 
         int playerChose = menu(numberOfWeek,numberOfYear);
 
@@ -34,7 +35,7 @@ public class Main {
 
                     System.out.println("     ****************************************");
                     System.out.println("Your balance: "+ player.getCash()+"$");
-                    System.out.println("Your farmland: "+ player.farmland+" hectare");
+                    System.out.println("Your farmland: "+ player.getFarmland()+" hectare");
 
                     System.out.println("Your animals: "+player.animals + "(Max. "+player.animalsMaxSize+") ");
                     System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
@@ -51,7 +52,7 @@ public class Main {
                     Farmland.buyFarmland(player.getCash());
 
                     player.setCash(player.getCash()-placePriceTemp);
-                    player.farmland = player.farmland+placeSizeTemp;
+                    player.setFarmland(player.getFarmland()+placeSizeTemp);
 
                     player.seedsMaxSize = player.seedsMaxSize+placeForSeedsTemp;
                     player.buildingsMaxSize = player.buildingsMaxSize+placeForBuildingsTemp;
@@ -68,7 +69,7 @@ public class Main {
                         numberOfWeek = numberOfWeek+1;
                     }
 
-                    Player.checkEndGame(player.farmland,player.animals,player.seeds);
+                    Player.checkEndGame(player.getFarmland(),player.animals,player.seeds);
                     Farmland.setAlreadyOpenShopFarmland();
                     Market.setAlreadyOpenShop();
 

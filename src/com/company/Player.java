@@ -127,4 +127,36 @@ public static void checkEndGame(double FarmlandSize, int AnimalsSize, int SeedsS
     public void setPotatoSeedsPlayer(int potatoSeedsPlayer) {
         this.potatoSeedsPlayer = potatoSeedsPlayer;
     }
+
+    public int getMaxWheatSeedsPlayer() {
+        return MaxWheatSeedsPlayer;
+    }
+
+    public void setMaxWheatSeedsPlayer(int maxWheatSeedsPlayer) {
+        MaxWheatSeedsPlayer = maxWheatSeedsPlayer;
+    }
+
+    public int getMaxOatSeedsPlayer() {
+        return MaxOatSeedsPlayer;
+    }
+
+    public void setMaxOatSeedsPlayer(int maxOatSeedsPlayer) {
+        MaxOatSeedsPlayer = maxOatSeedsPlayer;
+    }
+
+    public int getMaxCornSeedsPlayer() {
+        return MaxCornSeedsPlayer;
+    }
+
+    public void setMaxCornSeedsPlayer(int maxCornSeedsPlayer) {
+        MaxCornSeedsPlayer = maxCornSeedsPlayer;
+    }
+
+    public int getMaxPotatoSeedsPlayer() {
+        return MaxPotatoSeedsPlayer;
+    }
+
+    public void setMaxPotatoSeedsPlayer(int maxPotatoSeedsPlayer) {
+        MaxPotatoSeedsPlayer = maxPotatoSeedsPlayer;
+    }
 }

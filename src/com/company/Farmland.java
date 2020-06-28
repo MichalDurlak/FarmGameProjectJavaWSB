@@ -38,6 +38,7 @@ public class Farmland {
             System.out.println("7. Place Size: "+placeSize7 +" Place for animals: " + placeForAnimals7 +" Place for seeds: "+placeForSeeds7+" Place for buildings: "+placeForBuildings7+" PRICE: "+ place7Price);
             System.out.println("8. Place Size: "+placeSize8 +" Place for animals: " + placeForAnimals8 +" Place for seeds: "+placeForSeeds8+" Place for buildings: "+placeForBuildings8+" PRICE: "+ place8Price);
             System.out.println("9. Place Size: "+placeSize9 +" Place for animals: " + placeForAnimals9 +" Place for seeds: "+placeForSeeds9+" Place for buildings: "+placeForBuildings9+" PRICE: "+ place9Price);
+            System.out.println("0. Exit.");
 
             System.out.println("I chose number: ");
             Scanner in = new Scanner(System.in);
@@ -46,11 +47,18 @@ public class Farmland {
             if (choose == 1) {
                 if (cash > place1Price) {
                     System.out.println("Congratulations you bought it!");
+
                     placePriceTemp = place1Price;
                     placeForAnimalTemp = placeForAnimals1;
                     placeForSeedsTemp = placeForSeeds1;
                     placeForBuildingsTemp = placeForBuildings1;
                     placeSizeTemp = placeSize1;
+
+                    place1Price = 0;
+                    placeForAnimals1 = 0;
+                    placeForSeeds1 = 0;
+                    placeForBuildings1 = 0;
+                    placeSize1 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -67,6 +75,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds2;
                     placeForBuildingsTemp = placeForBuildings2;
                     placeSizeTemp = placeSize2;
+
+                    place2Price = 0;
+                    placeForAnimals2 = 0;
+                    placeForSeeds2 = 0;
+                    placeForBuildings2 = 0;
+                    placeSize2 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -83,6 +98,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds3;
                     placeForBuildingsTemp = placeForBuildings3;
                     placeSizeTemp = placeSize3;
+
+                    place3Price = 0;
+                    placeForAnimals3 = 0;
+                    placeForSeeds3 = 0;
+                    placeForBuildings3 = 0;
+                    placeSize3 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -99,6 +121,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds4;
                     placeForBuildingsTemp = placeForBuildings4;
                     placeSizeTemp = placeSize4;
+
+                    place4Price = 0;
+                    placeForAnimals4 = 0;
+                    placeForSeeds4 = 0;
+                    placeForBuildings4 = 0;
+                    placeSize4 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -115,6 +144,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds5;
                     placeForBuildingsTemp = placeForBuildings5;
                     placeSizeTemp = placeSize5;
+
+                    place5Price = 0;
+                    placeForAnimals5 = 0;
+                    placeForSeeds5 = 0;
+                    placeForBuildings5 = 0;
+                    placeSize5 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -131,6 +167,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds6;
                     placeForBuildingsTemp = placeForBuildings6;
                     placeSizeTemp = placeSize6;
+
+                    place6Price = 0;
+                    placeForAnimals6 = 0;
+                    placeForSeeds6 = 0;
+                    placeForBuildings6 = 0;
+                    placeSize6 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -147,6 +190,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds7;
                     placeForBuildingsTemp = placeForBuildings7;
                     placeSizeTemp = placeSize7;
+
+                    place7Price = 0;
+                    placeForAnimals7 = 0;
+                    placeForSeeds7 = 0;
+                    placeForBuildings7 = 0;
+                    placeSize7 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -163,6 +213,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds8;
                     placeForBuildingsTemp = placeForBuildings8;
                     placeSizeTemp = placeSize8;
+
+                    place8Price = 0;
+                    placeForAnimals8 = 0;
+                    placeForSeeds8 = 0;
+                    placeForBuildings8 = 0;
+                    placeSize8 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -179,6 +236,13 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds9;
                     placeForBuildingsTemp = placeForBuildings9;
                     placeSizeTemp = placeSize9;
+
+                    place9Price = 0;
+                    placeForAnimals9 = 0;
+                    placeForSeeds9 = 0;
+                    placeForBuildings9 = 0;
+                    placeSize9 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -297,7 +361,7 @@ public class Farmland {
             System.out.println("7. Place Size: "+placeSize7 +" Place for animals: " + placeForAnimals7 +" Place for seeds: "+placeForSeeds7+" Place for buildings: "+placeForBuildings7+" PRICE: "+ place7Price);
             System.out.println("8. Place Size: "+placeSize8 +" Place for animals: " + placeForAnimals8 +" Place for seeds: "+placeForSeeds8+" Place for buildings: "+placeForBuildings8+" PRICE: "+ place8Price);
             System.out.println("9. Place Size: "+placeSize9 +" Place for animals: " + placeForAnimals9 +" Place for seeds: "+placeForSeeds9+" Place for buildings: "+placeForBuildings9+" PRICE: "+ place9Price);
-            System.out.println("0. Wyjdz.");
+            System.out.println("0. Exit.");
 
 
             System.out.println("I chose number: ");
@@ -312,6 +376,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds1;
                     placeForBuildingsTemp = placeForBuildings1;
                     placeSizeTemp = placeSize1;
+                    place1Price = 0;
+                    placeForAnimals1 = 0;
+                    placeForSeeds1 = 0;
+                    placeForBuildings1 = 0;
+                    placeSize1 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -328,6 +397,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds2;
                     placeForBuildingsTemp = placeForBuildings2;
                     placeSizeTemp = placeSize2;
+                    place2Price = 0;
+                    placeForAnimals2 = 0;
+                    placeForSeeds2 = 0;
+                    placeForBuildings2 = 0;
+                    placeSize2 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -344,6 +418,12 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds3;
                     placeForBuildingsTemp = placeForBuildings3;
                     placeSizeTemp = placeSize3;
+                    place3Price = 0;
+                    placeForAnimals3 = 0;
+                    placeForSeeds3 = 0;
+                    placeForBuildings3 = 0;
+                    placeSize3 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -360,6 +440,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds4;
                     placeForBuildingsTemp = placeForBuildings4;
                     placeSizeTemp = placeSize4;
+                    place4Price = 0;
+                    placeForAnimals4 = 0;
+                    placeForSeeds4 = 0;
+                    placeForBuildings4 = 0;
+                    placeSize4 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -376,6 +461,12 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds5;
                     placeForBuildingsTemp = placeForBuildings5;
                     placeSizeTemp = placeSize5;
+                    place5Price = 0;
+                    placeForAnimals5 = 0;
+                    placeForSeeds5 = 0;
+                    placeForBuildings5 = 0;
+                    placeSize5 = 0;
+
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -392,6 +483,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds6;
                     placeForBuildingsTemp = placeForBuildings6;
                     placeSizeTemp = placeSize6;
+                    place6Price = 0;
+                    placeForAnimals6 = 0;
+                    placeForSeeds6 = 0;
+                    placeForBuildings6 = 0;
+                    placeSize6 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -408,6 +504,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds7;
                     placeForBuildingsTemp = placeForBuildings7;
                     placeSizeTemp = placeSize7;
+                    place7Price = 0;
+                    placeForAnimals7 = 0;
+                    placeForSeeds7 = 0;
+                    placeForBuildings7 = 0;
+                    placeSize7 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -424,6 +525,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds8;
                     placeForBuildingsTemp = placeForBuildings8;
                     placeSizeTemp = placeSize8;
+                    place8Price = 0;
+                    placeForAnimals8 = 0;
+                    placeForSeeds8 = 0;
+                    placeForBuildings8 = 0;
+                    placeSize8 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;
@@ -440,6 +546,11 @@ public class Farmland {
                     placeForSeedsTemp = placeForSeeds9;
                     placeForBuildingsTemp = placeForBuildings9;
                     placeSizeTemp = placeSize9;
+                    place9Price = 0;
+                    placeForAnimals9 = 0;
+                    placeForSeeds9 = 0;
+                    placeForBuildings9 = 0;
+                    placeSize9 = 0;
                 } else {
                     System.out.println("Sorry check your balance");
                     return choose;

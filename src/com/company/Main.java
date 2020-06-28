@@ -63,12 +63,13 @@ public class Main {
 
                 case 8:
                     System.out.println("  YOUR BACKPACK   ****************************************");
-                    System.out.println("Your: "+ player.getCash()+"$");
-                    System.out.println("Your farmland: "+ player.getFarmland()+" hectare");
+                    System.out.println("Actual Wheat Seeds: "+ player.getWheatSeedsPlayer()+" (Max: "+ player.getMaxWheatSeedsPlayer()+")");
+                    System.out.println("Actual Oat Seeds: "+ player.getOatSeedsPlayer()+" (Max: "+ player.getMaxOatSeedsPlayer()+")");
 
-                    System.out.println("Your animals: "+player.animals + "(Max. "+player.animalsMaxSize+") ");
-                    System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
-                    System.out.println("Your seeds: "+player.seeds+". "+ "(Max. "+player.seedsMaxSize+") ");
+                    System.out.println("Actual Oat Seeds: "+ player.getCornSeedsPlayer()+" (Max: "+ player.getMaxCornSeedsPlayer()+")");
+                    System.out.println("Actual Oat Seeds: "+ player.getPotatoSeedsPlayer()+" (Max: "+ player.getMaxPotatoSeedsPlayer()+")");
+
+
                     System.out.println("     ****************************************");
                     break;
 
@@ -107,6 +108,7 @@ public class Main {
         System.out.println("     1. Check stats.");
         System.out.println("     2. Go to marketplace. ");
         System.out.println("     3. Buy farmland. ");
+        System.out.println("     8. Check backpack. ");
         System.out.println("     9. Next week.");
         System.out.println("     0. Exit Game.");
         System.out.println("My Choice: ");

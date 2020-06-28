@@ -61,6 +61,17 @@ public class Main {
 
                     break;
 
+                case 8:
+                    System.out.println("  YOUR BACKPACK   ****************************************");
+                    System.out.println("Your: "+ player.getCash()+"$");
+                    System.out.println("Your farmland: "+ player.getFarmland()+" hectare");
+
+                    System.out.println("Your animals: "+player.animals + "(Max. "+player.animalsMaxSize+") ");
+                    System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
+                    System.out.println("Your seeds: "+player.seeds+". "+ "(Max. "+player.seedsMaxSize+") ");
+                    System.out.println("     ****************************************");
+                    break;
+
                 case 9:
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;

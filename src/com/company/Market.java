@@ -49,8 +49,9 @@ public class Market {
     static int priceTempBuy = 0;
     static int priceTempSell = 0;
     static int animalTempNumber = 0;
+    static int seedsTempNumber = 0;
 
-    public static int Marketplace(int cash) {
+    public static int Marketplace(int cash, int maxSeedsThatCanBuy) {
 
 
 
@@ -58,6 +59,7 @@ public class Market {
         if (getAlreadyOpenShop() == true) {
             priceTempBuy = 0;
             animalTempNumber = 0;
+            seedsTempNumber = 0;
             System.out.println("You saw these prices: ");
 
             System.out.println("    BUY:  ****************************************   SELL:   ");
@@ -235,42 +237,76 @@ public class Market {
                     return choose;
 
 
-                }} else if (choose ==11){
+                }} else if (choose <=11){
 
                 if (cash > WheatSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + WheatSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy <= 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + WheatSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose ==13){
+                }} else if (choose <=13){
 
                 if (cash > OatSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + OatSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy == 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + OatSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose ==15){
+                }} else if (choose <=15){
 
                 if (cash > CornSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + CornSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy == 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + CornSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if(choose ==17){
+                }} else if(choose <=17){
 
                 if (cash > PotatoSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + PotatoSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy == 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + PotatoSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+                    }
+
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -330,7 +366,7 @@ public class Market {
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + foodForAnimalBUY;
-                    animalTempNumber = animalTempNumber +1;
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -343,6 +379,7 @@ public class Market {
         } else if (getAlreadyOpenShop() == false) {
             priceTempBuy = 0;
             animalTempNumber = 0;
+            seedsTempNumber = 0;
             System.out.println("Look there are new prices: ");
 
 
@@ -567,9 +604,17 @@ public class Market {
                 }} else if (choose ==11){
 
                 if (cash > WheatSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + WheatSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy <= 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + WheatSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -577,9 +622,17 @@ public class Market {
             }} else if (choose ==13){
 
                 if (cash > OatSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + OatSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy <= 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + OatSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -587,9 +640,17 @@ public class Market {
             }} else if (choose ==15){
 
                 if (cash > CornSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + CornSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy <= 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + CornSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -597,9 +658,17 @@ public class Market {
             }} else if(choose ==17){
 
                 if (cash > PotatoSeedsBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + PotatoSeedsBUY;
-                    animalTempNumber = animalTempNumber +1;
+
+                    if (maxSeedsThatCanBuy <= 0){
+                        System.out.println("You dont have enough space");
+                    } else {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + PotatoSeedsBUY;
+                        seedsTempNumber = seedsTempNumber+1;
+                    }
+
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -664,7 +733,7 @@ public class Market {
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + foodForAnimalBUY;
-                    animalTempNumber = animalTempNumber +1;
+
 
                 } else {
                     System.out.println("Check your balance.");
@@ -697,6 +766,10 @@ public class Market {
 
     public static int getAnimalTempNumber(){
         return animalTempNumber;
+    }
+
+    public static int getseedsTempNumber(){
+        return  seedsTempNumber;
     }
 
 }

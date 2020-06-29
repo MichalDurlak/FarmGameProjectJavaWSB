@@ -45,7 +45,11 @@ public class Main {
                     break;
 
                 case 2:
-                    Market.Marketplace(player.getCash());
+
+                    int maxSeedsThatCanBuy = player.seedsMaxSize-player.seeds;
+
+                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy);
+
 
                     int sellTempPlusCash = getPriceTempSell();
                     int buyTempMinusCash = getpriceTempBuy();
@@ -56,8 +60,11 @@ public class Main {
                     player.setCash(toChangePlayerCashPlus);
                     player.setCash(toChangePlayerCashMinus);
 
-                    int plusAnimalTemp = getAnimalTempNumber();
-                    player.animals = player.animals+plusAnimalTemp;
+                    int numberAnimalTemp = getAnimalTempNumber();
+                    player.animals = player.animals+numberAnimalTemp;
+
+                    int numberSeedsTemp = getseedsTempNumber();
+                    player.seeds = player.seeds + numberSeedsTemp;
 
 
                     break;

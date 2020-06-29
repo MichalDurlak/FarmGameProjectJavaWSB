@@ -3,8 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 import static com.company.Farmland.*;
-import static com.company.Market.getPriceTempSell;
-import static com.company.Market.getpriceTempBuy;
+import static com.company.Market.*;
 
 public class Main {
 
@@ -56,6 +55,9 @@ public class Main {
 
                     player.setCash(toChangePlayerCashPlus);
                     player.setCash(toChangePlayerCashMinus);
+
+                    int plusAnimalTemp = getAnimalTempNumber();
+                    player.animals = player.animals+plusAnimalTemp;
 
 
                     break;

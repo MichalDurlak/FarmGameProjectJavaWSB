@@ -48,6 +48,7 @@ public class Market {
 
     static int priceTempBuy = 0;
     static int priceTempSell = 0;
+    static int animalTempNumber = 0;
 
     public static int Marketplace(int cash) {
 
@@ -56,6 +57,7 @@ public class Market {
 
         if (getAlreadyOpenShop() == true) {
             priceTempBuy = 0;
+            animalTempNumber = 0;
             System.out.println("You saw these prices: ");
 
             System.out.println("    BUY:  ****************************************   SELL:   ");
@@ -189,6 +191,7 @@ public class Market {
                 if (cash > smallCowBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallCowBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -198,6 +201,7 @@ public class Market {
                 if (cash > smallHorseBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallHorseBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -206,6 +210,7 @@ public class Market {
                 if (cash > smallRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallRabbitBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -215,6 +220,7 @@ public class Market {
                 if (cash > smallChickenBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallChickenBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -223,6 +229,7 @@ public class Market {
                 if (cash > smallDogBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallDogBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -233,6 +240,7 @@ public class Market {
                 if (cash > WheatSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + WheatSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -242,6 +250,7 @@ public class Market {
                 if (cash > OatSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + OatSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -251,6 +260,7 @@ public class Market {
                 if (cash > CornSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + CornSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -260,6 +270,7 @@ public class Market {
                 if (cash > PotatoSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + PotatoSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -269,7 +280,7 @@ public class Market {
                 if (cash > bigCowBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigCowBUY;
-
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -279,7 +290,7 @@ public class Market {
                 if (cash > bigHorseBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigHorseBUY;
-
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -289,7 +300,7 @@ public class Market {
                 if (cash > bigRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigRabbitBUY;
-
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -299,7 +310,7 @@ public class Market {
                 if (cash > bigChickenBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigChickenBUY;
-
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -309,7 +320,7 @@ public class Market {
                 if (cash > bigDogBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigDogBUY;
-
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -319,7 +330,7 @@ public class Market {
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + foodForAnimalBUY;
-
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -331,6 +342,7 @@ public class Market {
 
         } else if (getAlreadyOpenShop() == false) {
             priceTempBuy = 0;
+            animalTempNumber = 0;
             System.out.println("Look there are new prices: ");
 
 
@@ -508,6 +520,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
 
                     priceTempBuy = priceTempBuy + smallCowBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -517,6 +530,7 @@ public class Market {
                 if (cash > smallHorseBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallHorseBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -525,6 +539,7 @@ public class Market {
                 if (cash > smallRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallRabbitBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -534,6 +549,7 @@ public class Market {
                 if (cash > smallChickenBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallChickenBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -542,6 +558,7 @@ public class Market {
                 if (cash > smallDogBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallDogBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -552,6 +569,7 @@ public class Market {
                 if (cash > WheatSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + WheatSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -561,6 +579,7 @@ public class Market {
                 if (cash > OatSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + OatSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -570,6 +589,7 @@ public class Market {
                 if (cash > CornSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + CornSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -579,6 +599,7 @@ public class Market {
                 if (cash > PotatoSeedsBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + PotatoSeedsBUY;
+                    animalTempNumber = animalTempNumber +1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -588,6 +609,7 @@ public class Market {
                 if (cash > bigCowBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigCowBUY;
+                    animalTempNumber = animalTempNumber +1;
 
                 } else {
                     System.out.println("Check your balance.");
@@ -598,6 +620,7 @@ public class Market {
                 if (cash > bigHorseBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigHorseBUY;
+                    animalTempNumber = animalTempNumber +1;
 
                 } else {
                     System.out.println("Check your balance.");
@@ -608,6 +631,7 @@ public class Market {
                 if (cash > bigRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigRabbitBUY;
+                    animalTempNumber = animalTempNumber +1;
 
                 } else {
                     System.out.println("Check your balance.");
@@ -618,6 +642,7 @@ public class Market {
                 if (cash > bigChickenBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigChickenBUY;
+                    animalTempNumber = animalTempNumber +1;
 
                 } else {
                     System.out.println("Check your balance.");
@@ -628,6 +653,7 @@ public class Market {
                 if (cash > bigDogBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigDogBUY;
+                    animalTempNumber = animalTempNumber +1;
 
                 } else {
                     System.out.println("Check your balance.");
@@ -638,6 +664,7 @@ public class Market {
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + foodForAnimalBUY;
+                    animalTempNumber = animalTempNumber +1;
 
                 } else {
                     System.out.println("Check your balance.");
@@ -666,6 +693,10 @@ public class Market {
 
     public static int getPriceTempSell(){
         return priceTempSell;
+    }
+
+    public static int getAnimalTempNumber(){
+        return animalTempNumber;
     }
 
 }

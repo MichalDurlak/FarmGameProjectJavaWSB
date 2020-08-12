@@ -23,7 +23,7 @@ public class BuildBuildings {
     int tempMaxSizeBuildings = 0;
 
 
-    public static int buildBuildings(int cash, int tempMaxSizeBuildings){
+    public static int buildBuildings(int cash, int tempPlayerMaxSizeBuildings){
 
             if (getAlreadyOpenBuildBuildings() == true){
                 System.out.println("You saw these prices: ");
@@ -44,18 +44,112 @@ public class BuildBuildings {
                 int choose = in.nextInt();
 
                 if (choose == 1) {
-                    System.out.println("Congratulations you bought it!");
 
-                } else if (choose == 2) {
+                    if (cash > small1CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
 
-                } else if (choose == 0) {
-                    return choose;
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
 
                 }
 
-                else {
-                    System.out.println("Please dont brake the game.");
+                else if (choose == 2) {
+
+                    if (cash > small2CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
                 }
+
+                else if (choose == 3) {
+
+                    if (cash > small3CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+                            System.out.println("You build cowshed");
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 4) {
+
+                    if (cash > medium1CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 5) {
+
+                    if (cash > medium2CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 6) {
+
+                    if (cash > big1CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 7) {
+
+                    if (cash > big2CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 0) { return choose; }
+                else { System.out.println("Please dont brake the game."); }
 
 
             } else if (getAlreadyOpenBuildBuildings() == false) {
@@ -127,20 +221,114 @@ public class BuildBuildings {
                 int choose = in.nextInt();
 
 
-
                 if (choose == 1) {
-                    System.out.println("Congratulations you bought it!");
 
-                } else if (choose == 2) {
+                    if (cash > small1CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
 
-                } else if (choose == 0) {
-                    return choose;
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
 
                 }
 
-                else {
-                    System.out.println("Please dont brake the game.");
+                else if (choose == 2) {
+
+                    if (cash > small2CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
                 }
+
+                else if (choose == 3) {
+
+                    if (cash > small3CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+                            System.out.println("You build cowshed");
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 4) {
+
+                    if (cash > medium1CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 5) {
+
+                    if (cash > medium2CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 6) {
+
+                    if (cash > big1CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 7) {
+
+                    if (cash > big2CowshedBUY){
+                        if (tempPlayerMaxSizeBuildings > 1){
+
+                        } else {
+                            System.out.println("You cant build, because you dont have enough place for this.");
+                        }
+
+                    } else {
+                        System.out.println("Not enough money. Check your balance.");
+                    }
+
+                }
+
+                else if (choose == 0) { return choose; }
+                else { System.out.println("Please dont brake the game."); }
+
 
 
 

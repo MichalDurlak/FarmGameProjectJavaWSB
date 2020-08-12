@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
+import static com.company.BuildBuildings.buildBuildings;
 import static com.company.Farmland.*;
 import static com.company.Market.*;
 
@@ -82,6 +83,12 @@ public class Main {
 
                     break;
 
+                case 4:
+
+                    buildBuildings(player.getCash(),player.buildingsMaxSize);
+
+                    break;
+
                 case 8:
                     System.out.println("  YOUR BACKPACK   ****************************************");
                     System.out.println("Actual Wheat Seeds: "+ player.getWheatSeedsPlayer()+" (Max: "+ player.getMaxWheatSeedsPlayer()+")");
@@ -129,6 +136,7 @@ public class Main {
         System.out.println("     1. Check stats.");
         System.out.println("     2. Go to marketplace. ");
         System.out.println("     3. Buy farmland. ");
+        System.out.println("     4. Build buildings. ");
         System.out.println("     8. Check backpack. ");
         System.out.println("     9. Next week.");
         System.out.println("     0. Exit Game.");

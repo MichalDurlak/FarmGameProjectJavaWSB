@@ -109,9 +109,10 @@ public class Main {
                         numberOfWeek = numberOfWeek+1;
                     }
 
-                    Player.checkEndGame(player.getFarmland(),player.animals,player.seeds);
+           // END GAME  Player.checkEndGame(player.getFarmland(),player.animals,player.seeds);
                     Farmland.setAlreadyOpenShopFarmland();
                     Market.setAlreadyOpenShop();
+                    BuildBuildings.setAlreadyOpenBuildBuildings();
 
                     break;
 

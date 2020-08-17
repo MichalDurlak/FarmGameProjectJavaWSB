@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-import static com.company.BuildBuildings.buildBuildings;
+import static com.company.BuildBuildings.*;
 import static com.company.Farmland.*;
 import static com.company.Market.*;
 
@@ -78,7 +78,7 @@ public class Main {
 
                     player.seedsMaxSize = player.seedsMaxSize+placeForSeedsTemp;
                     player.buildingsMaxSize = player.buildingsMaxSize+placeForBuildingsTemp;
-                    player.animalsMaxSize = player.animalsMaxSize +placeForAnimalTemp;
+//                    player.animalsMaxSize = player.animalsMaxSize +placeForAnimalTemp;
 
 
                     break;
@@ -87,6 +87,14 @@ public class Main {
 
                     buildBuildings(player.getCash(),player.buildingsMaxSize);
 
+                    int tempPriceOfCowshed = getTempPriceBuilding();
+                    int tempSizeOfCowshed = getTempSizeofCowshed();
+                    int tempMaxSizeOfBuildings = getTempMaxSizeBuildings();
+
+                    player.setCash(player.getCash()-tempPriceOfCowshed);
+                    player.buildings += tempMaxSizeOfBuildings;
+                    player.buildingsMaxSize -= tempMaxSizeOfBuildings;
+                    player.animalsMaxSize += tempSizeOfCowshed;
                     break;
 
                 case 8:

@@ -44,9 +44,14 @@ public class BuildBuildings {
 
 
     static int tempMaxSizeBuildings = 0;
-
+    private static int tempPriceBuilding = 0;
+    private static int tempSizeofCowshed = 0;
 
     public static int buildBuildings(int cash, int tempPlayerMaxSizeBuildings){
+
+        tempPriceBuilding = 0;
+        tempSizeofCowshed = 0;
+        tempMaxSizeBuildings = 0;
 
             if (getAlreadyOpenBuildBuildings() == true){
                 System.out.println("You saw these prices: ");
@@ -71,6 +76,14 @@ public class BuildBuildings {
                     if (cash > small1CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizesmall1CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += small1CowshedBUY;
+                            tempSizeofCowshed += MAXsmall1CowshedBUY;
+                            tempMaxSizeBuildings +=Sizesmall1CowshedBUY;
+
+                            small1CowshedBUY = 0;
+                            MAXsmall1CowshedBUY = 0;
+                            Sizesmall1CowshedBUY = 0;
+
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
                         }
@@ -86,6 +99,13 @@ public class BuildBuildings {
                     if (cash > small2CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizesmall2CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += small2CowshedBUY;
+                            tempSizeofCowshed += MAXsmall2CowshedBUY;
+                            tempMaxSizeBuildings +=Sizesmall2CowshedBUY;
+
+                            small2CowshedBUY = 0;
+                            MAXsmall2CowshedBUY = 0;
+                            Sizesmall2CowshedBUY= 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -102,8 +122,16 @@ public class BuildBuildings {
                     if (cash > small3CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizesmall3CowshedBUY){
                             System.out.println("You build cowshed");
+                            tempPriceBuilding += small3CowshedBUY;
+                            tempSizeofCowshed += MAXsmall3CowshedBUY;
+                            tempMaxSizeBuildings +=Sizesmall3CowshedBUY;
+
+                            small3CowshedBUY = 0;
+                            MAXsmall3CowshedBUY = 0;
+                            Sizesmall3CowshedBUY= 0;
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
+
                         }
 
                     } else {
@@ -117,6 +145,13 @@ public class BuildBuildings {
                     if (cash > medium1CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizemedium1CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += medium1CowshedBUY;
+                            tempSizeofCowshed += MAXmedium1CowshedBUY;
+                            tempMaxSizeBuildings +=Sizemedium1CowshedBUY;
+
+                            medium1CowshedBUY = 0;
+                            MAXmedium1CowshedBUY = 0;
+                            Sizemedium1CowshedBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -133,6 +168,13 @@ public class BuildBuildings {
                     if (cash > medium2CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizemedium2CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += medium2CowshedBUY;
+                            tempSizeofCowshed += MAXmedium2CowshedBUY;
+                            tempMaxSizeBuildings +=Sizemedium2CowshedBUY;
+
+                            medium2CowshedBUY = 0;
+                            MAXmedium2CowshedBUY = 0;
+                            Sizemedium2CowshedBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -149,6 +191,13 @@ public class BuildBuildings {
                     if (cash > big1CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizebig1CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += big1CowshedBUY;
+                            tempSizeofCowshed += MAXbig1CowshedBUY;
+                            tempMaxSizeBuildings +=Sizebig1CowshedBUY;
+
+                            big1CowshedBUY = 0;
+                            MAXbig1CowshedBUY = 0;
+                            Sizebig1CowshedBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -165,6 +214,13 @@ public class BuildBuildings {
                     if (cash > big2CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizebig2CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += big2CowshedBUY;
+                            tempSizeofCowshed += MAXbig2CowshedBUY;
+                            tempMaxSizeBuildings +=Sizebig2CowshedBUY;
+
+                            big2CowshedBUY = 0;
+                            MAXbig2CowshedBUY = 0;
+                            Sizebig2CowshedBUY= 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -182,6 +238,11 @@ public class BuildBuildings {
 
 
             } else if (getAlreadyOpenBuildBuildings() == false) {
+
+                tempPriceBuilding = 0;
+                tempSizeofCowshed = 0;
+                tempMaxSizeBuildings = 0;
+
                 AlreadyOpenBuildBuildings = true;
                 System.out.println("New prices: ");
                 ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -276,6 +337,14 @@ public class BuildBuildings {
                     if (cash > small1CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizesmall1CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += small1CowshedBUY;
+                            tempSizeofCowshed += MAXsmall1CowshedBUY;
+                            tempMaxSizeBuildings +=Sizesmall1CowshedBUY;
+
+                            small1CowshedBUY = 0;
+                            MAXsmall1CowshedBUY = 0;
+                            Sizesmall1CowshedBUY = 0;
+
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
                         }
@@ -291,6 +360,13 @@ public class BuildBuildings {
                     if (cash > small2CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizesmall2CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += small2CowshedBUY;
+                            tempSizeofCowshed += MAXsmall2CowshedBUY;
+                            tempMaxSizeBuildings +=Sizesmall2CowshedBUY;
+
+                            small2CowshedBUY = 0;
+                            MAXsmall2CowshedBUY = 0;
+                            Sizesmall2CowshedBUY= 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -307,8 +383,16 @@ public class BuildBuildings {
                     if (cash > small3CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizesmall3CowshedBUY){
                             System.out.println("You build cowshed");
+                            tempPriceBuilding += small3CowshedBUY;
+                            tempSizeofCowshed += MAXsmall3CowshedBUY;
+                            tempMaxSizeBuildings +=Sizesmall3CowshedBUY;
+
+                            small3CowshedBUY = 0;
+                            MAXsmall3CowshedBUY = 0;
+                            Sizesmall3CowshedBUY= 0;
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
+
                         }
 
                     } else {
@@ -322,6 +406,13 @@ public class BuildBuildings {
                     if (cash > medium1CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizemedium1CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += medium1CowshedBUY;
+                            tempSizeofCowshed += MAXmedium1CowshedBUY;
+                            tempMaxSizeBuildings +=Sizemedium1CowshedBUY;
+
+                            medium1CowshedBUY = 0;
+                            MAXmedium1CowshedBUY = 0;
+                            Sizemedium1CowshedBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -338,6 +429,13 @@ public class BuildBuildings {
                     if (cash > medium2CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizemedium2CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += medium2CowshedBUY;
+                            tempSizeofCowshed += MAXmedium2CowshedBUY;
+                            tempMaxSizeBuildings +=Sizemedium2CowshedBUY;
+
+                            medium2CowshedBUY = 0;
+                            MAXmedium2CowshedBUY = 0;
+                            Sizemedium2CowshedBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -354,6 +452,13 @@ public class BuildBuildings {
                     if (cash > big1CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizebig1CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += big1CowshedBUY;
+                            tempSizeofCowshed += MAXbig1CowshedBUY;
+                            tempMaxSizeBuildings +=Sizebig1CowshedBUY;
+
+                            big1CowshedBUY = 0;
+                            MAXbig1CowshedBUY = 0;
+                            Sizebig1CowshedBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -370,6 +475,13 @@ public class BuildBuildings {
                     if (cash > big2CowshedBUY){
                         if (tempPlayerMaxSizeBuildings >= Sizebig2CowshedBUY){
                             System.out.println("You build it.");
+                            tempPriceBuilding += big2CowshedBUY;
+                            tempSizeofCowshed += MAXbig2CowshedBUY;
+                            tempMaxSizeBuildings +=Sizebig2CowshedBUY;
+
+                            big2CowshedBUY = 0;
+                            MAXbig2CowshedBUY = 0;
+                            Sizebig2CowshedBUY= 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -401,6 +513,19 @@ public class BuildBuildings {
     public static void setAlreadyOpenBuildBuildings() {
         AlreadyOpenBuildBuildings = false;
     }
+
+
+    public static int getTempPriceBuilding(){
+        return tempPriceBuilding;
+    }
+
+    public static int getTempSizeofCowshed(){
+        return tempSizeofCowshed;
+    }
+    public static int getTempMaxSizeBuildings(){
+        return tempMaxSizeBuildings;
+    }
+
 
 
 }

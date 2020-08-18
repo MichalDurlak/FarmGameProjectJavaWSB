@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -51,6 +53,24 @@ public class Market {
     static int animalTempNumber = 0;
     static int seedsTempNumber = 0;
 
+
+    //
+    static int tempsmallChickenAnimal = 0;
+    static int tempsmallDogAnimal = 0;
+    static int tempsmallCowAnimal = 0;
+    static int tempsmallHorseAnimal = 0;
+
+    static int tempbigChickenAnimal = 0;
+    static int tempbigDogAnimal = 0;
+    static int tempbigCowAnimal = 0;
+    static int tempbigHorseAnimal = 0;
+
+    static int tempWheatSeed= 0;
+    static  int tempOatSeed= 0;
+    static int tempCornSeed= 0;
+    static int tempPotatoSeed= 0;
+//
+
     public static int Marketplace(int cash, int maxSeedsThatCanBuy) {
 
 
@@ -60,6 +80,22 @@ public class Market {
             priceTempBuy = 0;
             animalTempNumber = 0;
             seedsTempNumber = 0;
+            //
+            tempsmallChickenAnimal = 0;
+            tempsmallDogAnimal = 0;
+            tempsmallCowAnimal = 0;
+            tempsmallHorseAnimal = 0;
+
+            tempbigChickenAnimal = 0;
+            tempbigDogAnimal = 0;
+            tempbigCowAnimal = 0;
+            tempbigHorseAnimal = 0;
+
+            tempWheatSeed= 0;
+            tempOatSeed= 0;
+            tempCornSeed= 0;
+            tempPotatoSeed= 0;
+//
             System.out.println("You saw these prices: ");
 
             System.out.println("    BUY:  ****************************************   SELL:   ");
@@ -76,9 +112,9 @@ public class Market {
 
             // sell and buy #3
             System.out.println("");
-            System.out.print("5. Small Rabbit: " + smallRabbitBUY);
+            System.out.print("XXXXX5. Small Rabbit: " + smallRabbitBUY);
             System.out.print("                                  ");
-            System.out.print("6. Small Rabbit: " + smallRabbitSELL);
+            System.out.print("XXXXX6. Small Rabbit: " + smallRabbitSELL);
 
             // sell and buy #4
             System.out.println("");
@@ -139,9 +175,9 @@ public class Market {
 
             // sell and buy #12
             System.out.println("");
-            System.out.print("23. Big Rabbit: " + bigRabbitBUY);
+            System.out.print("XXXXX23. Big Rabbit: " + bigRabbitBUY);
             System.out.print("                                  ");
-            System.out.print("24. Big Rabbit: " + bigRabbitSELL);
+            System.out.print("XXXXX24. Big Rabbit: " + bigRabbitSELL);
 
             // sell and buy #13
             System.out.println("");
@@ -194,6 +230,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallCowBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallCowAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -204,6 +241,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallHorseBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallHorseAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -213,6 +251,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallRabbitBUY;
                     animalTempNumber = animalTempNumber +1;
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -223,6 +262,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallChickenBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallChickenAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -232,6 +272,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallDogBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallDogAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -248,7 +289,7 @@ public class Market {
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + WheatSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
-
+                        tempWheatSeed = 1;
                     }
 
 
@@ -267,6 +308,7 @@ public class Market {
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + OatSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
+                        tempOatSeed = 1;
                     }
 
 
@@ -285,6 +327,7 @@ public class Market {
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + CornSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
+                        tempCornSeed = 1;
                     }
 
 
@@ -303,6 +346,7 @@ public class Market {
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + PotatoSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
+                        tempPotatoSeed = 1;
                     }
 
 
@@ -317,6 +361,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigCowBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempbigCowAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -327,6 +372,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigHorseBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempbigHorseAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -337,6 +383,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigRabbitBUY;
                     animalTempNumber = animalTempNumber +1;
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -347,6 +394,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigChickenBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempbigChickenAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -357,6 +405,7 @@ public class Market {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigDogBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempbigDogAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -380,6 +429,23 @@ public class Market {
             priceTempBuy = 0;
             animalTempNumber = 0;
             seedsTempNumber = 0;
+
+            //
+            tempsmallChickenAnimal = 0;
+            tempsmallDogAnimal = 0;
+            tempsmallCowAnimal = 0;
+            tempsmallHorseAnimal = 0;
+
+            tempbigChickenAnimal = 0;
+            tempbigDogAnimal = 0;
+            tempbigCowAnimal = 0;
+            tempbigHorseAnimal = 0;
+
+            tempWheatSeed= 0;
+            tempOatSeed= 0;
+            tempCornSeed= 0;
+            tempPotatoSeed= 0;
+//
             System.out.println("Look there are new prices: ");
 
 
@@ -558,6 +624,7 @@ public class Market {
 
                     priceTempBuy = priceTempBuy + smallCowBUY;
                     animalTempNumber = animalTempNumber +1;
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
@@ -772,4 +839,23 @@ public class Market {
         return  seedsTempNumber;
     }
 
-}
+    //
+    public static int gettempsmallCowAnimal(){return  tempsmallCowAnimal;}
+    public static int gettempsmallHorseAnimal(){return  tempsmallHorseAnimal;}
+    public static int gettempsmallDogAnimal(){return  tempsmallDogAnimal;}
+    public static int gettempsmallChickenAnimal(){return  tempsmallChickenAnimal;}
+
+    public static int gettempbigChickenAnimal(){return  tempbigChickenAnimal;}
+    public static int gettempbigDogAnimal(){return  tempbigDogAnimal;}
+    public static int gettempbigCowAnimal(){return  tempbigCowAnimal;}
+    public static int gettempbigHorseAnimal(){return  tempbigHorseAnimal;}
+
+    public static int gettempWheatSeed(){return  tempWheatSeed;}
+    public static int gettempOatSeed(){return  tempOatSeed;}
+    public static int gettempCornSeed(){return  tempCornSeed;}
+    public static int gettempPotatoSeed(){return  tempPotatoSeed;}
+    //
+
+
+    }
+

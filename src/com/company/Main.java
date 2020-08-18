@@ -68,6 +68,34 @@ public class Main {
                     player.seeds = player.seeds + numberSeedsTemp;
 
 
+                    if(gettempsmallCowAnimal()==1){
+                        player.smallCowAnimal.add(numberOfWeek,numberOfYear);
+                    } else if(gettempsmallChickenAnimal()==1){
+                        player.smallChickenAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempsmallHorseAnimal()==1){
+                        player.smallHorseAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempsmallDogAnimal()==1){
+                        player.smallDogAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempbigChickenAnimal()==1){
+                        player.bigChickenAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempbigDogAnimal()==1){
+                        player.bigDogAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempbigCowAnimal()==1){
+                        player.bigCowAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempbigHorseAnimal()==1){
+                        player.bigHorseAnimal.add(numberOfWeek,numberOfYear);
+                    }else if(gettempWheatSeed()==1){
+                        player.WheatSeed.add(numberOfWeek,numberOfYear);
+                    }else if(gettempOatSeed()==1){
+                        player.OatSeed.add(numberOfWeek,numberOfYear);
+                    }else if(gettempCornSeed()==1){
+                        player.CornSeed.add(numberOfWeek,numberOfYear);
+                    }else if(gettempPotatoSeed()==1){
+                        player.PotatoSeed.add(numberOfWeek,numberOfYear);
+                    }else {
+                        System.out.println("Please dont do that...");
+                    }
+
                     break;
 
                 case 3:

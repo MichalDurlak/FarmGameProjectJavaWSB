@@ -1,4 +1,6 @@
 package com.company;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Player {
@@ -15,6 +17,21 @@ public class Player {
 
     public int buildingsMaxSize,animalsMaxSize,seedsMaxSize;
 
+
+    public List<Integer> smallChickenAnimal = new ArrayList<>();
+    public List<Integer> smallDogAnimal = new ArrayList<>();
+    public List<Integer> smallCowAnimal = new ArrayList<>();
+    public List<Integer> smallHorseAnimal = new ArrayList<>();
+
+    public List<Integer> bigChickenAnimal = new ArrayList<>();
+    public List<Integer> bigDogAnimal = new ArrayList<>();
+    public List<Integer> bigCowAnimal = new ArrayList<>();
+    public List<Integer> bigHorseAnimal = new ArrayList<>();
+
+    public List<Integer> WheatSeed = new ArrayList<>();
+    public List<Integer> OatSeed = new ArrayList<>();
+    public List<Integer> CornSeed = new ArrayList<>();
+    public List<Integer> PotatoSeed = new ArrayList<>();
 
 
     public Player(String name){

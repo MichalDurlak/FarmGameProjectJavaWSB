@@ -18,20 +18,20 @@ public class Player {
     public int buildingsMaxSize,animalsMaxSize,seedsMaxSize;
 
 
-    public List<Integer> smallChickenAnimal = new ArrayList<>();
-    public List<Integer> smallDogAnimal = new ArrayList<>();
-    public List<Integer> smallCowAnimal = new ArrayList<>();
-    public List<Integer> smallHorseAnimal = new ArrayList<>();
+    public List<String> smallChickenAnimal = new ArrayList<>();
+    public List<String> smallDogAnimal = new ArrayList<>();
+    public List<String> smallCowAnimal = new ArrayList<>();
+    public List<String> smallHorseAnimal = new ArrayList<>();
 
-    public List<Integer> bigChickenAnimal = new ArrayList<>();
-    public List<Integer> bigDogAnimal = new ArrayList<>();
-    public List<Integer> bigCowAnimal = new ArrayList<>();
-    public List<Integer> bigHorseAnimal = new ArrayList<>();
+    public List<String> bigChickenAnimal = new ArrayList<>();
+    public List<String> bigDogAnimal = new ArrayList<>();
+    public List<String> bigCowAnimal = new ArrayList<>();
+    public List<String> bigHorseAnimal = new ArrayList<>();
 
-    public List<Integer> WheatSeed = new ArrayList<>();
-    public List<Integer> OatSeed = new ArrayList<>();
-    public List<Integer> CornSeed = new ArrayList<>();
-    public List<Integer> PotatoSeed = new ArrayList<>();
+    public List<String> WheatSeed = new ArrayList<>();
+    public List<String> OatSeed = new ArrayList<>();
+    public List<String> CornSeed = new ArrayList<>();
+    public List<String> PotatoSeed = new ArrayList<>();
 
 
     public Player(String name){

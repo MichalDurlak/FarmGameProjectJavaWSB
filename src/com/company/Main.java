@@ -67,31 +67,35 @@ public class Main {
                     int numberSeedsTemp = getseedsTempNumber();
                     player.seeds = player.seeds + numberSeedsTemp;
 
+                    String tempnumberOfWeeknumberOfYear = numberOfWeek + ", "+numberOfYear;
+
 
                     if(gettempsmallCowAnimal()==1){
-                        player.smallCowAnimal.add(numberOfWeek,numberOfYear);
+                        player.smallCowAnimal.add(tempnumberOfWeeknumberOfYear);
+//                        for ( int j=0; j<player.smallCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallCowAnimal.get(j) );
+
                     } else if(gettempsmallChickenAnimal()==1){
-                        player.smallChickenAnimal.add(numberOfWeek,numberOfYear);
+                        player.smallChickenAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempsmallHorseAnimal()==1){
-                        player.smallHorseAnimal.add(numberOfWeek,numberOfYear);
+                        player.smallHorseAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempsmallDogAnimal()==1){
-                        player.smallDogAnimal.add(numberOfWeek,numberOfYear);
+                        player.smallDogAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempbigChickenAnimal()==1){
-                        player.bigChickenAnimal.add(numberOfWeek,numberOfYear);
+                        player.bigChickenAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempbigDogAnimal()==1){
-                        player.bigDogAnimal.add(numberOfWeek,numberOfYear);
+                        player.bigDogAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempbigCowAnimal()==1){
-                        player.bigCowAnimal.add(numberOfWeek,numberOfYear);
+                        player.bigCowAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempbigHorseAnimal()==1){
-                        player.bigHorseAnimal.add(numberOfWeek,numberOfYear);
+                        player.bigHorseAnimal.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempWheatSeed()==1){
-                        player.WheatSeed.add(numberOfWeek,numberOfYear);
+                        player.WheatSeed.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempOatSeed()==1){
-                        player.OatSeed.add(numberOfWeek,numberOfYear);
+                        player.OatSeed.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempCornSeed()==1){
-                        player.CornSeed.add(numberOfWeek,numberOfYear);
+                        player.CornSeed.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempPotatoSeed()==1){
-                        player.PotatoSeed.add(numberOfWeek,numberOfYear);
+                        player.PotatoSeed.add(tempnumberOfWeeknumberOfYear);
                     }else {
                         System.out.println("Please dont do that...");
                     }

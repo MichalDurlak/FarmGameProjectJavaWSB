@@ -235,7 +235,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
                 }
-            } else if (choose == 3){
+            }
+            else if (choose == 3){
 
                 if (cash > smallHorseBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -246,7 +247,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
                 }
-            } else if (choose == 5){
+            }
+            else if (choose == 5){
                 if (cash > smallRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallRabbitBUY;
@@ -256,7 +258,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
                 }
-            } else if ( choose == 7){
+            }
+            else if ( choose == 7){
 
                 if (cash > smallChickenBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -266,7 +269,8 @@ public class Market {
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
-                }} else if ( choose == 9){
+                }}
+            else if ( choose == 9){
 
                 if (cash > smallDogBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -278,7 +282,8 @@ public class Market {
                     return choose;
 
 
-                }} else if (choose <=11){
+                }}
+            else if (choose <=11){
 
                 if (cash > WheatSeedsBUY) {
 
@@ -297,7 +302,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose <=13){
+                }}
+            else if (choose <=13){
 
                 if (cash > OatSeedsBUY) {
 
@@ -316,7 +322,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose <=15){
+                }}
+            else if (choose <=15){
 
                 if (cash > CornSeedsBUY) {
 
@@ -335,7 +342,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if(choose <=17){
+                }}
+            else if(choose <=17){
 
                 if (cash > PotatoSeedsBUY) {
 
@@ -355,7 +363,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose == 19){
+                }}
+            else if (choose == 19){
 
                 if (cash > bigCowBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -366,7 +375,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose ==21){
+                }}
+            else if (choose ==21){
 
                 if (cash > bigHorseBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -377,7 +387,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose == 23){
+                }}
+            else if (choose == 23){
 
                 if (cash > bigRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -388,7 +399,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if(choose == 25){
+                }}
+            else if(choose == 25){
 
                 if (cash > bigChickenBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -399,7 +411,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                }} else if (choose == 27){
+                }}
+            else if (choose == 27){
 
                 if (cash > bigDogBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -410,7 +423,8 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-                } } else if (choose ==30) {
+                } }
+            else if (choose ==30) {
 
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -621,54 +635,62 @@ public class Market {
             if (choose == 1) {
                 if (cash > smallCowBUY) {
                     System.out.println("Congratulations you bought it!");
-
                     priceTempBuy = priceTempBuy + smallCowBUY;
                     animalTempNumber = animalTempNumber +1;
-
+                    tempsmallCowAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
                 }
-            } else if (choose == 3){
+            }
+            else if (choose == 3){
 
                 if (cash > smallHorseBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallHorseBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallHorseAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
                 }
-                } else if (choose == 5){
+            }
+            else if (choose == 5){
                 if (cash > smallRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallRabbitBUY;
                     animalTempNumber = animalTempNumber +1;
+
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
                 }
-                } else if ( choose == 7){
+            }
+            else if ( choose == 7){
 
                 if (cash > smallChickenBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallChickenBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallChickenAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
-                }} else if ( choose == 9){
+                }}
+            else if ( choose == 9){
 
                 if (cash > smallDogBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + smallDogBUY;
                     animalTempNumber = animalTempNumber +1;
+                    tempsmallDogAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
 
-                }} else if (choose ==11){
+                }}
+            else if (choose <=11){
 
                 if (cash > WheatSeedsBUY) {
 
@@ -679,6 +701,7 @@ public class Market {
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + WheatSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
+                        tempWheatSeed = 1;
                     }
 
 
@@ -686,17 +709,19 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if (choose ==13){
+                }}
+            else if (choose <=13){
 
                 if (cash > OatSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy <= 0){
+                    if (maxSeedsThatCanBuy == 0){
                         System.out.println("You dont have enough space");
                     } else {
+
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + OatSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
-
+                        tempOatSeed = 1;
                     }
 
 
@@ -704,17 +729,19 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if (choose ==15){
+                }}
+            else if (choose <=15){
 
                 if (cash > CornSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy <= 0){
+                    if (maxSeedsThatCanBuy == 0){
                         System.out.println("You dont have enough space");
                     } else {
 
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + CornSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
+                        tempCornSeed = 1;
                     }
 
 
@@ -722,47 +749,53 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if(choose ==17){
+                }}
+            else if(choose <=17){
 
                 if (cash > PotatoSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy <= 0){
+                    if (maxSeedsThatCanBuy == 0){
                         System.out.println("You dont have enough space");
                     } else {
 
                         System.out.println("Congratulations you bought it!");
                         priceTempBuy = priceTempBuy + PotatoSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
+                        tempPotatoSeed = 1;
                     }
+
 
 
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if (choose == 19){
+                }}
+            else if (choose == 19){
 
                 if (cash > bigCowBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigCowBUY;
                     animalTempNumber = animalTempNumber +1;
-
+                    tempbigCowAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if (choose ==21){
+                }}
+            else if (choose ==21){
 
                 if (cash > bigHorseBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigHorseBUY;
                     animalTempNumber = animalTempNumber +1;
-
+                    tempbigHorseAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if (choose == 23){
+                }}
+            else if (choose == 23){
 
                 if (cash > bigRabbitBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -773,41 +806,42 @@ public class Market {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if(choose == 25){
+                }}
+            else if(choose == 25){
 
                 if (cash > bigChickenBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigChickenBUY;
                     animalTempNumber = animalTempNumber +1;
-
+                    tempbigChickenAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-            }} else if (choose == 27){
+                }}
+            else if (choose == 27){
 
                 if (cash > bigDogBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + bigDogBUY;
                     animalTempNumber = animalTempNumber +1;
-
+                    tempbigDogAnimal = 1;
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
-            } } else if (choose ==30) {
+                } }
+            else if (choose ==30) {
 
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
                     priceTempBuy = priceTempBuy + foodForAnimalBUY;
-
 
                 } else {
                     System.out.println("Check your balance.");
                     return choose;
 
                 }}
-
 
 
         }

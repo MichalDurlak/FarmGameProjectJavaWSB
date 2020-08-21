@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.company.BuildBuildings.*;
@@ -24,7 +26,7 @@ public class Main {
         System.out.println("Your balance: "+ player.getCash()+"$");
         System.out.println("Your farmland: "+ player.getFarmland()+" hectare");
 
-        System.out.println("Your animals: "+player.animals + "(Max. "+player.animalsMaxSize+") ");
+        System.out.println("Your animals: "+player.animals + "(Free slots: "+player.animalsMaxSize+") ");
         System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
         System.out.println("Your seeds: "+player.seeds+". "+ "(Max. "+player.seedsMaxSize+") ");
         System.out.println("     ****************************************");
@@ -43,13 +45,25 @@ public class Main {
                     System.out.println("Your buildings: "+player.buildings+ "(Max. "+player.buildingsMaxSize+") ");
                     System.out.println("Your seeds: "+player.seeds+". "+ "(Max. "+player.seedsMaxSize+") ");
                     System.out.println("     ****************************************");
+                    System.out.println("You have: "+player.smallChickenAnimal.size()+" small chickens");
+                    System.out.println("You have: "+player.smallDogAnimal.size()+" small dogs");
+                    System.out.println("You have: "+player.smallCowAnimal.size()+" small cows");
+                    System.out.println("You have: "+player.smallHorseAnimal.size()+" small horses");
+
+                    System.out.println("You have: "+player.bigChickenAnimal.size()+" big chickens");
+                    System.out.println("You have: "+player.bigDogAnimal.size()+" big dogs");
+                    System.out.println("You have: "+player.bigCowAnimal.size()+" big cows");
+                    System.out.println("You have: "+player.bigHorseAnimal.size()+" big horses");
+
+
+                    System.out.println("     ****************************************");
                     break;
 
                 case 2:
 
                     int maxSeedsThatCanBuy = player.seedsMaxSize-player.seeds;
-
-                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy);
+                    int maxAnimalsThatCanBuy = player.animalsMaxSize;
+                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy,maxAnimalsThatCanBuy);
 
 
                     int sellTempPlusCash = getPriceTempSell();
@@ -72,22 +86,30 @@ public class Main {
 
                     if(gettempsmallCowAnimal()==1){
                         player.smallCowAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
 //                        for ( int j=0; j<player.smallCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallCowAnimal.get(j) );
 
                     } else if(gettempsmallChickenAnimal()==1){
                         player.smallChickenAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempsmallHorseAnimal()==1){
                         player.smallHorseAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempsmallDogAnimal()==1){
                         player.smallDogAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempbigChickenAnimal()==1){
                         player.bigChickenAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempbigDogAnimal()==1){
                         player.bigDogAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempbigCowAnimal()==1){
                         player.bigCowAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempbigHorseAnimal()==1){
                         player.bigHorseAnimal.add(tempnumberOfWeeknumberOfYear);
+                        player.animalsMaxSize -=1;
                     }else if(gettempWheatSeed()==1){
                         player.WheatSeed.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempOatSeed()==1){
@@ -96,9 +118,10 @@ public class Main {
                         player.CornSeed.add(tempnumberOfWeeknumberOfYear);
                     }else if(gettempPotatoSeed()==1){
                         player.PotatoSeed.add(tempnumberOfWeeknumberOfYear);
-                    }else {
-                        System.out.println("Please dont do that...");
                     }
+//                    else {
+//                        System.out.println("Please dont do that...");
+//                    }
 
                     break;
 
@@ -131,14 +154,15 @@ public class Main {
 
                 case 8:
                     System.out.println("  YOUR BACKPACK   ****************************************");
-                    System.out.println("Actual Wheat Seeds: "+ player.getWheatSeedsPlayer()+" (Max: "+ player.getMaxWheatSeedsPlayer()+")");
-                    System.out.println("Actual Oat Seeds: "+ player.getOatSeedsPlayer()+" (Max: "+ player.getMaxOatSeedsPlayer()+")");
+                    System.out.println("Actual Wheat Seeds: "+ player.WheatSeed.size()+" (Max: "+ player.getMaxWheatSeedsPlayer()+")");
+                    System.out.println("Actual Oat Seeds: "+ player.OatSeed.size()+" (Max: "+ player.getMaxOatSeedsPlayer()+")");
 
-                    System.out.println("Actual Oat Seeds: "+ player.getCornSeedsPlayer()+" (Max: "+ player.getMaxCornSeedsPlayer()+")");
-                    System.out.println("Actual Oat Seeds: "+ player.getPotatoSeedsPlayer()+" (Max: "+ player.getMaxPotatoSeedsPlayer()+")");
-
+                    System.out.println("Actual Oat Seeds: "+ player.CornSeed.size()+" (Max: "+ player.getMaxCornSeedsPlayer()+")");
+                    System.out.println("Actual Oat Seeds: "+ player.PotatoSeed.size()+" (Max: "+ player.getMaxPotatoSeedsPlayer()+")");
 
                     System.out.println("     ****************************************");
+
+
                     break;
 
                 case 9:

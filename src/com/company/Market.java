@@ -71,7 +71,7 @@ public class Market {
     static int tempPotatoSeed= 0;
 //
 
-    public static int Marketplace(int cash, int maxSeedsThatCanBuy) {
+    public static int Marketplace(int cash, int maxSeedsThatCanBuy, int maxAnimalsThatCanBuy) {
 
 
 
@@ -216,7 +216,7 @@ public class Market {
 
             System.out.println("");
             System.out.println("*************************************************************");
-            System.out.println("99. Exit Marketplace");
+            System.out.println("0. Exit Marketplace");
 
             alreadyOpenShop = true;
 
@@ -226,63 +226,93 @@ public class Market {
             int choose = in.nextInt();
 
             if (choose == 1) {
-                if (cash > smallCowBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallCowBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallCowAnimal = 1;
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallCowBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallCowBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallCowAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
                 } else {
-                    System.out.println("Check your balance.");
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
                 }
+
             }
             else if (choose == 3){
-
-                if (cash > smallHorseBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallHorseBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallHorseAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallHorseBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallHorseBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallHorseAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
                 }
+
             }
             else if (choose == 5){
-                if (cash > smallRabbitBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallRabbitBUY;
-                    animalTempNumber = animalTempNumber +1;
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallRabbitBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallRabbitBUY;
+                        animalTempNumber = animalTempNumber +1;
 
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
                 } else {
-                    System.out.println("Check your balance.");
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+
+            }
+            else if ( choose == 7){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallChickenBUY) {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallChickenBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallChickenAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+
+            }
+            else if ( choose == 9){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallDogBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallDogBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallDogAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
                 }
             }
-            else if ( choose == 7){
-
-                if (cash > smallChickenBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallChickenBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallChickenAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
-                }}
-            else if ( choose == 9){
-
-                if (cash > smallDogBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallDogBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallDogAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
-
-
-                }}
             else if (choose <=11){
 
                 if (cash > WheatSeedsBUY) {
@@ -311,7 +341,7 @@ public class Market {
                         System.out.println("You dont have enough space");
                     } else {
 
-                        System.out.println("Congratulations you bought it!");
+                        System.out.println("Coongratulations yu bought it!");
                         priceTempBuy = priceTempBuy + OatSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
                         tempOatSeed = 1;
@@ -365,65 +395,94 @@ public class Market {
 
                 }}
             else if (choose == 19){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > bigCowBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigCowBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigCowAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
 
-                if (cash > bigCowBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigCowBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigCowAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                }}
+                }
+            }
             else if (choose ==21){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > bigHorseBUY) {
 
-                if (cash > bigHorseBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigHorseBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigHorseAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigHorseBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigHorseAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                }}
+                }
+            }
             else if (choose == 23){
+                if (maxAnimalsThatCanBuy < 0){
+                    if (cash > bigRabbitBUY) {
 
-                if (cash > bigRabbitBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigRabbitBUY;
-                    animalTempNumber = animalTempNumber +1;
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigRabbitBUY;
+                        animalTempNumber = animalTempNumber +1;
 
-                } else {
-                    System.out.println("Check your balance.");
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                }}
+                }
+            }
             else if(choose == 25){
+                if (maxAnimalsThatCanBuy < 0){
+                    if (cash > bigChickenBUY) {
 
-                if (cash > bigChickenBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigChickenBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigChickenAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigChickenBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigChickenAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                }}
+                }
+            }
             else if (choose == 27){
+                if (maxAnimalsThatCanBuy < 0){
+                    if (cash > bigDogBUY) {
 
-                if (cash > bigDogBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigDogBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigDogAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigDogBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigDogAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                } }
+                }
+            }
             else if (choose ==30) {
 
                 if (cash > foodForAnimalBUY) {
@@ -435,8 +494,10 @@ public class Market {
                     return choose;
 
                 }}
+            else if (choose == 0){
 
-
+                return choose;
+            }
 
 
         } else if (getAlreadyOpenShop() == false) {
@@ -633,63 +694,93 @@ public class Market {
             int choose = in.nextInt();
 
             if (choose == 1) {
-                if (cash > smallCowBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallCowBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallCowAnimal = 1;
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallCowBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallCowBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallCowAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
                 } else {
-                    System.out.println("Check your balance.");
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
                 }
+
             }
             else if (choose == 3){
-
-                if (cash > smallHorseBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallHorseBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallHorseAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallHorseBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallHorseBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallHorseAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
                 }
+
             }
             else if (choose == 5){
-                if (cash > smallRabbitBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallRabbitBUY;
-                    animalTempNumber = animalTempNumber +1;
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallRabbitBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallRabbitBUY;
+                        animalTempNumber = animalTempNumber +1;
 
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
                 } else {
-                    System.out.println("Check your balance.");
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+
+            }
+            else if ( choose == 7){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallChickenBUY) {
+
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallChickenBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallChickenAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+
+            }
+            else if ( choose == 9){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > smallDogBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + smallDogBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempsmallDogAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
                 }
             }
-            else if ( choose == 7){
-
-                if (cash > smallChickenBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallChickenBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallChickenAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
-                }}
-            else if ( choose == 9){
-
-                if (cash > smallDogBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + smallDogBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempsmallDogAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
-
-
-                }}
             else if (choose <=11){
 
                 if (cash > WheatSeedsBUY) {
@@ -718,7 +809,7 @@ public class Market {
                         System.out.println("You dont have enough space");
                     } else {
 
-                        System.out.println("Congratulations you bought it!");
+                        System.out.println("Coongratulations yu bought it!");
                         priceTempBuy = priceTempBuy + OatSeedsBUY;
                         seedsTempNumber = seedsTempNumber+1;
                         tempOatSeed = 1;
@@ -772,65 +863,94 @@ public class Market {
 
                 }}
             else if (choose == 19){
+                if (maxAnimalsThatCanBuy > 0){
+                    if (cash > bigCowBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigCowBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigCowAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
 
-                if (cash > bigCowBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigCowBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigCowAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                }}
+                }
+            }
             else if (choose ==21){
-
+                if (maxAnimalsThatCanBuy > 0){
                 if (cash > bigHorseBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigHorseBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigHorseAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
 
-                }}
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigHorseBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigHorseAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+            }
             else if (choose == 23){
-
+                if (maxAnimalsThatCanBuy < 0){
                 if (cash > bigRabbitBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigRabbitBUY;
-                    animalTempNumber = animalTempNumber +1;
 
-                } else {
-                    System.out.println("Check your balance.");
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigRabbitBUY;
+                        animalTempNumber = animalTempNumber +1;
+
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
                     return choose;
-
-                }}
+                }
+            }
             else if(choose == 25){
-
+                if (maxAnimalsThatCanBuy < 0){
                 if (cash > bigChickenBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigChickenBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigChickenAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
 
-                }}
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigChickenBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigChickenAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+            }
             else if (choose == 27){
-
+                if (maxAnimalsThatCanBuy < 0){
                 if (cash > bigDogBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + bigDogBUY;
-                    animalTempNumber = animalTempNumber +1;
-                    tempbigDogAnimal = 1;
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
 
-                } }
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + bigDogBUY;
+                        animalTempNumber = animalTempNumber +1;
+                        tempbigDogAnimal = 1;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
+
+                    }
+                }else {
+                    System.out.println("You cant buy you dont have enough place for animals.");
+                    return choose;
+                }
+            }
             else if (choose ==30) {
 
                 if (cash > foodForAnimalBUY) {
@@ -842,6 +962,11 @@ public class Market {
                     return choose;
 
                 }}
+            else if (choose == 0){
+
+                return choose;
+            }
+
 
 
         }

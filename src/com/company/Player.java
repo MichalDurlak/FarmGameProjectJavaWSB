@@ -18,20 +18,21 @@ public class Player {
     public int buildingsMaxSize,animalsMaxSize,seedsMaxSize;
 
 
-    public List<String> smallChickenAnimal = new ArrayList<>();
-    public List<String> smallDogAnimal = new ArrayList<>();
-    public List<String> smallCowAnimal = new ArrayList<>();
-    public List<String> smallHorseAnimal = new ArrayList<>();
+    public List<Integer> smallChickenAnimal = new ArrayList<>();
+    public List<Integer> smallDogAnimal = new ArrayList<>();
+    public List<Integer> smallCowAnimal = new ArrayList<>();
+    public List<Integer> smallHorseAnimal = new ArrayList<>();
 
-    public List<String> bigChickenAnimal = new ArrayList<>();
-    public List<String> bigDogAnimal = new ArrayList<>();
-    public List<String> bigCowAnimal = new ArrayList<>();
-    public List<String> bigHorseAnimal = new ArrayList<>();
+    public List<Integer> bigChickenAnimal = new ArrayList<>();
+    public List<Integer> bigDogAnimal = new ArrayList<>();
+    public List<Integer> bigCowAnimal = new ArrayList<>();
+    public List<Integer> bigHorseAnimal = new ArrayList<>();
 
-    public List<String> WheatSeed = new ArrayList<>();
-    public List<String> OatSeed = new ArrayList<>();
-    public List<String> CornSeed = new ArrayList<>();
-    public List<String> PotatoSeed = new ArrayList<>();
+    public List<Integer> WheatSeed = new ArrayList<>();
+    public List<Integer> OatSeed = new ArrayList<>();
+    public List<Integer> CornSeed = new ArrayList<>();
+    public List<Integer> PotatoSeed = new ArrayList<>();
+
 
 
     public Player(String name){
@@ -176,4 +177,30 @@ public static void checkEndGame(double FarmlandSize, int AnimalsSize, int SeedsS
     public void setMaxPotatoSeedsPlayer(int maxPotatoSeedsPlayer) {
         MaxPotatoSeedsPlayer = maxPotatoSeedsPlayer;
     }
+
+
+
+    public List<Integer> testarray2 = new ArrayList<Integer>();
+    public List<testclass> testarray = new ArrayList<testclass>();
+    static class testclass {
+        public int test1, test2;
+
+        public testclass(int test1, int test2) {
+            this.test1 = test1;
+            this.test2 = test2;
+
+        }
+
+        public String toString() {
+            return test1+", "+test2;
+
+        }
+
+        public void changeDataToOneMore(){
+
+        }
+
+    }
 }
+
+

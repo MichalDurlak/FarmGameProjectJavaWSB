@@ -71,7 +71,7 @@ public class Market {
     static int tempPotatoSeed= 0;
 //
 
-    public static int Marketplace(int cash, int maxSeedsThatCanBuy, int maxAnimalsThatCanBuy) {
+    public static int Marketplace(int cash, int maxSeedsThatCanBuy, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed) {
 
 
 
@@ -96,6 +96,10 @@ public class Market {
             tempCornSeed= 0;
             tempPotatoSeed= 0;
 //
+
+
+
+            //
             System.out.println("You saw these prices: ");
 
             System.out.println("    BUY:  ****************************************   SELL:   ");
@@ -276,7 +280,7 @@ public class Market {
                 }
 
             }
-            else if ( choose == 7){
+            else if (choose == 7){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > smallChickenBUY) {
 
@@ -294,7 +298,7 @@ public class Market {
                 }
 
             }
-            else if ( choose == 9){
+            else if (choose == 9){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > smallDogBUY) {
                         System.out.println("Congratulations you bought it!");
@@ -313,7 +317,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose <=11){
+            else if (choose == 11){
 
                 if (cash > WheatSeedsBUY) {
 
@@ -333,7 +337,7 @@ public class Market {
                     return choose;
 
                 }}
-            else if (choose <=13){
+            else if (choose == 13){
 
                 if (cash > OatSeedsBUY) {
 
@@ -353,7 +357,7 @@ public class Market {
                     return choose;
 
                 }}
-            else if (choose <=15){
+            else if (choose == 15){
 
                 if (cash > CornSeedsBUY) {
 
@@ -373,7 +377,7 @@ public class Market {
                     return choose;
 
                 }}
-            else if(choose <=17){
+            else if (choose == 17){
 
                 if (cash > PotatoSeedsBUY) {
 
@@ -411,7 +415,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose ==21){
+            else if (choose == 21){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigHorseBUY) {
 
@@ -447,7 +451,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if(choose == 25){
+            else if (choose == 25){
                 if (maxAnimalsThatCanBuy < 0){
                     if (cash > bigChickenBUY) {
 
@@ -483,7 +487,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose ==30) {
+            else if (choose == 30) {
 
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -494,10 +498,182 @@ public class Market {
                     return choose;
 
                 }}
+
+
+            // sell
+
+            else if (choose == 2){
+                if (sizesmallCowAnimal>0){
+                    tempsmallCowAnimal = -1;
+                    priceTempSell = priceTempSell + smallCowSELL;
+                    System.out.println("Congratulation you sell small cow for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have small cow");
+                }
+            }
+            else if (choose == 4){
+                if (sizesmallHorseAnimal>0){
+                    tempsmallHorseAnimal = -1;
+                    priceTempSell = priceTempSell + smallHorseSELL;
+                    System.out.println("Congratulation you sell small horse for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have small horse");
+                }
+            }
+            else if (choose == 8){
+                if (sizesmallChickenAnimal>0){
+                    tempsmallChickenAnimal = -1;
+                    priceTempSell = priceTempSell + smallChickenSELL;
+                    System.out.println("Congratulation you sell small chicken for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have small chicken");
+                }
+            }
+            else if (choose == 10){
+                if (sizesmallDogAnimal>0){
+                    tempsmallDogAnimal = -1;
+                    priceTempSell = priceTempSell + smallDogSELL;
+                    System.out.println("Congratulation you sell small dog for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have small dog");
+                }
+            }
+//            else if (choose == 6){
+//                if (sizesmallCowAnimal>0){
+//                    System.out.println(error);
+//                } else {
+//                    System.out.println("You dont have small cow");
+//                }
+//            }
+
+
+            else if (choose == 12){
+                if (sizeWheatSeed>0){
+                    tempWheatSeed = -1;
+                    priceTempSell = priceTempSell + WheatSeedsSELL;
+                    System.out.println("Congratulation you sell wheat seed for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have wheat seed");
+                }
+            }
+            else if (choose == 14){
+                if (sizeOatSeed>0){
+                    tempOatSeed = -1;
+                    priceTempSell = priceTempSell + OatSeedsSELL;
+                    System.out.println("Congratulation you sell oat seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have oat seed");
+                }
+            }
+            else if (choose == 16){
+                if (sizeCornSeed>0){
+                    tempCornSeed = -1;
+                    priceTempSell = priceTempSell + CornSeedsSELL;
+                    System.out.println("Congratulation you sell corn seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have corn seed");
+                }
+            }
+            else if (choose == 18){
+                if (sizePotatoSeed>0){
+                    tempPotatoSeed = -1;
+                    priceTempSell = priceTempSell + PotatoSeedsSELL;
+                    System.out.println("Congratulation you sell potato seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have Potato seed");
+                }
+            }
+
+            else if (choose == 20){
+                if (sizebigCowAnimal>0){
+                    tempbigCowAnimal = -1;
+                    priceTempSell = priceTempSell + bigCowSELL;
+                    System.out.println("Congratulation you sell big cow for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big cow.");
+                }
+            }
+            else if (choose == 22){
+                if (sizebigHorseAnimal>0){
+                    tempbigHorseAnimal = -1;
+                    priceTempSell = priceTempSell + bigHorseSELL;
+                    System.out.println("Congratulation you sell big horse for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big horse");
+                }
+            }
+//            else if (choose == 24){
+//                if (sizesmallChickenAnimal>0){
+//                    tempsmallDogAnimal = -1;
+//                    priceTempSell = priceTempSell + smallDogSELL;
+//                    System.out.println("Congratulation you sell small dog for: " + priceTempSell);
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+            else if (choose == 26){
+                if (sizebigChickenAnimal>0){
+                    tempbigChickenAnimal = -1;
+                    priceTempSell = priceTempSell + bigChickenSELL;
+                    System.out.println("Congratulation you sell big chicken for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big chicken");
+                }
+            }
+            else if (choose == 28){
+                if (sizebigDogAnimal>0){
+                    tempbigDogAnimal = -1;
+                    priceTempSell = priceTempSell + bigDogSELL;
+                    System.out.println("Congratulation you sell big dog for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big dog");
+                }
+            }
+
+//            else if (choose == 29){
+//                if (sizesmallChickenAnimal>0){
+//
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+//            else if (choose == 31){
+//                if (sizesmallChickenAnimal>0){
+//
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+//            else if (choose == 32){
+//                if (sizesmallChickenAnimal>0){
+//
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+            //
+
+
+
+
             else if (choose == 0){
 
                 return choose;
             }
+            else {
+                System.out.println("Please dont brake the game! ");
+            }
+
+
+
 
 
         } else if (getAlreadyOpenShop() == false) {
@@ -693,6 +869,7 @@ public class Market {
             Scanner in = new Scanner(System.in);
             int choose = in.nextInt();
 
+            // buy
             if (choose == 1) {
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > smallCowBUY) {
@@ -744,7 +921,7 @@ public class Market {
                 }
 
             }
-            else if ( choose == 7){
+            else if (choose == 7){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > smallChickenBUY) {
 
@@ -762,7 +939,7 @@ public class Market {
                 }
 
             }
-            else if ( choose == 9){
+            else if (choose == 9){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > smallDogBUY) {
                         System.out.println("Congratulations you bought it!");
@@ -781,7 +958,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose <=11){
+            else if (choose == 11){
 
                 if (cash > WheatSeedsBUY) {
 
@@ -801,7 +978,7 @@ public class Market {
                     return choose;
 
                 }}
-            else if (choose <=13){
+            else if (choose == 13){
 
                 if (cash > OatSeedsBUY) {
 
@@ -821,7 +998,7 @@ public class Market {
                     return choose;
 
                 }}
-            else if (choose <=15){
+            else if (choose == 15){
 
                 if (cash > CornSeedsBUY) {
 
@@ -841,7 +1018,7 @@ public class Market {
                     return choose;
 
                 }}
-            else if(choose <=17){
+            else if (choose == 17){
 
                 if (cash > PotatoSeedsBUY) {
 
@@ -879,7 +1056,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose ==21){
+            else if (choose == 21){
                 if (maxAnimalsThatCanBuy > 0){
                 if (cash > bigHorseBUY) {
 
@@ -915,7 +1092,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if(choose == 25){
+            else if (choose == 25){
                 if (maxAnimalsThatCanBuy < 0){
                 if (cash > bigChickenBUY) {
 
@@ -951,7 +1128,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose ==30) {
+            else if (choose == 30) {
 
                 if (cash > foodForAnimalBUY) {
                     System.out.println("Congratulations you bought it!");
@@ -962,9 +1139,175 @@ public class Market {
                     return choose;
 
                 }}
+
+
+            // sell
+
+            else if (choose == 2){
+                if (sizesmallCowAnimal>0){
+                    tempsmallCowAnimal = -1;
+                    priceTempSell = priceTempSell + smallCowSELL;
+                    System.out.println("Congratulation you sell small cow for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have small cow");
+                }
+            }
+            else if (choose == 4){
+                if (sizesmallHorseAnimal>0){
+                    tempsmallHorseAnimal = -1;
+                    priceTempSell = priceTempSell + smallHorseSELL;
+                    System.out.println("Congratulation you sell small horse for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have small horse");
+                }
+            }
+            else if (choose == 8){
+                if (sizesmallChickenAnimal>0){
+                    tempsmallChickenAnimal = -1;
+                    priceTempSell = priceTempSell + smallChickenSELL;
+                    System.out.println("Congratulation you sell small chicken for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have small chicken");
+                }
+            }
+            else if (choose == 10){
+                if (sizesmallDogAnimal>0){
+                    tempsmallDogAnimal = -1;
+                    priceTempSell = priceTempSell + smallDogSELL;
+                    System.out.println("Congratulation you sell small dog for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have small dog");
+                }
+            }
+//            else if (choose == 6){
+//                if (sizesmallCowAnimal>0){
+//                    System.out.println(error);
+//                } else {
+//                    System.out.println("You dont have small cow");
+//                }
+//            }
+
+
+            else if (choose == 12){
+                if (sizeWheatSeed>0){
+                    tempWheatSeed = -1;
+                    priceTempSell = priceTempSell + WheatSeedsSELL;
+                    System.out.println("Congratulation you sell wheat seed for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have wheat seed");
+                }
+            }
+            else if (choose == 14){
+                if (sizeOatSeed>0){
+                    tempOatSeed = -1;
+                    priceTempSell = priceTempSell + OatSeedsSELL;
+                    System.out.println("Congratulation you sell oat seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have oat seed");
+                }
+            }
+            else if (choose == 16){
+                if (sizeCornSeed>0){
+                    tempCornSeed = -1;
+                    priceTempSell = priceTempSell + CornSeedsSELL;
+                    System.out.println("Congratulation you sell corn seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have corn seed");
+                }
+            }
+            else if (choose == 18){
+                if (sizePotatoSeed>0){
+                    tempPotatoSeed = -1;
+                    priceTempSell = priceTempSell + PotatoSeedsSELL;
+                    System.out.println("Congratulation you sell potato seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have Potato seed");
+                }
+            }
+
+            else if (choose == 20){
+                if (sizebigCowAnimal>0){
+                    tempbigCowAnimal = -1;
+                    priceTempSell = priceTempSell + bigCowSELL;
+                    System.out.println("Congratulation you sell big cow for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big cow.");
+                }
+            }
+            else if (choose == 22){
+                if (sizebigHorseAnimal>0){
+                    tempbigHorseAnimal = -1;
+                    priceTempSell = priceTempSell + bigHorseSELL;
+                    System.out.println("Congratulation you sell big horse for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big horse");
+                }
+            }
+//            else if (choose == 24){
+//                if (sizesmallChickenAnimal>0){
+//                    tempsmallDogAnimal = -1;
+//                    priceTempSell = priceTempSell + smallDogSELL;
+//                    System.out.println("Congratulation you sell small dog for: " + priceTempSell);
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+            else if (choose == 26){
+                if (sizebigChickenAnimal>0){
+                    tempbigChickenAnimal = -1;
+                    priceTempSell = priceTempSell + bigChickenSELL;
+                    System.out.println("Congratulation you sell big chicken for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big chicken");
+                }
+            }
+            else if (choose == 28){
+                if (sizebigDogAnimal>0){
+                    tempbigDogAnimal = -1;
+                    priceTempSell = priceTempSell + bigDogSELL;
+                    System.out.println("Congratulation you sell big dog for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have big dog");
+                }
+            }
+
+//            else if (choose == 29){
+//                if (sizesmallChickenAnimal>0){
+//
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+//            else if (choose == 31){
+//                if (sizesmallChickenAnimal>0){
+//
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+//            else if (choose == 32){
+//                if (sizesmallChickenAnimal>0){
+//
+//                } else {
+//                    System.out.println("You dont have Chicken");
+//                }
+//            }
+            //
+
             else if (choose == 0){
 
                 return choose;
+            }
+            else {
+                System.out.println("Please dont brake the game.");
             }
 
 

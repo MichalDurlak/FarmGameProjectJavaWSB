@@ -340,6 +340,36 @@ public class Main {
 
 
                         player.setCash(player.getCash()+tempmoneyformilk+tempmoneyforegg);
+
+            // rozmnazanie zwierzat
+                        if (player.bigChickenAnimal.size()>2){
+                            int chanceForduplicateAnimal = 0;
+                            chanceForduplicateAnimal = random.nextInt(1, 10);
+                            if (chanceForduplicateAnimal==6){
+                                player.bigChickenAnimal.add(player.bigChickenAnimal.size()+1);
+                            }
+                        }
+                        if (player.bigDogAnimal.size()>2){
+                            int chanceForduplicateAnimal = 0;
+                            chanceForduplicateAnimal = random.nextInt(1, 10);
+                            if (chanceForduplicateAnimal==6){
+                                player.bigDogAnimal.add(player.bigDogAnimal.size()+1);
+                            }
+                        }
+                        if (player.bigCowAnimal.size()>2){
+                            int chanceForduplicateAnimal = 0;
+                            chanceForduplicateAnimal = random.nextInt(1, 10);
+                            if (chanceForduplicateAnimal==6){
+                                player.bigCowAnimal.add(player.bigCowAnimal.size()+1);
+                            }
+                        }
+                        if (player.bigHorseAnimal.size()>2){
+                            int chanceForduplicateAnimal = 0;
+                            chanceForduplicateAnimal = random.nextInt(1, 10);
+                            if (chanceForduplicateAnimal==6){
+                                player.bigHorseAnimal.add(player.bigHorseAnimal.size()+1);
+                            }
+                        }
                     }
 
 

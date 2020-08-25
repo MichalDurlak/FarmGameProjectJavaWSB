@@ -199,11 +199,6 @@ public class Market {
             System.out.println("    ------------------------------------------------------   ");
 
 
-            // sell and buy #15
-
-            System.out.print("");
-            System.out.print("                                                     ");
-            System.out.print("29. Milk: " + milkSELL);
 
             // sell and buy #16
             System.out.println("");
@@ -211,11 +206,7 @@ public class Market {
             System.out.print("                              ");
             System.out.print("31. Food For Animal: " + foodForAnimalSELL);
 
-            // sell and buy #17
-            System.out.println("");
-            System.out.print("");
-            System.out.print("                                                     ");
-            System.out.print("32. Egg: " + eggSELL);
+
 
 
             System.out.println("");
@@ -839,23 +830,12 @@ public class Market {
             System.out.println("    ------------------------------------------------------   ");
 
 
-            // sell and buy #15
-
-            System.out.print("");
-            System.out.print("                                                     ");
-            System.out.print("29. Milk: " + milkSELL);
-
             // sell and buy #16
             System.out.println("");
             System.out.print("30. Food For Animal: " + foodForAnimalBUY);
             System.out.print("                              ");
             System.out.print("31. Food For Animal: " + foodForAnimalSELL);
 
-            // sell and buy #17
-            System.out.println("");
-            System.out.print("");
-            System.out.print("                                                     ");
-            System.out.print("32. Egg: " + eggSELL);
 
 
             System.out.println("");

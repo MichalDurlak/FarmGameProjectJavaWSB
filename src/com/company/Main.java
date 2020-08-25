@@ -304,7 +304,7 @@ public class Main {
                         endAnimalNumber+=1;
                     }
 
-                    System.out.println(endAnimalNumber);
+//                    System.out.println(endAnimalNumber);
                     Player.checkEndGame(player.getFarmland(),endAnimalNumber);
 
 
@@ -320,6 +320,29 @@ public class Main {
                     additionalToPlayerCash = random.nextInt(1, 300);
                     additionalToPlayerCash += player.getCash();
                     player.setCash(additionalToPlayerCash);
+
+            // Dodawanie dla gracza $$ za jajka i mleko
+
+                    if (player.bigChickenAnimal.size()>0||player.bigCowAnimal.size()>0){
+                        int tempmoneyformilk =0;
+                        tempmoneyformilk += player.bigCowAnimal.size();
+
+                        int tempmoneyformilkprice = 0;
+                        tempmoneyformilkprice = random.nextInt(1, 10);
+                        tempmoneyformilk *= tempmoneyformilkprice;
+
+                        int tempmoneyforegg =0;
+                        tempmoneyforegg += player.bigChickenAnimal.size();
+
+                        int tempmoneyforeggsell = 0;
+                        tempmoneyforeggsell = random.nextInt(3, 12);
+                        tempmoneyforegg *= tempmoneyforeggsell;
+
+
+                        player.setCash(player.getCash()+tempmoneyformilk+tempmoneyforegg);
+                    }
+
+
 
 // MINUS -1 do wieku
                     for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){

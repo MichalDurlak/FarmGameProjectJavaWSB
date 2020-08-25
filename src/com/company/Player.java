@@ -62,22 +62,23 @@ public int getCash(){
 }
 
 
-    static int endFarmlandSize = 20;
+    static double endFarmlandSize = 20.0;
     static int endAnimalsSize = 5;
+
     static int endSeedsSize = 5;
     static int endFoodForAnimals = 0; // do poprawy
 
-public static void checkEndGame(double FarmlandSize, int AnimalsSize, int SeedsSize){
+public static void checkEndGame(double FarmlandSize, int fullAnimals){
 
 
     if (FarmlandSize == endFarmlandSize){
-        if (AnimalsSize == endAnimalsSize){
-            if (SeedsSize == endSeedsSize){
+        if (fullAnimals == endAnimalsSize){
+
                 System.out.println("     ****************************************");
                 System.out.println("!!!Congratulations you won the game!!!");
                 System.out.println("     ****************************************");
                 System.exit(0);
-            }
+
 
         }
 

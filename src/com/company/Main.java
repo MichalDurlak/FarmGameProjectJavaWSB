@@ -287,7 +287,29 @@ public class Main {
                         numberOfWeek = numberOfWeek+1;
                     }
 
-           // END GAME  Player.checkEndGame(player.getFarmland(),player.animals,player.seeds);
+           // END GAME
+
+
+                    int endAnimalNumber =0;
+                    if (player.smallChickenAnimal.size()>0||player.bigChickenAnimal.size()>0){
+                        endAnimalNumber+=1;
+                    }
+                    if (player.smallDogAnimal.size()>0||player.bigDogAnimal.size() >0){
+                        endAnimalNumber+=1;
+                    }
+                    if (player.smallCowAnimal.size()>0||player.bigCowAnimal.size()>0){
+                        endAnimalNumber+=1;
+                    }
+                    if (player.smallHorseAnimal.size()>0||player.bigHorseAnimal.size()>0){
+                        endAnimalNumber+=1;
+                    }
+
+                    System.out.println(endAnimalNumber);
+                    Player.checkEndGame(player.getFarmland(),endAnimalNumber);
+
+
+
+
                     Farmland.setAlreadyOpenShopFarmland();
                     Market.setAlreadyOpenShop();
                     BuildBuildings.setAlreadyOpenBuildBuildings();

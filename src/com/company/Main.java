@@ -43,7 +43,7 @@ public class Main {
             switch(playerChose){
                 case 1:
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
-
+                    player.countAnimals();
                     System.out.println("     ****************************************");
                     System.out.println("Your balance: "+ player.getCash()+"$");
                     System.out.println("Your farmland: "+ player.getFarmland()+" hectare");
@@ -264,7 +264,7 @@ public class Main {
                     }
 
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
-
+                    player.countAnimals();
                     break;
 
                 case 3:
@@ -331,27 +331,14 @@ public class Main {
 
            // END GAME
                     // title = stage 15 - ending 1.5/3 (size of farmland + how many animals)
-
-
+                    stage 21 - add foodforyear and foodforweek
                     int endAnimalNumber =0;
-                    if (player.smallChickenAnimal.size()>0||player.bigChickenAnimal.size()>0){
-                        endAnimalNumber+=1;
-                    }
-                    if (player.smallDogAnimal.size()>0||player.bigDogAnimal.size() >0){
-                        endAnimalNumber+=1;
-                    }
-                    if (player.smallCowAnimal.size()>0||player.bigCowAnimal.size()>0){
-                        endAnimalNumber+=1;
-                    }
-                    if (player.smallHorseAnimal.size()>0||player.bigHorseAnimal.size()>0){
-                        endAnimalNumber+=1;
-                    }
-                    if (player.smallRabbitAnimal.size()>0||player.bigRabbitAnimal.size()>0){
-                        endAnimalNumber+=1;
-                    }
+                    player.countAnimals();
 
+
+                    endAnimalNumber = player.rabbitEndSize+player.horseEndSize+player.cowEndSize+player.dogEndSize+player.chickenEndSize;
 //                    System.out.println(endAnimalNumber);
-                    Player.checkEndGame(player.getFarmland(),endAnimalNumber);
+                    Player.checkEndGame(player.getFarmland(),endAnimalNumber,player.getFoodForYear(),player.foodForAnimals);
 
 
 
@@ -574,6 +561,23 @@ public class Main {
                     for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.smallRabbitAnimal.remove(j);}}
                     break;
 
+
+
+
+                case 10:
+                    player.countAnimals();
+                    player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
+                    int endAnimalNumber1 = player.rabbitEndSize+player.horseEndSize+player.cowEndSize+player.dogEndSize+player.chickenEndSize;
+                    System.out.println("     ****************************************");
+                    System.out.println("To end game you need to collect these things: ");
+                    System.out.println("Farmland size: " +player.endFarmlandSize+" (You have "+player.getFarmland()+" at this moment)");
+                    System.out.println("Animal size: " +player.endAnimalsSize+" (You have "+endAnimalNumber1+" at this moment)");
+                    System.out.println("Food for your animals: " +player.getFoodForYear()+" (You have "+player.foodForAnimals+" at this moment)");
+                    System.out.println("XXXXXX Seeds size: " +player.endSeedsSize+" (You have "+player.getFarmland()+" at this moment) XXXXXX");
+
+                    System.out.println("     ****************************************");
+                    System.out.println();
+                    break;
             }
 
             playerChose = menu(numberOfWeek,numberOfYear);
@@ -601,6 +605,7 @@ public class Main {
         System.out.println("     4. Build buildings. ");
         System.out.println("     8. Check backpack. ");
         System.out.println("     9. Next week.");
+        System.out.println("     10. End game tasks.");
         System.out.println("     0. Exit Game.");
         System.out.println("My Choice: ");
         Scanner in = new Scanner(System.in);

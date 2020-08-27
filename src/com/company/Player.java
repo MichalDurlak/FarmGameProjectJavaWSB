@@ -19,6 +19,11 @@ public class Player {
 
     public int buildingsMaxSize, animalsMaxSize, seedsMaxSize;
 
+    int chickenEndSize;
+    int dogEndSize;
+    int cowEndSize;
+    int horseEndSize;
+    int rabbitEndSize;
 
     public List<Integer> smallChickenAnimal = new ArrayList<>();
     public List<Integer> smallDogAnimal = new ArrayList<>();
@@ -56,6 +61,11 @@ public class Player {
         this.cornSeedsPlayer = 0;
         this.potatoSeedsPlayer = 0;
 
+        this.chickenEndSize =0;
+        this.dogEndSize =0;
+        this.cowEndSize =0;
+        this.horseEndSize =0;
+        this.rabbitEndSize =0;
 
     }
 
@@ -69,19 +79,18 @@ public class Player {
     static int endAnimalsSize = 5;
 
     static int endSeedsSize = 5;
-    static int endFoodForAnimals = 0; // do poprawy
 
-    public static void checkEndGame(double FarmlandSize, int fullAnimals) {
+    public static void checkEndGame(double FarmlandSize, int fullAnimals, int endFoodForAnimals, int foodForAnimalsNOW) {
 
 
         if (FarmlandSize == endFarmlandSize) {
             if (fullAnimals == endAnimalsSize) {
-
-                System.out.println("     ****************************************");
-                System.out.println("!!!Congratulations you won the game!!!");
-                System.out.println("     ****************************************");
-                System.exit(0);
-
+                if (endFoodForAnimals == foodForAnimalsNOW) {
+                    System.out.println("     ****************************************");
+                    System.out.println("!!!Congratulations you won the game!!!");
+                    System.out.println("     ****************************************");
+                    System.exit(0);
+                }
 
             }
 
@@ -217,6 +226,61 @@ public class Player {
     public int getFoodForYear() { return foodForYear; }
 
 
+    public void countAnimals(){
+        if (this.chickenEndSize==0){
+            if (smallChickenAnimal.size()>0||bigChickenAnimal.size()>0) {
+                this.chickenEndSize += 1;
+            }
+        } else if (this.chickenEndSize==1){
+            if (smallChickenAnimal.size()<=0 && bigChickenAnimal.size()<=0) {
+                this.chickenEndSize -= 1;
+            }
+        }
+
+        if (this.dogEndSize==0){
+            if (smallDogAnimal.size()>0||bigDogAnimal.size() >0){
+                this.dogEndSize+=1;
+            }
+        } else if (this.dogEndSize==1){
+            if (smallDogAnimal.size()<=0 && bigDogAnimal.size()<=0){
+                this.dogEndSize-=1;
+            }
+        }
+
+        if (this.cowEndSize==0){
+            if (smallCowAnimal.size()>0||bigCowAnimal.size()>0){
+                this.cowEndSize+=1;
+            }
+        } else if (this.cowEndSize==1){
+            if (smallCowAnimal.size()<=0 && bigCowAnimal.size()<=0){
+                this.cowEndSize-=1;
+            }
+        }
+
+        if (this.horseEndSize==0){
+            if (smallHorseAnimal.size()>0||bigHorseAnimal.size()>0){
+                this.horseEndSize +=1;
+            }
+        } else if (this.horseEndSize==1){
+            if (smallHorseAnimal.size()<=0 && bigHorseAnimal.size()<=0){
+                this.horseEndSize -=1;
+            }
+        }
+
+        if (this.rabbitEndSize==0){
+            if (smallRabbitAnimal.size()>0||bigRabbitAnimal.size()>0){
+                this.rabbitEndSize +=1;
+            }
+        } else if (this.horseEndSize==1){
+            if (smallRabbitAnimal.size()<=0 && bigRabbitAnimal.size()<=0){
+                this.rabbitEndSize -=1;
+            }
+        }
+    }
+
+
+
+    //
 }
 
 

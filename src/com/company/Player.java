@@ -14,8 +14,8 @@ public class Player {
     private int wheatSeedsPlayer, oatSeedsPlayer, cornSeedsPlayer, potatoSeedsPlayer;
     private int MaxWheatSeedsPlayer, MaxOatSeedsPlayer, MaxCornSeedsPlayer, MaxPotatoSeedsPlayer;
 
-    public int maxStorageFoodForAnimals,foodForAnimals;
-
+    public int maxStorageFoodForAnimals, foodForAnimals;
+    private int foodForWeek, foodForYear;
 
     public int buildingsMaxSize, animalsMaxSize, seedsMaxSize;
 
@@ -183,7 +183,38 @@ public class Player {
     }
 
 
+    // food for animals
 
+
+    public void setFoodForWeek(int foodsmallChickenAnimal, int foodsmallDogAnimal, int foodsmallCowAnimal, int foodsmallHorseAnimal, int foodsmallRabbitAnimal, int foodbigChickenAnimal, int foodbigDogAnimal, int foodbigCowAnimal, int foodbigHorseAnimal, int foodbigRabbitsAnimal) {
+        int finalFoodForWeek =0;
+        int finalFoodForYear =0;
+
+        int foodForsmallchickens = 5*foodsmallChickenAnimal;
+        int foodForsmalldogs = 5*foodsmallDogAnimal;
+        int foodForsmallcows = 5*foodsmallCowAnimal;
+        int foodForsmallhorses = 5*foodsmallHorseAnimal;
+        int foodForsmallrabbits = 5*foodsmallRabbitAnimal;
+        int foodForbigchickens = 5*foodbigChickenAnimal;
+        int foodForbigdogs = 5*foodbigDogAnimal;
+        int foodForbigcows =5*foodbigCowAnimal;
+        int foodForbighorses = 5*foodbigHorseAnimal;
+        int foodForbigrabbits = 5*foodbigRabbitsAnimal;
+
+        finalFoodForWeek = foodForsmallchickens+foodForsmalldogs+foodForsmallcows+foodForsmallhorses+foodForsmallrabbits+foodForbigchickens+foodForbigdogs+foodForbigcows+foodForbighorses+foodForbigrabbits;
+
+        this.foodForWeek = finalFoodForWeek;
+
+        finalFoodForYear = finalFoodForWeek*52;
+        this.foodForYear = finalFoodForYear;
+
+
+    }
+
+    public int getfoodForWeek() { return foodForWeek; }
+
+
+    public int getFoodForYear() { return foodForYear; }
 
 
 }

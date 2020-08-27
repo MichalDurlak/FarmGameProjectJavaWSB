@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Your animals: "+player.animals + "(Free slots: "+player.animalsMaxSize+") ");
         System.out.println("Your buildings: "+player.buildings+ "(Free slots: "+player.buildingsMaxSize+") ");
         System.out.println("Your seeds: "+player.seeds+". "+ "(Free slots:  "+player.seedsMaxSize+") ");
-        System.out.println("Your storage size: "+player.foodForAnimals+" "+ "(Free size:  "+player.maxStorageFoodForAnimals+") ");
+        System.out.println("Your storage size: "+player.foodForAnimals+" "+ "(Free size:  "+player.maxStorageFoodForAnimals+") "+"(You need: "+player.getfoodForWeek()+" food for this week.)");
         System.out.println("     ****************************************");
 
         int playerChose = menu(numberOfWeek,numberOfYear);
@@ -42,6 +42,7 @@ public class Main {
         while(playerChose!=0){
             switch(playerChose){
                 case 1:
+                    player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
 
                     System.out.println("     ****************************************");
                     System.out.println("Your balance: "+ player.getCash()+"$");
@@ -50,7 +51,7 @@ public class Main {
                     System.out.println("Your animals: "+player.animals + "(Free slots:  "+player.animalsMaxSize+") ");
                     System.out.println("Your buildings: "+player.buildings+ "(Free slots:  "+player.buildingsMaxSize+") ");
                     System.out.println("Your seeds: "+player.seeds+" "+ "(Free slots:  "+player.seedsMaxSize+") ");
-                    System.out.println("Your storage size: "+player.foodForAnimals+" "+ "(Free size:  "+player.maxStorageFoodForAnimals+") ");
+                    System.out.println("Your storage size: "+player.foodForAnimals+" "+ "(Free size:  "+player.maxStorageFoodForAnimals+") "+"(You need: "+player.getfoodForWeek()+" food for this week.)");
                     System.out.println("     ****************************************");
                     System.out.println("You have: "+player.smallChickenAnimal.size()+" small chickens");
                     System.out.println("You have: "+player.smallDogAnimal.size()+" small dogs");
@@ -262,6 +263,7 @@ public class Main {
 
                     }
 
+                    player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
 
                     break;
 
@@ -318,6 +320,8 @@ public class Main {
                     break;
 
                 case 9:
+                    player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
+
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;
                         numberOfYear = numberOfYear +1;

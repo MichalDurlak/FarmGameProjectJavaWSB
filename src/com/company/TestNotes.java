@@ -89,4 +89,28 @@ public class TestNotes {
 
 
 */
+
+
+
+
+
+
+
+    //                    int sellTempPlusCash = getPriceTempSell();
+//                    int buyTempMinusCash = getpriceTempBuy();
+//
+//                    int toChangePlayerCashPlus = player.getCash()+sellTempPlusCash;
+//                    int toChangePlayerCashMinus = player.getCash()-buyTempMinusCash;
+//
+//                    System.out.println("Player cash: "+player.getCash());
+//
+//                    player.setCash(toChangePlayerCashMinus);
+//                    System.out.println("Player to change: "+toChangePlayerCashPlus);
+//                    player.setCash(toChangePlayerCashPlus);
+//
+//
+//                    System.out.println("Player cash: "+player.getCash());
+
+
+
 }

@@ -33,6 +33,7 @@ public class Main {
         System.out.println("Your animals: "+player.animals + "(Free slots: "+player.animalsMaxSize+") ");
         System.out.println("Your buildings: "+player.buildings+ "(Free slots: "+player.buildingsMaxSize+") ");
         System.out.println("Your seeds: "+player.seeds+". "+ "(Free slots:  "+player.seedsMaxSize+") ");
+        System.out.println("Your storage size: "+player.foodForAnimals+" "+ "(Free size:  "+player.maxStorageFoodForAnimals+") ");
         System.out.println("     ****************************************");
 
         int playerChose = menu(numberOfWeek,numberOfYear);
@@ -49,7 +50,7 @@ public class Main {
                     System.out.println("Your animals: "+player.animals + "(Free slots:  "+player.animalsMaxSize+") ");
                     System.out.println("Your buildings: "+player.buildings+ "(Free slots:  "+player.buildingsMaxSize+") ");
                     System.out.println("Your seeds: "+player.seeds+" "+ "(Free slots:  "+player.seedsMaxSize+") ");
-                    System.out.println("Your food for animals: "+player.foodForAnimals+" "+ "(Free slots:  "+player.maxStorageFoodForAnimals+") ");
+                    System.out.println("Your storage size: "+player.foodForAnimals+" "+ "(Free size:  "+player.maxStorageFoodForAnimals+") ");
                     System.out.println("     ****************************************");
                     System.out.println("You have: "+player.smallChickenAnimal.size()+" small chickens");
                     System.out.println("You have: "+player.smallDogAnimal.size()+" small dogs");
@@ -86,17 +87,23 @@ public class Main {
                     int sizeCornSeed = player.CornSeed.size();
                     int sizePotatoSeed = player.PotatoSeed.size();
 
-                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy,maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,sizeWheatSeed,sizeOatSeed,sizeCornSeed,sizePotatoSeed,sizesmallRabbitAnimal,sizebigRabbitsAnimal);
 
 
-                    int sellTempPlusCash = getPriceTempSell();
-                    int buyTempMinusCash = getpriceTempBuy();
+                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy,maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,sizeWheatSeed,sizeOatSeed,sizeCornSeed,sizePotatoSeed,sizesmallRabbitAnimal,sizebigRabbitsAnimal,player.maxStorageFoodForAnimals,player.foodForAnimals);
 
-                    int toChangePlayerCashPlus = player.getCash()+sellTempPlusCash;
-                    int toChangePlayerCashMinus = player.getCash()-buyTempMinusCash;
+                  if(getPriceTempSell()>0){
+                      System.out.println("SELL: ");
+                      System.out.println(player.getCash());
+                      player.setCash(player.getCash()+getPriceTempSell());
+                      System.out.println(player.getCash());
+                 } else if (getpriceTempBuy()>0){
+                      System.out.println("BUY: ");
+                      System.out.println(player.getCash());
+                     player.setCash(player.getCash()-getpriceTempBuy());
+                     System.out.println(player.getCash());
+                 }
 
-                    player.setCash(toChangePlayerCashPlus);
-                    player.setCash(toChangePlayerCashMinus);
+
 
                     int numberAnimalTemp = getAnimalTempNumber();
                     player.animals = player.animals+numberAnimalTemp;
@@ -176,12 +183,18 @@ public class Main {
                         int PotatoTimeGrowUp = 2;
                         player.PotatoSeed.add(PotatoTimeGrowUp);
                     }
+                    else if(gettempFoodForAnimal()==1){
+                        player.maxStorageFoodForAnimals -=1;
+                        player.foodForAnimals +=1;
+
+                    }
+
 
 //sell
                     else if(gettempsmallCowAnimal()==-1){
                         player.smallCowAnimal.remove(player.smallCowAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
 //                        for ( int j=0; j<player.smallCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallCowAnimal.get(j) );
 
@@ -189,80 +202,66 @@ public class Main {
                     else if(gettempsmallChickenAnimal()==-1){
                         player.smallChickenAnimal.remove(player.smallChickenAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
 
                     }
                     else if(gettempsmallHorseAnimal()==-1){
                         player.smallHorseAnimal.remove(player.smallHorseAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
                     else if(gettempsmallDogAnimal()==-1){
                         player.smallDogAnimal.remove(player.smallDogAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
                     else if(gettempsmallRabbitAnimal()==-1){
 
                         player.smallRabbitAnimal.remove(player.smallRabbitAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
 
                     else if(gettempbigChickenAnimal()==-1){
                         player.bigChickenAnimal.remove(player.bigChickenAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
                     else if(gettempbigDogAnimal()==-1){
                         player.bigDogAnimal.remove(player.bigDogAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
                     else if(gettempbigCowAnimal()==-1){
                         player.bigCowAnimal.remove(player.bigCowAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
                     else if(gettempbigHorseAnimal()==-1){
                         player.bigHorseAnimal.remove(player.bigHorseAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
                     else if(gettempbigRabbitsAnimal()==-1){
                         player.bigRabbitAnimal.remove(player.bigRabbitAnimal.size()-1);
                         player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
+
                         player.animals -=1;
                     }
+                    else if(gettempFoodForAnimal()==-1){
+                        player.maxStorageFoodForAnimals +=1;
+                        player.foodForAnimals -=1;
 
-//                    else if(gettempWheatSeed()==-1){
-//                        int WheatTimeGrowUp = 2;
-//                        player.WheatSeed.remove(WheatTimeGrowUp);
-//                    }
-//                    else if(gettempOatSeed()==-1){
-//                        int OatTimeGrowUp = 2;
-//                        player.OatSeed.remove(OatTimeGrowUp);
-//                    }
-//                    else if(gettempCornSeed()==-1){
-//                        int CornTimeGrowUp = 2;
-//                        player.CornSeed.remove(CornTimeGrowUp);
-//                    }
-//                    else if(gettempPotatoSeed()==-1){
-//                        int PotatoTimeGrowUp = 2;
-//                        player.PotatoSeed.remove(PotatoTimeGrowUp);
-//                    }
-//                    else {
-//                        System.out.println("Please dont do that...");
-//                    }
+                    }
+
 
                     break;
 
@@ -275,6 +274,9 @@ public class Main {
                     player.seedsMaxSize = player.seedsMaxSize+placeForSeedsTemp;
                     player.buildingsMaxSize = player.buildingsMaxSize+placeForBuildingsTemp;
 //                    player.animalsMaxSize = player.animalsMaxSize +placeForAnimalTemp;
+
+
+
 
 
                     break;

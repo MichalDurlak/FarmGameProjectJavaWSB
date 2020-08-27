@@ -71,9 +71,11 @@ public class Market {
     static int tempOatSeed= 0;
     static int tempCornSeed= 0;
     static int tempPotatoSeed= 0;
+
+    static int tempFoodForAnimal=0;
 //
 
-    public static int Marketplace(int cash, int maxSeedsThatCanBuy, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed,int sizesmallRabbitAnimal,int sizebigRabbitsAnimal) {
+    public static int Marketplace(int cash, int maxSeedsThatCanBuy, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed,int sizesmallRabbitAnimal,int sizebigRabbitsAnimal, int sizestorage, int actualfood) {
 
 
 
@@ -82,6 +84,7 @@ public class Market {
             priceTempBuy = 0;
             animalTempNumber = 0;
             seedsTempNumber = 0;
+            priceTempSell =0;
             //
             tempsmallChickenAnimal = 0;
             tempsmallDogAnimal = 0;
@@ -99,6 +102,8 @@ public class Market {
             tempOatSeed= 0;
             tempCornSeed= 0;
             tempPotatoSeed= 0;
+            tempFoodForAnimal=0;
+
 //
 
 
@@ -120,9 +125,9 @@ public class Market {
 
             // sell and buy #3
             System.out.println("");
-            System.out.print("XXXXX5. Small Rabbit: " + smallRabbitBUY);
+            System.out.print("5. Small Rabbit: " + smallRabbitBUY);
             System.out.print("                                  ");
-            System.out.print("XXXXX6. Small Rabbit: " + smallRabbitSELL);
+            System.out.print("6. Small Rabbit: " + smallRabbitSELL);
 
             // sell and buy #4
             System.out.println("");
@@ -183,9 +188,9 @@ public class Market {
 
             // sell and buy #12
             System.out.println("");
-            System.out.print("XXXXX23. Big Rabbit: " + bigRabbitBUY);
+            System.out.print("23. Big Rabbit: " + bigRabbitBUY);
             System.out.print("                                  ");
-            System.out.print("XXXXX24. Big Rabbit: " + bigRabbitSELL);
+            System.out.print("24. Big Rabbit: " + bigRabbitSELL);
 
             // sell and buy #13
             System.out.println("");
@@ -484,18 +489,23 @@ public class Market {
                     return choose;
                 }
             }
+
             else if (choose == 30) {
+                if (sizestorage>0){
+                    if (cash > foodForAnimalBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + foodForAnimalBUY;
+                        tempFoodForAnimal = 1;
 
-                if (cash > foodForAnimalBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + foodForAnimalBUY;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
 
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
-
-                }}
-
+                    }
+                }else {
+                    System.out.println("You dont have enough space for food.");
+                }
+            }
 
             // sell
 
@@ -637,28 +647,16 @@ public class Market {
                 }
             }
 
-//            else if (choose == 29){
-//                if (sizesmallChickenAnimal>0){
-//
-//                } else {
-//                    System.out.println("You dont have Chicken");
-//                }
-//            }
-//            else if (choose == 31){
-//                if (sizesmallChickenAnimal>0){
-//
-//                } else {
-//                    System.out.println("You dont have Chicken");
-//                }
-//            }
-//            else if (choose == 32){
-//                if (sizesmallChickenAnimal>0){
-//
-//                } else {
-//                    System.out.println("You dont have Chicken");
-//                }
-//            }
-            //
+            else if (choose == 31){
+                if (actualfood>0){
+                    tempFoodForAnimal = -1;
+                    priceTempSell = priceTempSell + foodForAnimalSELL;
+                    System.out.println("Congratulation you sell food for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have food for sell");
+                }
+            }
+
 
 
 
@@ -677,6 +675,7 @@ public class Market {
 
         } else if (getAlreadyOpenShop() == false) {
             priceTempBuy = 0;
+            priceTempSell =0;
             animalTempNumber = 0;
             seedsTempNumber = 0;
 
@@ -685,16 +684,19 @@ public class Market {
             tempsmallDogAnimal = 0;
             tempsmallCowAnimal = 0;
             tempsmallHorseAnimal = 0;
+            tempsmallRabbitAnimal=0;
 
             tempbigChickenAnimal = 0;
             tempbigDogAnimal = 0;
             tempbigCowAnimal = 0;
             tempbigHorseAnimal = 0;
+            tempbigRabbitAnimal =0;
 
             tempWheatSeed= 0;
             tempOatSeed= 0;
             tempCornSeed= 0;
             tempPotatoSeed= 0;
+            tempFoodForAnimal=0;
 //
             System.out.println("Look there are new prices: ");
 
@@ -848,7 +850,7 @@ public class Market {
 
             System.out.println("");
             System.out.println("*************************************************************");
-            System.out.println("99. Exit Marketplace");
+            System.out.println("0. Exit Marketplace");
 
             alreadyOpenShop = true;
 
@@ -1117,16 +1119,21 @@ public class Market {
                 }
             }
             else if (choose == 30) {
+                if (sizestorage>0){
+                    if (cash > foodForAnimalBUY) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + foodForAnimalBUY;
+                        tempFoodForAnimal = 1;
 
-                if (cash > foodForAnimalBUY) {
-                    System.out.println("Congratulations you bought it!");
-                    priceTempBuy = priceTempBuy + foodForAnimalBUY;
+                    } else {
+                        System.out.println("Check your balance.");
+                        return choose;
 
-                } else {
-                    System.out.println("Check your balance.");
-                    return choose;
-
-                }}
+                    }
+                }else {
+                    System.out.println("You dont have enough space for food.");
+                }
+            }
 
 
             // sell
@@ -1270,6 +1277,17 @@ public class Market {
                 }
             }
 
+            else if (choose == 31){
+                if (actualfood>0){
+                    tempFoodForAnimal = -1;
+                    priceTempSell = priceTempSell + foodForAnimalSELL;
+                    System.out.println("Congratulation you sell food for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have food for sell");
+                }
+
+            }
+
             else if (choose == 0){
 
                 return choose;
@@ -1326,6 +1344,9 @@ public class Market {
     public static int gettempOatSeed(){return  tempOatSeed;}
     public static int gettempCornSeed(){return  tempCornSeed;}
     public static int gettempPotatoSeed(){return  tempPotatoSeed;}
+
+    public static int gettempFoodForAnimal(){return  tempFoodForAnimal;}
+
     //
 
 

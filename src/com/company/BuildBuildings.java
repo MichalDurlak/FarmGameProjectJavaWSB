@@ -527,73 +527,74 @@ public class BuildBuildings {
                 Sizebig2CowshedBUY = Math.round(Sizebig2CowshedBUY * 100);
                 Sizebig2CowshedBUY = Sizebig2CowshedBUY / 100;
 
+                //
                 small1StorageBUY = random.nextInt(100, 300);
                 small1StorageBUY = Math.round(small1StorageBUY * 100);
                 small1StorageBUY = small1StorageBUY / 100;
-                MAXsmall1StorageBUY = random.nextInt(1, 2);
+                MAXsmall1StorageBUY = random.nextInt(1, 6);
                 MAXsmall1StorageBUY = Math.round(MAXsmall1StorageBUY * 100);
                 MAXsmall1StorageBUY = MAXsmall1StorageBUY / 100;
-                Sizesmall1StorageBUY = random.nextInt(1, 3);
+                Sizesmall1StorageBUY = random.nextInt(1, 2);
                 Sizesmall1StorageBUY = Math.round(Sizesmall1StorageBUY * 100);
                 Sizesmall1StorageBUY = Sizesmall1StorageBUY / 100;
 
                 small2StorageBUY = random.nextInt(50, 300);
                 small2StorageBUY = Math.round(small2StorageBUY * 100);
                 small2StorageBUY = small2StorageBUY / 100;
-                MAXsmall2StorageBUY = random.nextInt(1, 2);
+                MAXsmall2StorageBUY = random.nextInt(4, 10);
                 MAXsmall2StorageBUY = Math.round(MAXsmall2StorageBUY * 100);
                 MAXsmall2StorageBUY = MAXsmall2StorageBUY / 100;
-                Sizesmall2StorageBUY = random.nextInt(1, 3);
+                Sizesmall2StorageBUY = random.nextInt(2, 4);
                 Sizesmall2StorageBUY = Math.round(Sizesmall2StorageBUY * 100);
                 Sizesmall2StorageBUY = Sizesmall2StorageBUY / 100;
 
                 small3StorageBUY = random.nextInt(100, 250);
                 small3StorageBUY = Math.round(small3StorageBUY * 100);
                 small3StorageBUY = small3StorageBUY / 100;
-                MAXsmall3StorageBUY = random.nextInt(1, 2);
+                MAXsmall3StorageBUY = random.nextInt(4, 10);
                 MAXsmall3StorageBUY = Math.round(MAXsmall3StorageBUY * 100);
                 MAXsmall3StorageBUY = MAXsmall3StorageBUY / 100;
-                Sizesmall3StorageBUY = random.nextInt(1, 3);
+                Sizesmall3StorageBUY = random.nextInt(2, 5);
                 Sizesmall3StorageBUY = Math.round(Sizesmall3StorageBUY * 100);
                 Sizesmall3StorageBUY = Sizesmall3StorageBUY / 100;
 
                 medium1StorageBUY = random.nextInt(300, 550);
                 medium1StorageBUY = Math.round(medium1StorageBUY * 100);
                 medium1StorageBUY = medium1StorageBUY / 100;
-                MAXmedium1StorageBUY = random.nextInt(3, 5);
+                MAXmedium1StorageBUY = random.nextInt(8, 15);
                 MAXmedium1StorageBUY = Math.round(MAXmedium1StorageBUY * 100);
                 MAXmedium1StorageBUY = MAXmedium1StorageBUY / 100;
-                Sizemedium1StorageBUY = random.nextInt(2, 6);
+                Sizemedium1StorageBUY = random.nextInt(2, 10);
                 Sizemedium1StorageBUY = Math.round(Sizemedium1StorageBUY * 100);
                 Sizemedium1StorageBUY = Sizemedium1StorageBUY / 100;
 
                 medium2StorageBUY = random.nextInt(350, 450);
                 medium2StorageBUY = Math.round(medium2StorageBUY * 100);
                 medium2StorageBUY = medium2StorageBUY / 100;
-                MAXmedium2StorageBUY = random.nextInt(3, 5);
+                MAXmedium2StorageBUY = random.nextInt(10, 17);
                 MAXmedium2StorageBUY = Math.round(MAXmedium2StorageBUY * 100);
                 MAXmedium2StorageBUY = MAXmedium2StorageBUY / 100;
-                Sizemedium2StorageBUY = random.nextInt(2, 6);
+                Sizemedium2StorageBUY = random.nextInt(2, 10);
                 Sizemedium2StorageBUY = Math.round(Sizemedium2StorageBUY * 100);
                 Sizemedium2StorageBUY = Sizemedium2StorageBUY / 100;
 
                 big1StorageBUY = random.nextInt(600, 1000);
                 big1StorageBUY = Math.round(big1StorageBUY * 100);
                 big1StorageBUY = big1StorageBUY / 100;
-                MAXbig1StorageBUY = random.nextInt(6, 12);
+                MAXbig1StorageBUY = random.nextInt(10, 20);
                 MAXbig1StorageBUY = Math.round(MAXbig1StorageBUY * 100);
                 MAXbig1StorageBUY = MAXbig1StorageBUY / 100;
-                Sizebig1StorageBUY = random.nextInt(4, 8);
+                Sizebig1StorageBUY = random.nextInt(7, 11);
                 Sizebig1StorageBUY = Math.round(Sizebig1StorageBUY * 100);
                 Sizebig1StorageBUY = Sizebig1StorageBUY / 100;
 
-                big2StorageBUY = random.nextInt(700, 800);
+                big2StorageBUY = random.nextInt(999, 1999);
                 big2StorageBUY = Math.round(big2StorageBUY * 100);
                 big2StorageBUY = big2StorageBUY / 100;
-                MAXbig2StorageBUY = random.nextInt(6, 12);
+                MAXbig2StorageBUY = random.nextInt(20, 30);
                 MAXbig2StorageBUY = Math.round(MAXbig2StorageBUY * 100);
                 MAXbig2StorageBUY = MAXbig2StorageBUY / 100;
-                Sizebig2StorageBUY = random.nextInt(4, 8);
+                Sizebig2StorageBUY = random.nextInt(9, 12);
                 Sizebig2StorageBUY = Math.round(Sizebig2StorageBUY * 100);
                 Sizebig2StorageBUY = Sizebig2StorageBUY / 100;
 

@@ -49,17 +49,19 @@ public class Main {
                     System.out.println("Your animals: "+player.animals + "(Free slots:  "+player.animalsMaxSize+") ");
                     System.out.println("Your buildings: "+player.buildings+ "(Free slots:  "+player.buildingsMaxSize+") ");
                     System.out.println("Your seeds: "+player.seeds+" "+ "(Free slots:  "+player.seedsMaxSize+") ");
+                    System.out.println("Your food for animals: "+player.foodForAnimals+" "+ "(Free slots:  "+player.maxStorageFoodForAnimals+") ");
                     System.out.println("     ****************************************");
                     System.out.println("You have: "+player.smallChickenAnimal.size()+" small chickens");
                     System.out.println("You have: "+player.smallDogAnimal.size()+" small dogs");
                     System.out.println("You have: "+player.smallCowAnimal.size()+" small cows");
                     System.out.println("You have: "+player.smallHorseAnimal.size()+" small horses");
+                    System.out.println("You have: "+player.smallRabbitAnimal.size()+" small rabbits");
 
                     System.out.println("You have: "+player.bigChickenAnimal.size()+" big chickens");
                     System.out.println("You have: "+player.bigDogAnimal.size()+" big dogs");
                     System.out.println("You have: "+player.bigCowAnimal.size()+" big cows");
                     System.out.println("You have: "+player.bigHorseAnimal.size()+" big horses");
-
+                    System.out.println("You have: "+player.bigRabbitAnimal.size()+" big rabbits");
 
                     System.out.println("     ****************************************");
                     break;
@@ -73,16 +75,18 @@ public class Main {
                     int sizesmallDogAnimal = player.smallDogAnimal.size();
                     int sizesmallCowAnimal = player.smallCowAnimal.size();
                     int sizesmallHorseAnimal = player.smallHorseAnimal.size();
+                    int sizesmallRabbitAnimal = player.smallRabbitAnimal.size();
                     int sizebigChickenAnimal = player.bigChickenAnimal.size();
                     int sizebigDogAnimal = player.bigDogAnimal.size();
                     int sizebigCowAnimal = player.bigCowAnimal.size();
                     int sizebigHorseAnimal = player.bigHorseAnimal.size();
+                    int sizebigRabbitsAnimal = player.bigRabbitAnimal.size();
                     int sizeWheatSeed = player.WheatSeed.size();
                     int sizeOatSeed = player.OatSeed.size();
                     int sizeCornSeed = player.CornSeed.size();
                     int sizePotatoSeed = player.PotatoSeed.size();
 
-                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy,maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,sizeWheatSeed,sizeOatSeed,sizeCornSeed,sizePotatoSeed);
+                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy,maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,sizeWheatSeed,sizeOatSeed,sizeCornSeed,sizePotatoSeed,sizesmallRabbitAnimal,sizebigRabbitsAnimal);
 
 
                     int sellTempPlusCash = getPriceTempSell();
@@ -100,7 +104,7 @@ public class Main {
                     int numberSeedsTemp = getseedsTempNumber();
                     player.seeds = player.seeds + numberSeedsTemp;
 
-                    String tempnumberOfWeeknumberOfYear = numberOfWeek + ", "+numberOfYear;
+
 
 //buy
                     if(gettempsmallCowAnimal()==1){
@@ -126,6 +130,11 @@ public class Main {
                         player.smallDogAnimal.add(smallDogTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
+                    else if(gettempsmallRabbitAnimal()==1){
+                        int smallRabbitTimeGrowUp = 2;
+                        player.smallRabbitAnimal.add(smallRabbitTimeGrowUp);
+                        player.animalsMaxSize -=1;
+                    }
                     else if(gettempbigChickenAnimal()==1){
                         int bigChickenTimeGrowUp = 2;
                         player.bigChickenAnimal.add(bigChickenTimeGrowUp);
@@ -146,6 +155,11 @@ public class Main {
                         player.bigHorseAnimal.add(bigHorseTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
+                    else if(gettempbigRabbitsAnimal()==1){
+                        int bigRabbitsTimeGrowUp = 2;
+                        player.bigRabbitAnimal.add(bigRabbitsTimeGrowUp);
+                        player.animalsMaxSize -=1;
+                    }
                     else if(gettempWheatSeed()==1){
                         int WheatTimeGrowUp = 2;
                         player.WheatSeed.add(WheatTimeGrowUp);
@@ -162,6 +176,7 @@ public class Main {
                         int PotatoTimeGrowUp = 2;
                         player.PotatoSeed.add(PotatoTimeGrowUp);
                     }
+
 //sell
                     else if(gettempsmallCowAnimal()==-1){
                         player.smallCowAnimal.remove(player.smallCowAnimal.size()-1);
@@ -179,58 +194,72 @@ public class Main {
 
                     }
                     else if(gettempsmallHorseAnimal()==-1){
-                        player.smallHorseAnimal.add(player.smallHorseAnimal.size()-1);
+                        player.smallHorseAnimal.remove(player.smallHorseAnimal.size()-1);
                         player.animalsMaxSize +=1;
                         player.setCash(player.getCash()+getPriceTempSell());
                         player.animals -=1;
                     }
                     else if(gettempsmallDogAnimal()==-1){
-                        player.smallDogAnimal.add(player.smallDogAnimal.size()-1);
+                        player.smallDogAnimal.remove(player.smallDogAnimal.size()-1);
                         player.animalsMaxSize +=1;
                         player.setCash(player.getCash()+getPriceTempSell());
                         player.animals -=1;
                     }
-                    else if(gettempbigChickenAnimal()==-1){
-                        player.bigChickenAnimal.add(player.bigChickenAnimal.size()-1);
-                        player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
-                        player.animals -=1;
-                    }
-                    else if(gettempbigDogAnimal()==-1){
-                        player.bigDogAnimal.add(player.bigDogAnimal.size()-1);
-                        player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
-                        player.animals -=1;
-                    }
-                    else if(gettempbigCowAnimal()==-1){
-                        player.bigCowAnimal.add(player.bigCowAnimal.size()-1);
-                        player.animalsMaxSize +=1;
-                        player.setCash(player.getCash()+getPriceTempSell());
-                        player.animals -=1;
-                    }
-                    else if(gettempbigHorseAnimal()==-1){
-                        player.bigHorseAnimal.add(player.bigHorseAnimal.size()-1);
+                    else if(gettempsmallRabbitAnimal()==-1){
+
+                        player.smallRabbitAnimal.remove(player.smallRabbitAnimal.size()-1);
                         player.animalsMaxSize +=1;
                         player.setCash(player.getCash()+getPriceTempSell());
                         player.animals -=1;
                     }
 
-                    else if(gettempWheatSeed()==-1){
-                        int WheatTimeGrowUp = 2;
-                        player.WheatSeed.add(WheatTimeGrowUp);
+                    else if(gettempbigChickenAnimal()==-1){
+                        player.bigChickenAnimal.remove(player.bigChickenAnimal.size()-1);
+                        player.animalsMaxSize +=1;
+                        player.setCash(player.getCash()+getPriceTempSell());
+                        player.animals -=1;
                     }
-                    else if(gettempOatSeed()==-1){
-                        int OatTimeGrowUp = 2;
-                        player.OatSeed.add(OatTimeGrowUp);
+                    else if(gettempbigDogAnimal()==-1){
+                        player.bigDogAnimal.remove(player.bigDogAnimal.size()-1);
+                        player.animalsMaxSize +=1;
+                        player.setCash(player.getCash()+getPriceTempSell());
+                        player.animals -=1;
                     }
-                    else if(gettempCornSeed()==-1){
-                        int CornTimeGrowUp = 2;
-                        player.CornSeed.add(CornTimeGrowUp);
+                    else if(gettempbigCowAnimal()==-1){
+                        player.bigCowAnimal.remove(player.bigCowAnimal.size()-1);
+                        player.animalsMaxSize +=1;
+                        player.setCash(player.getCash()+getPriceTempSell());
+                        player.animals -=1;
                     }
-                    else if(gettempPotatoSeed()==-1){
-                        int PotatoTimeGrowUp = 2;
-                        player.PotatoSeed.add(PotatoTimeGrowUp);
+                    else if(gettempbigHorseAnimal()==-1){
+                        player.bigHorseAnimal.remove(player.bigHorseAnimal.size()-1);
+                        player.animalsMaxSize +=1;
+                        player.setCash(player.getCash()+getPriceTempSell());
+                        player.animals -=1;
                     }
+                    else if(gettempbigRabbitsAnimal()==-1){
+                        player.bigRabbitAnimal.remove(player.bigRabbitAnimal.size()-1);
+                        player.animalsMaxSize +=1;
+                        player.setCash(player.getCash()+getPriceTempSell());
+                        player.animals -=1;
+                    }
+
+//                    else if(gettempWheatSeed()==-1){
+//                        int WheatTimeGrowUp = 2;
+//                        player.WheatSeed.remove(WheatTimeGrowUp);
+//                    }
+//                    else if(gettempOatSeed()==-1){
+//                        int OatTimeGrowUp = 2;
+//                        player.OatSeed.remove(OatTimeGrowUp);
+//                    }
+//                    else if(gettempCornSeed()==-1){
+//                        int CornTimeGrowUp = 2;
+//                        player.CornSeed.remove(CornTimeGrowUp);
+//                    }
+//                    else if(gettempPotatoSeed()==-1){
+//                        int PotatoTimeGrowUp = 2;
+//                        player.PotatoSeed.remove(PotatoTimeGrowUp);
+//                    }
 //                    else {
 //                        System.out.println("Please dont do that...");
 //                    }
@@ -288,6 +317,7 @@ public class Main {
                     }
 
            // END GAME
+                    // title = stage 15 - ending 1.5/3 (size of farmland + how many animals)
 
 
                     int endAnimalNumber =0;
@@ -301,6 +331,9 @@ public class Main {
                         endAnimalNumber+=1;
                     }
                     if (player.smallHorseAnimal.size()>0||player.bigHorseAnimal.size()>0){
+                        endAnimalNumber+=1;
+                    }
+                    if (player.smallRabbitAnimal.size()>0||player.bigRabbitAnimal.size()>0){
                         endAnimalNumber+=1;
                     }
 
@@ -363,6 +396,13 @@ public class Main {
                                 player.bigCowAnimal.add(player.bigCowAnimal.size()+1);
                             }
                         }
+                        if (player.bigRabbitAnimal.size()>2){
+                            int chanceForduplicateAnimal = 0;
+                            chanceForduplicateAnimal = random.nextInt(1, 10);
+                            if (chanceForduplicateAnimal==6){
+                                player.bigRabbitAnimal.add(player.bigRabbitAnimal.size()+1);
+                            }
+                        }
                         if (player.bigHorseAnimal.size()>2){
                             int chanceForduplicateAnimal = 0;
                             chanceForduplicateAnimal = random.nextInt(1, 10);
@@ -382,6 +422,15 @@ public class Main {
                         temp -= 1;
                         player.smallChickenAnimal.remove(j);
                         player.smallChickenAnimal.add(j,temp);
+
+                    }
+                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){
+
+                        int temp = player.smallRabbitAnimal.get(j);
+
+                        temp -= 1;
+                        player.smallRabbitAnimal.remove(j);
+                        player.smallRabbitAnimal.add(j,temp);
 
                     }
                     for ( int j=0; j<player.smallDogAnimal.size(); j++ ){
@@ -460,6 +509,15 @@ public class Main {
                         player.bigChickenAnimal.add(j,temp);
 
                     }
+                    for ( int j=0; j<player.bigRabbitAnimal.size(); j++ ){
+
+                        int temp = player.bigRabbitAnimal.get(j);
+
+                        temp += 1;
+                        player.bigRabbitAnimal.remove(j);
+                        player.bigRabbitAnimal.add(j,temp);
+
+                    }
                     for ( int j=0; j<player.bigDogAnimal.size(); j++ ){
 
                         int temp = player.bigDogAnimal.get(j);
@@ -494,13 +552,13 @@ public class Main {
                     for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if(player.smallDogAnimal.get(j) == 0){player.bigDogAnimal.add(2);}}
                     for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if(player.smallCowAnimal.get(j) == 0){player.bigCowAnimal.add(2);}}
                     for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if(player.smallHorseAnimal.get(j) == 0){player.bigHorseAnimal.add(2);}}
-
+                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.bigRabbitAnimal.add(2);}}
 // jesli 0 usun z array
                     for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){if (player.smallChickenAnimal.get(j) == 0) {player.smallChickenAnimal.remove(j);}}
                     for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if (player.smallDogAnimal.get(j) == 0) {player.smallDogAnimal.remove(j);}}
                     for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if (player.smallCowAnimal.get(j) == 0) {player.smallCowAnimal.remove(j);}}
                     for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if (player.smallHorseAnimal.get(j) == 0) {player.smallHorseAnimal.remove(j);}}
-
+                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.smallRabbitAnimal.remove(j);}}
                     break;
 
             }

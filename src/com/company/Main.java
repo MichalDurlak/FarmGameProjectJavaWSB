@@ -321,7 +321,7 @@ public class Main {
 
                 case 9:
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
-
+                    player.animalsEatFood(player.getfoodForWeek());
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;
                         numberOfYear = numberOfYear +1;
@@ -330,8 +330,8 @@ public class Main {
                     }
 
            // END GAME
-                    // title = stage 15 - ending 1.5/3 (size of farmland + how many animals)
-                    stage 21 - add foodforyear and foodforweek
+                    // title = stage 15 - ending 2/3 resolved problem with animals size after selling / adding another end counting + add foodforanimalsYEAR
+
                     int endAnimalNumber =0;
                     player.countAnimals();
 

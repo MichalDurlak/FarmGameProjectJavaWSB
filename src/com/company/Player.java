@@ -278,7 +278,16 @@ public class Player {
         }
     }
 
+public void animalsEatFood(int foodUsage){
 
+        if (foodUsage > foodForAnimals){
+
+        } else {
+            this.foodForAnimals -= foodUsage;
+        }
+
+
+}
 
     //
 }

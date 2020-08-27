@@ -13,6 +13,7 @@ public class Player {
 
     private int wheatSeedsPlayer, oatSeedsPlayer, cornSeedsPlayer, potatoSeedsPlayer;
     private int MaxWheatSeedsPlayer, MaxOatSeedsPlayer, MaxCornSeedsPlayer, MaxPotatoSeedsPlayer;
+
     public int maxStorageFoodForAnimals,foodForAnimals;
 
 

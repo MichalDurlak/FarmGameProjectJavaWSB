@@ -287,10 +287,17 @@ public class Main {
                     int tempSizeOfCowshed = getTempSizeofCowshed();
                     int tempMaxSizeOfBuildings = getTempMaxSizeBuildings();
 
+
+                    int tempSizeOfStorage = getTempSizeofStorage();
+
+
                     player.setCash(player.getCash()-tempPriceOfCowshed);
                     player.buildings += tempMaxSizeOfBuildings;
                     player.buildingsMaxSize -= tempMaxSizeOfBuildings;
                     player.animalsMaxSize += tempSizeOfCowshed;
+                    player.maxStorageFoodForAnimals += tempSizeOfStorage;
+
+
                     break;
 
 

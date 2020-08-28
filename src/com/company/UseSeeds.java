@@ -16,6 +16,11 @@ static int AppleTreeSeedPlant;
 
     public static void useSeeds(int WheatSeedsize, int OatSeedsize, int CornSeedsize, int PotatoSeedsize,int AppleTreeSeedsize, int playerCash, double playerHectares) {
 
+        WheatSeedsPlant = 0;
+        OatSeedPlant = 0;
+        CornSeedPlant =0;
+        PotatoSeedPlant= 0;
+        AppleTreeSeedPlant =0;
         double oneWheatSeedsPlaceNeeded = 0.5;
         double oneOatSeedPlaceNeeded = 0.5;
         double oneCornSeedPlaceNeeded = 0.5;
@@ -66,6 +71,9 @@ static int AppleTreeSeedPlant;
                 if(playerHectares >= tempPlaceForPlant){
 
 //plant
+                    WheatSeedsPlant = 1;
+                    howManySeeds = choose1;
+                    howManyHectaresUsed = tempPlaceForPlant;
 
 
                 } else {
@@ -88,7 +96,9 @@ static int AppleTreeSeedPlant;
 
                 if(playerHectares >= tempPlaceForPlant){
 
-                    // plant
+                    OatSeedPlant = 1;
+                    howManySeeds = choose1;
+                    howManyHectaresUsed = tempPlaceForPlant;
 
                 } else {
                     System.out.println("You dont have enough hectares for plant.");
@@ -111,6 +121,9 @@ static int AppleTreeSeedPlant;
                 if(playerHectares >= tempPlaceForPlant){
 
                     // plant
+                    CornSeedPlant = 1;
+                    howManySeeds = choose1;
+                    howManyHectaresUsed = tempPlaceForPlant;
 
                 } else {
                     System.out.println("You dont have enough hectares for plant.");
@@ -133,6 +146,9 @@ static int AppleTreeSeedPlant;
                 if(playerHectares >= tempPlaceForPlant){
 
                     // plant
+                    PotatoSeedPlant = 1;
+                    howManySeeds = choose1;
+                    howManyHectaresUsed = tempPlaceForPlant;
 
                 } else {
                     System.out.println("You dont have enough hectares for plant.");
@@ -155,6 +171,9 @@ static int AppleTreeSeedPlant;
                 if(playerHectares >= tempPlaceForPlant){
 
                     // plant
+                    AppleTreeSeedPlant = 1;
+                    howManySeeds = choose1;
+                    howManyHectaresUsed = tempPlaceForPlant;
 
                 } else {
                     System.out.println("You dont have enough hectares for plant.");

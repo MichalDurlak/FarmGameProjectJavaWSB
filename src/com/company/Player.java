@@ -20,11 +20,15 @@ public class Player {
     public int buildingsMaxSize, animalsMaxSize, seedsMaxSize;
     public int noFoodNoAnimal, noFoodNoAnimaltemp;
 
+    public int wheatPlayer,oatPlayer,cornPlayer,potatoPlayer,applePlayer;
+
     int chickenEndSize;
     int dogEndSize;
     int cowEndSize;
     int horseEndSize;
     int rabbitEndSize;
+
+    int wheatEndSize,oatEndSize,cornEndSize,potatoEndSize,appleEndSize;
 
     public List<Integer> smallChickenAnimal = new ArrayList<>();
     public List<Integer> smallDogAnimal = new ArrayList<>();
@@ -71,11 +75,23 @@ public class Player {
         this.potatoSeedsPlayer = 0;
         this.appleTreeSeedsPlayer = 0;
 
+        this.wheatPlayer = 0;
+        this.oatPlayer = 0;
+        this.cornPlayer = 0;
+        this.potatoPlayer = 0;
+        this.applePlayer = 0;
+
         this.chickenEndSize = 0;
         this.dogEndSize = 0;
         this.cowEndSize = 0;
         this.horseEndSize = 0;
         this.rabbitEndSize = 0;
+
+        this.wheatEndSize = 0;
+        this.oatEndSize = 0;
+        this.cornEndSize = 0;
+        this.potatoEndSize = 0;
+        this.appleEndSize = 0;
 
         this.noFoodNoAnimal = 0;
     }
@@ -91,16 +107,21 @@ public class Player {
 
     static int endSeedsSize = 5;
 
-    public static void checkEndGame(double FarmlandSize, int fullAnimals, int endFoodForAnimals, int foodForAnimalsNOW) {
+    public static void checkEndGame(double FarmlandSize, int fullAnimals, int endFoodForAnimals, int foodForAnimalsNOW, int seedsToEnd) {
 
 
         if (FarmlandSize == endFarmlandSize) {
             if (fullAnimals == endAnimalsSize) {
                 if (endFoodForAnimals == foodForAnimalsNOW) {
-                    System.out.println("     ****************************************");
-                    System.out.println("!!!Congratulations you won the game!!!");
-                    System.out.println("     ****************************************");
-                    System.exit(0);
+                    if (seedsToEnd == endSeedsSize){
+                        System.out.println("     ****************************************");
+                        System.out.println("!!!Congratulations you won the game!!!");
+                        System.out.println("     ****************************************");
+                        System.exit(0);
+
+                    }
+
+
                 }
 
             }
@@ -519,6 +540,78 @@ public class Player {
 
 
 
+    }
+
+
+    public void countSeeds(){
+        if (this.wheatEndSize  == 0) {
+            if (wheatNeedGrowUp.size() > 0 || wheatGrowedUp.size() > 0) {
+                this.wheatEndSize += 1;
+            }
+        } else if (this.wheatEndSize  == 1) {
+            if (wheatNeedGrowUp.size() <= 0 && wheatGrowedUp.size() <= 0) {
+                this.wheatEndSize -= 1;
+            }
+        }
+
+        if (this.oatEndSize  == 0) {
+            if (oatNeedGrowUp.size() > 0 || oatGrowedUp.size() > 0) {
+                this.oatEndSize += 1;
+            }
+        } else if (this.oatEndSize  == 1) {
+            if (oatNeedGrowUp.size() <= 0 && oatGrowedUp.size() <= 0) {
+                this.oatEndSize -= 1;
+            }
+        }
+
+        if (this.cornEndSize  == 0) {
+            if (cornNeedGrowUp.size() > 0 || cornGrowedUp.size() > 0) {
+                this.cornEndSize += 1;
+            }
+        } else if (this.cornEndSize  == 1) {
+            if (cornNeedGrowUp.size() <= 0 && cornGrowedUp.size() <= 0) {
+                this.cornEndSize -= 1;
+            }
+        }
+
+        if (this.potatoEndSize  == 0) {
+            if (potatoNeedGrowUp.size() > 0 || potatoGrowedUp.size() > 0) {
+                this.potatoEndSize += 1;
+            }
+        } else if (this.potatoEndSize  == 1) {
+            if (potatoNeedGrowUp.size() <= 0 && potatoGrowedUp.size() <= 0) {
+                this.potatoEndSize -= 1;
+            }
+        }
+
+        if (this.appleEndSize  == 0) {
+            if (appleNeedGrowUp.size() > 0 || appleGrowedUp.size() > 0) {
+                this.appleEndSize += 1;
+            }
+        } else if (this.appleEndSize  == 1) {
+            if (appleNeedGrowUp.size() <= 0 && appleGrowedUp.size() <= 0) {
+                this.appleEndSize -= 1;
+            }
+        }
+
+    }
+
+    public void checkHarvest(){
+
+        System.out.println();
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("wheatNeedGrowUp -> "+wheatNeedGrowUp.size() );
+        System.out.println("oatNeedGrowUp  -> "+oatNeedGrowUp.size() );
+        System.out.println("cornNeedGrowUp  -> "+cornNeedGrowUp .size() );
+        System.out.println("potatoNeedGrowUp  -> "+potatoNeedGrowUp .size() );
+        System.out.println("appleNeedGrowUp  -> "+appleNeedGrowUp .size() );
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("wheatGrowedUp  -> "+wheatGrowedUp .size() );
+        System.out.println("oatGrowedUp   -> "+oatGrowedUp  .size() );
+        System.out.println("cornGrowedUp   -> "+cornGrowedUp  .size() );
+        System.out.println("potatoGrowedUp   -> "+potatoGrowedUp  .size() );
+        System.out.println("appleGrowedUp   -> "+appleGrowedUp  .size() );
+        System.out.println("------------------------------------------------------------------");
     }
 }
 

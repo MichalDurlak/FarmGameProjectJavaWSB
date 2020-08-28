@@ -11,8 +11,8 @@ public class Player {
     private double farmland;
     private int cash;
 
-    private int wheatSeedsPlayer, oatSeedsPlayer, cornSeedsPlayer, potatoSeedsPlayer;
-    private int MaxWheatSeedsPlayer, MaxOatSeedsPlayer, MaxCornSeedsPlayer, MaxPotatoSeedsPlayer;
+    public int wheatSeedsPlayer, oatSeedsPlayer, cornSeedsPlayer, potatoSeedsPlayer,appleTreeSeedsPlayer;
+    public double MaxHectaresUsed;
 
     public int maxStorageFoodForAnimals, foodForAnimals;
     private int foodForWeek, foodForYear;
@@ -38,11 +38,17 @@ public class Player {
     public List<Integer> bigHorseAnimal = new ArrayList<>();
     public List<Integer> bigRabbitAnimal = new ArrayList<>();
 
-    public List<Integer> WheatSeed = new ArrayList<>();
-    public List<Integer> OatSeed = new ArrayList<>();
-    public List<Integer> CornSeed = new ArrayList<>();
-    public List<Integer> PotatoSeed = new ArrayList<>();
+    public List<Integer> wheatNeedGrowUp = new ArrayList<>();
+    public List<Integer> oatNeedGrowUp = new ArrayList<>();
+    public List<Integer> cornNeedGrowUp = new ArrayList<>();
+    public List<Integer> potatoNeedGrowUp = new ArrayList<>();
+    public List<Integer> appleNeedGrowUp = new ArrayList<>();
 
+    public List<Integer> wheatGrowedUp = new ArrayList<>();
+    public List<Integer> oatGrowedUp = new ArrayList<>();
+    public List<Integer> cornGrowedUp = new ArrayList<>();
+    public List<Integer> potatoGrowedUp = new ArrayList<>();
+    public List<Integer> appleGrowedUp = new ArrayList<>();
 
     public Player(String name) {
         this.name = name; // wprowadzenie imienia gracza
@@ -57,10 +63,13 @@ public class Player {
         this.seedsMaxSize = 0;
         this.buildingsMaxSize = 0;
         this.animalsMaxSize = 0;
+        this.MaxHectaresUsed =0;
+
         this.wheatSeedsPlayer = 0;
-        this.potatoSeedsPlayer = 0;
+        this.oatSeedsPlayer = 0;
         this.cornSeedsPlayer = 0;
         this.potatoSeedsPlayer = 0;
+        this.appleTreeSeedsPlayer = 0;
 
         this.chickenEndSize = 0;
         this.dogEndSize = 0;
@@ -107,17 +116,6 @@ public class Player {
         this.farmland = farmland;
     }
 
-    public void setAnimals(int animals) {
-        this.animals = animals;
-    }
-
-    public void buildings(int buildings) {
-        this.buildings = buildings;
-    }
-
-    public void setSeeds(int seeds) {
-        this.seeds = seeds;
-    }
 
     public void setCash(int cash) {
         this.cash = cash;
@@ -129,69 +127,6 @@ public class Player {
         return this.farmland;
     }
 
-    public int getWheatSeedsPlayer() {
-        return wheatSeedsPlayer;
-    }
-
-    public void setWheatSeedsPlayer(int wheatSeedsPlayer) {
-        this.wheatSeedsPlayer = wheatSeedsPlayer;
-    }
-
-    public int getOatSeedsPlayer() {
-        return oatSeedsPlayer;
-    }
-
-    public void setOatSeedsPlayer(int oatSeedsPlayer) {
-        this.oatSeedsPlayer = oatSeedsPlayer;
-    }
-
-    public int getCornSeedsPlayer() {
-        return cornSeedsPlayer;
-    }
-
-    public void setCornSeedsPlayer(int cornSeedsPlayer) {
-        this.cornSeedsPlayer = cornSeedsPlayer;
-    }
-
-    public int getPotatoSeedsPlayer() {
-        return potatoSeedsPlayer;
-    }
-
-    public void setPotatoSeedsPlayer(int potatoSeedsPlayer) {
-        this.potatoSeedsPlayer = potatoSeedsPlayer;
-    }
-
-    public int getMaxWheatSeedsPlayer() {
-        return MaxWheatSeedsPlayer;
-    }
-
-    public void setMaxWheatSeedsPlayer(int maxWheatSeedsPlayer) {
-        MaxWheatSeedsPlayer = maxWheatSeedsPlayer;
-    }
-
-    public int getMaxOatSeedsPlayer() {
-        return MaxOatSeedsPlayer;
-    }
-
-    public void setMaxOatSeedsPlayer(int maxOatSeedsPlayer) {
-        MaxOatSeedsPlayer = maxOatSeedsPlayer;
-    }
-
-    public int getMaxCornSeedsPlayer() {
-        return MaxCornSeedsPlayer;
-    }
-
-    public void setMaxCornSeedsPlayer(int maxCornSeedsPlayer) {
-        MaxCornSeedsPlayer = maxCornSeedsPlayer;
-    }
-
-    public int getMaxPotatoSeedsPlayer() {
-        return MaxPotatoSeedsPlayer;
-    }
-
-    public void setMaxPotatoSeedsPlayer(int maxPotatoSeedsPlayer) {
-        MaxPotatoSeedsPlayer = maxPotatoSeedsPlayer;
-    }
 
 
     // food for animals

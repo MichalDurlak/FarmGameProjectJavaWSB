@@ -9,6 +9,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import static com.company.BuildBuildings.*;
 import static com.company.Farmland.*;
 import static com.company.Market.*;
+import static com.company.UseSeeds.*;
+
 
 public class Main {
 
@@ -83,14 +85,11 @@ public class Main {
                     int sizebigCowAnimal = player.bigCowAnimal.size();
                     int sizebigHorseAnimal = player.bigHorseAnimal.size();
                     int sizebigRabbitsAnimal = player.bigRabbitAnimal.size();
-                    int sizeWheatSeed = player.WheatSeed.size();
-                    int sizeOatSeed = player.OatSeed.size();
-                    int sizeCornSeed = player.CornSeed.size();
-                    int sizePotatoSeed = player.PotatoSeed.size();
 
 
 
-                    Market.Marketplace(player.getCash(),maxSeedsThatCanBuy,maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,sizeWheatSeed,sizeOatSeed,sizeCornSeed,sizePotatoSeed,sizesmallRabbitAnimal,sizebigRabbitsAnimal,player.maxStorageFoodForAnimals,player.foodForAnimals);
+
+                    Market.Marketplace(player.getCash(),maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,player.wheatSeedsPlayer,player.oatSeedsPlayer,player.cornSeedsPlayer,player.potatoSeedsPlayer,player.appleTreeSeedsPlayer,sizesmallRabbitAnimal,sizebigRabbitsAnimal,player.maxStorageFoodForAnimals,player.foodForAnimals);
 
                   if(getPriceTempSell()>0){
                       System.out.println("SELL: ");
@@ -169,20 +168,19 @@ public class Main {
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempWheatSeed()==1){
-                        int WheatTimeGrowUp = 2;
-                        player.WheatSeed.add(WheatTimeGrowUp);
+                        player.wheatSeedsPlayer +=1;
                     }
                     else if(gettempOatSeed()==1){
-                        int OatTimeGrowUp = 2;
-                        player.OatSeed.add(OatTimeGrowUp);
+                        player.oatSeedsPlayer +=1;
                     }
                     else if(gettempCornSeed()==1){
-                        int CornTimeGrowUp = 2;
-                        player.CornSeed.add(CornTimeGrowUp);
+                        player.cornSeedsPlayer +=1;
                     }
                     else if(gettempPotatoSeed()==1){
-                        int PotatoTimeGrowUp = 2;
-                        player.PotatoSeed.add(PotatoTimeGrowUp);
+                        player.potatoSeedsPlayer +=1;
+                    }
+                    else if(gettempAppleTreeSeed()==1){
+                        player.appleTreeSeedsPlayer +=1;
                     }
                     else if(gettempFoodForAnimal()==1){
                         player.maxStorageFoodForAnimals -=1;
@@ -303,16 +301,90 @@ public class Main {
 
 
                     break;
+                case 5:
 
+                    useSeeds(player.wheatSeedsPlayer,player.oatSeedsPlayer,player.cornSeedsPlayer,player.potatoSeedsPlayer,player.appleTreeSeedsPlayer,player.getCash(),player.getFarmland());
+
+                    int getHowManySeeds = getHowManySeeds();
+                    double getHowManyHectaresUsed = getHowManyHectaresUsed();
+                    int getFinalPrice = getFinalPrice();
+
+                    int getWheatSeedsPlant=getWheatSeedsPlant();
+                    int getOatSeedPlant=getOatSeedPlant();
+                    int getCornSeedPlant=getCornSeedPlant();
+                    int getPotatoSeedPlant=getPotatoSeedPlant();
+                    int getAppleTreeSeedPlant=getAppleTreeSeedPlant();
+
+
+                    player.setCash(player.getCash()-getFinalPrice);
+                    player.MaxHectaresUsed +=getHowManyHectaresUsed;
+
+                    player.wheatSeedsPlayer -= getHowManySeeds*getWheatSeedsPlant;
+                    player.oatSeedsPlayer -= getHowManySeeds*getOatSeedPlant;
+                    player.cornSeedsPlayer -=getHowManySeeds *getCornSeedPlant;
+                    player.potatoSeedsPlayer -= getHowManySeeds*getPotatoSeedPlant;
+                    player.appleTreeSeedsPlayer -= getHowManySeeds *getAppleTreeSeedPlant;
+
+
+                    if(getWheatSeedsPlant==1){
+                        for (int j=0;j>=getHowManySeeds;j++){
+                            int timeGrowingUpWheat = 40;
+
+                            player.wheatNeedGrowUp.add(timeGrowingUpWheat);
+
+                        }
+
+                    }
+                    else if(getOatSeedPlant==1){
+                        for (int j=0;j>=getHowManySeeds;j++){
+                            int timeGrowingUpOat = 25;
+
+                            player.oatNeedGrowUp.add(timeGrowingUpOat);
+
+                        }
+
+                    }
+                    else if(getCornSeedPlant==1){
+                        for (int j=0;j>=getHowManySeeds;j++){
+                            int timeGrowingUpCorn = 60;
+
+                            player.cornNeedGrowUp.add(timeGrowingUpCorn);
+
+                        }
+
+                    }
+                    else if(getPotatoSeedPlant==1){
+                        for (int j=0;j>=getHowManySeeds;j++){
+                            int timeGrowingUpPotato = 80;
+
+                            player.potatoNeedGrowUp.add(timeGrowingUpPotato);
+
+                        }
+
+                    }
+                    else if(getAppleTreeSeedPlant==1){
+                        for (int j=0;j>=getHowManySeeds;j++){
+                            int timeGrowingUpAppleTree = 120;
+
+                            player.appleNeedGrowUp.add(timeGrowingUpAppleTree);
+
+                        }
+
+
+                    }
+
+
+                    break;
 
 
                 case 8:
                     System.out.println("  YOUR BACKPACK   ****************************************");
-                    System.out.println("Actual Wheat Seeds: "+ player.WheatSeed.size()+" (Max: "+ player.getMaxWheatSeedsPlayer()+")");
-                    System.out.println("Actual Oat Seeds: "+ player.OatSeed.size()+" (Max: "+ player.getMaxOatSeedsPlayer()+")");
+                    System.out.println("Actual Wheat Seeds: "+ player.wheatSeedsPlayer);
+                    System.out.println("Actual Oat Seeds: "+ player.oatSeedsPlayer);
 
-                    System.out.println("Actual Oat Seeds: "+ player.CornSeed.size()+" (Max: "+ player.getMaxCornSeedsPlayer()+")");
-                    System.out.println("Actual Oat Seeds: "+ player.PotatoSeed.size()+" (Max: "+ player.getMaxPotatoSeedsPlayer()+")");
+                    System.out.println("Actual Oat Seeds: "+ player.cornSeedsPlayer);
+                    System.out.println("Actual Oat Seeds: "+ player.potatoSeedsPlayer);
+                    System.out.println("Actual Apple tree Seeds: "+ player.appleTreeSeedsPlayer);
 
                     System.out.println("     ****************************************");
 
@@ -463,42 +535,7 @@ public class Main {
 
                     }
 
-                    for ( int j=0; j<player.WheatSeed.size(); j++ ){
 
-                        int temp = player.WheatSeed.get(j);
-
-                        temp -= 1;
-                        player.WheatSeed.remove(j);
-                        player.WheatSeed.add(j,temp);
-
-                    }
-                    for ( int j=0; j<player.OatSeed.size(); j++ ){
-
-                        int temp = player.OatSeed.get(j);
-
-                        temp -= 1;
-                        player.OatSeed.remove(j);
-                        player.OatSeed.add(j,temp);
-
-                    }
-                    for ( int j=0; j<player.CornSeed.size(); j++ ){
-
-                        int temp = player.CornSeed.get(j);
-
-                        temp -= 1;
-                        player.CornSeed.remove(j);
-                        player.CornSeed.add(j,temp);
-
-                    }
-                    for ( int j=0; j<player.PotatoSeed.size(); j++ ){
-
-                        int temp = player.PotatoSeed.get(j);
-
-                        temp -= 1;
-                        player.PotatoSeed.remove(j);
-                        player.PotatoSeed.add(j,temp);
-
-                    }
 
 // DODAWANIE +1 do wieku
 
@@ -628,9 +665,12 @@ public class Main {
         System.out.println("     2. Go to marketplace. ");
         System.out.println("     3. Buy farmland. ");
         System.out.println("     4. Build buildings. ");
+        System.out.println("     5. Plant seeds. ");
         System.out.println("     8. Check backpack. ");
         System.out.println("     9. Next week.");
         System.out.println("     10. End game tasks.");
+        System.out.println("     99. Add ultra bonus stats.");
+        System.out.println("     98. Add food for animals.");
         System.out.println("     0. Exit Game.");
         System.out.println("My Choice: ");
         Scanner in = new Scanner(System.in);

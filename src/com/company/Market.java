@@ -37,11 +37,13 @@ public class Market {
     static int OatSeedsBUY = 0;
     static int CornSeedsBUY = 0;
     static int PotatoSeedsBUY = 0;
+    static int AppleTreeSeedsBUY = 0;
 
     static int WheatSeedsSELL = 0;
     static int OatSeedsSELL = 0;
     static int CornSeedsSELL = 0;
     static int PotatoSeedsSELL = 0;
+    static int AppleTreeSeedsSELL = 0;
 
     static int milkSELL = 0;
     static int foodForAnimalBUY = 0;
@@ -71,11 +73,12 @@ public class Market {
     static int tempOatSeed= 0;
     static int tempCornSeed= 0;
     static int tempPotatoSeed= 0;
+    static int tempAppleTreeSeed= 0;
 
     static int tempFoodForAnimal=0;
 //
 
-    public static int Marketplace(int cash, int maxSeedsThatCanBuy, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed,int sizesmallRabbitAnimal,int sizebigRabbitsAnimal, int sizestorage, int actualfood) {
+    public static int Marketplace(int cash, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed,int sizeAppleTreeSeed,int sizesmallRabbitAnimal,int sizebigRabbitsAnimal, int sizestorage, int actualfood) {
 
 
 
@@ -155,63 +158,80 @@ public class Market {
             System.out.print("11. Wheat Seed: " + WheatSeedsBUY);
             System.out.print("                                   ");
             System.out.print("12. Wheat Seed: " + WheatSeedsSELL);
+            System.out.print("                                      ");
+            System.out.print("One seed needs - 0.5 hectares to plant it");
 
             // sell and buy #7
             System.out.println("");
             System.out.print("13. Wheat Oat: " + OatSeedsBUY);
             System.out.print("                                    ");
             System.out.print("14. Wheat Oat: " + OatSeedsSELL);
+            System.out.print("                                      ");
+            System.out.print("One seed needs - 0.5 hectares to plant it");
 
             // sell and buy #8
             System.out.println("");
             System.out.print("15. Wheat Corn: " + CornSeedsBUY);
             System.out.print("                                   ");
             System.out.print("16. Wheat Corn: " + CornSeedsSELL);
+            System.out.print("                                    ");
+            System.out.print("One seed needs - 0.5 hectares to plant it");
 
             // sell and buy #9
             System.out.println("");
             System.out.print("17. Wheat Potato: " + PotatoSeedsBUY);
             System.out.print("                                 ");
             System.out.print("18. Wheat Potato: " + PotatoSeedsSELL);
+            System.out.print("                                 ");
+            System.out.print("One seed needs - 0.5 hectares to plant it");
 
+            // sell and buy #10
+            System.out.println("");
+            System.out.print("19. Apple Tree Seed: " + AppleTreeSeedsBUY);
+            System.out.print("                                ");
+            System.out.print("20. Apple Tree Seed: " + AppleTreeSeedsSELL);
+            System.out.print("                                ");
+            System.out.print("One seed needs - 0.5 hectares to plant it");
 
             System.out.println("");
+
+
             System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
             // sell and buy #10
 
-            System.out.print("19. Big Cow: " + bigCowBUY);
+            System.out.print("21. Big Cow: " + bigCowBUY);
             System.out.print("                                     ");
-            System.out.print("20. Big Cow: " + bigCowSELL);
+            System.out.print("22. Big Cow: " + bigCowSELL);
             System.out.print("                                     ");
             System.out.print("Chance to reproduce 30%");
             // sell and buy #11
             System.out.println("");
-            System.out.print("21. Big Horse: " + bigHorseBUY);
+            System.out.print("23. Big Horse: " + bigHorseBUY);
             System.out.print("                                   ");
-            System.out.print("22. Big Horse: " + bigHorseSELL);
+            System.out.print("24. Big Horse: " + bigHorseSELL);
             System.out.print("                                    ");
             System.out.print("Chance to reproduce 20%");
             // sell and buy #12
             System.out.println("");
-            System.out.print("23. Big Rabbit: " + bigRabbitBUY);
+            System.out.print("25. Big Rabbit: " + bigRabbitBUY);
             System.out.print("                                  ");
-            System.out.print("24. Big Rabbit: " + bigRabbitSELL);
+            System.out.print("26. Big Rabbit: " + bigRabbitSELL);
             System.out.print("                                   ");
             System.out.print("Chance to reproduce 60%");
             // sell and buy #13
             System.out.println("");
-            System.out.print("25. Big Chicken: " + bigChickenBUY);
+            System.out.print("27. Big Chicken: " + bigChickenBUY);
             System.out.print("                                 ");
-            System.out.print("26. Big Chicken: " + bigChickenSELL);
+            System.out.print("28. Big Chicken: " + bigChickenSELL);
             System.out.print("                                  ");
             System.out.print("Chance to reproduce 40%");
             // sell and buy #14
             System.out.println("");
-            System.out.print("27. Big Dog: " + bigDogBUY);
+            System.out.print("29. Big Dog: " + bigDogBUY);
             System.out.print("                                      ");
-            System.out.print("28. Big Dog: " + bigDogSELL);
+            System.out.print("30. Big Dog: " + bigDogSELL);
             System.out.print("                                      ");
             System.out.print("Chance to reproduce 40%");
             System.out.println("");
@@ -221,9 +241,9 @@ public class Market {
 
             // sell and buy #16
             System.out.println("");
-            System.out.print("30. Food For Animal: " + foodForAnimalBUY);
+            System.out.print("31. Food For Animal: " + foodForAnimalBUY);
             System.out.print("                              ");
-            System.out.print("31. Food For Animal: " + foodForAnimalSELL);
+            System.out.print("32. Food For Animal: " + foodForAnimalSELL);
 
 
 
@@ -329,19 +349,17 @@ public class Market {
                     return choose;
                 }
             }
+
+
             else if (choose == 11){
 
                 if (cash > WheatSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy <= 0){
-                        System.out.println("You dont have enough space");
-                    } else {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + WheatSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempWheatSeed = 1;
 
-                        System.out.println("Congratulations you bought it!");
-                        priceTempBuy = priceTempBuy + WheatSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempWheatSeed = 1;
-                    }
 
 
                 } else {
@@ -353,15 +371,12 @@ public class Market {
 
                 if (cash > OatSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy == 0){
-                        System.out.println("You dont have enough space");
-                    } else {
 
-                        System.out.println("Coongratulations yu bought it!");
-                        priceTempBuy = priceTempBuy + OatSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempOatSeed = 1;
-                    }
+                    System.out.println("Coongratulations you bought it!");
+                    priceTempBuy = priceTempBuy + OatSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempOatSeed = 1;
+
 
 
                 } else {
@@ -373,15 +388,11 @@ public class Market {
 
                 if (cash > CornSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy == 0){
-                        System.out.println("You dont have enough space");
-                    } else {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + CornSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempCornSeed = 1;
 
-                        System.out.println("Congratulations you bought it!");
-                        priceTempBuy = priceTempBuy + CornSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempCornSeed = 1;
-                    }
 
 
                 } else {
@@ -393,15 +404,11 @@ public class Market {
 
                 if (cash > PotatoSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy == 0){
-                        System.out.println("You dont have enough space");
-                    } else {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + PotatoSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempPotatoSeed = 1;
 
-                        System.out.println("Congratulations you bought it!");
-                        priceTempBuy = priceTempBuy + PotatoSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempPotatoSeed = 1;
-                    }
 
 
 
@@ -411,6 +418,24 @@ public class Market {
 
                 }}
             else if (choose == 19){
+
+                if (cash > AppleTreeSeedsBUY) {
+
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + AppleTreeSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempAppleTreeSeed = 1;
+
+
+
+
+                } else {
+                    System.out.println("Check your balance.");
+                    return choose;
+
+                }}
+
+            else if (choose == 21){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigCowBUY) {
                         System.out.println("Congratulations you bought it!");
@@ -427,7 +452,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 21){
+            else if (choose == 23){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigHorseBUY) {
 
@@ -445,7 +470,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 23){
+            else if (choose == 25){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigRabbitBUY) {
 
@@ -463,7 +488,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 25){
+            else if (choose == 27){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigChickenBUY) {
 
@@ -481,7 +506,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 27){
+            else if (choose == 29){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigDogBUY) {
 
@@ -500,7 +525,7 @@ public class Market {
                 }
             }
 
-            else if (choose == 30) {
+            else if (choose == 31) {
                 if (sizestorage>0){
                     if (cash > foodForAnimalBUY) {
                         System.out.println("Congratulations you bought it!");
@@ -606,8 +631,18 @@ public class Market {
                     System.out.println("You dont have Potato seed");
                 }
             }
-
             else if (choose == 20){
+                if (sizeAppleTreeSeed>0){
+                    tempAppleTreeSeed = -1;
+                    priceTempSell = priceTempSell + AppleTreeSeedsSELL;
+                    System.out.println("Congratulation you sell potato seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have Apple Tree seeds");
+                }
+            }
+
+            else if (choose == 22){
                 if (sizebigCowAnimal>0){
                     tempbigCowAnimal = -1;
                     priceTempSell = priceTempSell + bigCowSELL;
@@ -617,7 +652,7 @@ public class Market {
                     System.out.println("You dont have big cow.");
                 }
             }
-            else if (choose == 22){
+            else if (choose == 24){
                 if (sizebigHorseAnimal>0){
                     tempbigHorseAnimal = -1;
                     priceTempSell = priceTempSell + bigHorseSELL;
@@ -627,7 +662,7 @@ public class Market {
                     System.out.println("You dont have big horse");
                 }
             }
-            else if (choose == 24){
+            else if (choose == 26){
                 if (sizebigRabbitsAnimal>0){
                     tempbigRabbitAnimal = -1;
                     priceTempSell = priceTempSell + bigRabbitSELL;
@@ -636,7 +671,7 @@ public class Market {
                     System.out.println("You dont have big Rabbit");
                 }
             }
-            else if (choose == 26){
+            else if (choose == 28){
                 if (sizebigChickenAnimal>0){
                     tempbigChickenAnimal = -1;
                     priceTempSell = priceTempSell + bigChickenSELL;
@@ -646,7 +681,7 @@ public class Market {
                     System.out.println("You dont have big chicken");
                 }
             }
-            else if (choose == 28){
+            else if (choose == 30){
                 if (sizebigDogAnimal>0){
                     tempbigDogAnimal = -1;
                     priceTempSell = priceTempSell + bigDogSELL;
@@ -657,7 +692,7 @@ public class Market {
                 }
             }
 
-            else if (choose == 31){
+            else if (choose == 32){
                 if (actualfood>0){
                     tempFoodForAnimal = -1;
                     priceTempSell = priceTempSell + foodForAnimalSELL;
@@ -741,11 +776,13 @@ public class Market {
             OatSeedsBUY = random.nextInt(15, 25);
             CornSeedsBUY = random.nextInt(20, 30);
             PotatoSeedsBUY = random.nextInt(35, 45);
+            AppleTreeSeedsBUY = random.nextInt(100, 300);
 
             WheatSeedsSELL = random.nextInt(2, 4);
             OatSeedsSELL = random.nextInt(9, 14);
             CornSeedsSELL = random.nextInt(12, 16);
             PotatoSeedsSELL = random.nextInt(20, 30);
+            AppleTreeSeedsSELL = random.nextInt(50, 120);
 
             milkSELL = random.nextInt(10, 20);
             foodForAnimalBUY = random.nextInt(50, 70);
@@ -797,63 +834,80 @@ public class Market {
             System.out.print("11. Wheat Seed: " + WheatSeedsBUY);
             System.out.print("                                   ");
             System.out.print("12. Wheat Seed: " + WheatSeedsSELL);
+            System.out.print("                                      ");
+            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 40 weeks ");
 
             // sell and buy #7
             System.out.println("");
             System.out.print("13. Wheat Oat: " + OatSeedsBUY);
             System.out.print("                                    ");
             System.out.print("14. Wheat Oat: " + OatSeedsSELL);
+            System.out.print("                                      ");
+            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 25 weeks ");
 
             // sell and buy #8
             System.out.println("");
             System.out.print("15. Wheat Corn: " + CornSeedsBUY);
             System.out.print("                                   ");
             System.out.print("16. Wheat Corn: " + CornSeedsSELL);
+            System.out.print("                                    ");
+            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 60 weeks ");
 
             // sell and buy #9
             System.out.println("");
             System.out.print("17. Wheat Potato: " + PotatoSeedsBUY);
             System.out.print("                                 ");
             System.out.print("18. Wheat Potato: " + PotatoSeedsSELL);
+            System.out.print("                                 ");
+            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 80 weeks ");
 
+            // sell and buy #10
+            System.out.println("");
+            System.out.print("19. Apple Tree Seed: " + AppleTreeSeedsBUY);
+            System.out.print("                                ");
+            System.out.print("20. Apple Tree Seed: " + AppleTreeSeedsSELL);
+            System.out.print("                                ");
+            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 120 weeks ");
 
             System.out.println("");
+
+
             System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
             // sell and buy #10
 
-            System.out.print("19. Big Cow: " + bigCowBUY);
+            System.out.print("21. Big Cow: " + bigCowBUY);
             System.out.print("                                     ");
-            System.out.print("20. Big Cow: " + bigCowSELL);
+            System.out.print("22. Big Cow: " + bigCowSELL);
             System.out.print("                                     ");
             System.out.print("Chance to reproduce 30%");
             // sell and buy #11
             System.out.println("");
-            System.out.print("21. Big Horse: " + bigHorseBUY);
+            System.out.print("23. Big Horse: " + bigHorseBUY);
             System.out.print("                                   ");
-            System.out.print("22. Big Horse: " + bigHorseSELL);
+            System.out.print("24. Big Horse: " + bigHorseSELL);
             System.out.print("                                    ");
             System.out.print("Chance to reproduce 20%");
             // sell and buy #12
             System.out.println("");
-            System.out.print("23. Big Rabbit: " + bigRabbitBUY);
+            System.out.print("25. Big Rabbit: " + bigRabbitBUY);
             System.out.print("                                  ");
-            System.out.print("24. Big Rabbit: " + bigRabbitSELL);
+            System.out.print("26. Big Rabbit: " + bigRabbitSELL);
             System.out.print("                                   ");
             System.out.print("Chance to reproduce 60%");
             // sell and buy #13
             System.out.println("");
-            System.out.print("25. Big Chicken: " + bigChickenBUY);
+            System.out.print("27. Big Chicken: " + bigChickenBUY);
             System.out.print("                                 ");
-            System.out.print("26. Big Chicken: " + bigChickenSELL);
+            System.out.print("28. Big Chicken: " + bigChickenSELL);
             System.out.print("                                  ");
             System.out.print("Chance to reproduce 40%");
             // sell and buy #14
             System.out.println("");
-            System.out.print("27. Big Dog: " + bigDogBUY);
+            System.out.print("29. Big Dog: " + bigDogBUY);
             System.out.print("                                      ");
-            System.out.print("28. Big Dog: " + bigDogSELL);
+            System.out.print("30. Big Dog: " + bigDogSELL);
             System.out.print("                                      ");
             System.out.print("Chance to reproduce 40%");
             System.out.println("");
@@ -863,9 +917,9 @@ public class Market {
 
             // sell and buy #16
             System.out.println("");
-            System.out.print("30. Food For Animal: " + foodForAnimalBUY);
+            System.out.print("31. Food For Animal: " + foodForAnimalBUY);
             System.out.print("                              ");
-            System.out.print("31. Food For Animal: " + foodForAnimalSELL);
+            System.out.print("32. Food For Animal: " + foodForAnimalSELL);
 
 
 
@@ -969,19 +1023,17 @@ public class Market {
                     return choose;
                 }
             }
+
+
             else if (choose == 11){
 
                 if (cash > WheatSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy <= 0){
-                        System.out.println("You dont have enough space");
-                    } else {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + WheatSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempWheatSeed = 1;
 
-                        System.out.println("Congratulations you bought it!");
-                        priceTempBuy = priceTempBuy + WheatSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempWheatSeed = 1;
-                    }
 
 
                 } else {
@@ -993,15 +1045,12 @@ public class Market {
 
                 if (cash > OatSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy == 0){
-                        System.out.println("You dont have enough space");
-                    } else {
 
-                        System.out.println("Coongratulations yu bought it!");
-                        priceTempBuy = priceTempBuy + OatSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempOatSeed = 1;
-                    }
+                    System.out.println("Coongratulations you bought it!");
+                    priceTempBuy = priceTempBuy + OatSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempOatSeed = 1;
+
 
 
                 } else {
@@ -1013,15 +1062,11 @@ public class Market {
 
                 if (cash > CornSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy == 0){
-                        System.out.println("You dont have enough space");
-                    } else {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + CornSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempCornSeed = 1;
 
-                        System.out.println("Congratulations you bought it!");
-                        priceTempBuy = priceTempBuy + CornSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempCornSeed = 1;
-                    }
 
 
                 } else {
@@ -1033,15 +1078,11 @@ public class Market {
 
                 if (cash > PotatoSeedsBUY) {
 
-                    if (maxSeedsThatCanBuy == 0){
-                        System.out.println("You dont have enough space");
-                    } else {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + PotatoSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempPotatoSeed = 1;
 
-                        System.out.println("Congratulations you bought it!");
-                        priceTempBuy = priceTempBuy + PotatoSeedsBUY;
-                        seedsTempNumber = seedsTempNumber+1;
-                        tempPotatoSeed = 1;
-                    }
 
 
 
@@ -1051,6 +1092,24 @@ public class Market {
 
                 }}
             else if (choose == 19){
+
+                if (cash > AppleTreeSeedsBUY) {
+
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + AppleTreeSeedsBUY;
+                    seedsTempNumber = seedsTempNumber+1;
+                    tempAppleTreeSeed = 1;
+
+
+
+
+                } else {
+                    System.out.println("Check your balance.");
+                    return choose;
+
+                }}
+
+            else if (choose == 21){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigCowBUY) {
                         System.out.println("Congratulations you bought it!");
@@ -1067,7 +1126,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 21){
+            else if (choose == 23){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigHorseBUY) {
 
@@ -1085,7 +1144,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 23){
+            else if (choose == 25){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigRabbitBUY) {
 
@@ -1103,7 +1162,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 25){
+            else if (choose == 27){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigChickenBUY) {
 
@@ -1121,7 +1180,7 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 27){
+            else if (choose == 29){
                 if (maxAnimalsThatCanBuy > 0){
                     if (cash > bigDogBUY) {
 
@@ -1139,7 +1198,8 @@ public class Market {
                     return choose;
                 }
             }
-            else if (choose == 30) {
+
+            else if (choose == 31) {
                 if (sizestorage>0){
                     if (cash > foodForAnimalBUY) {
                         System.out.println("Congratulations you bought it!");
@@ -1156,9 +1216,7 @@ public class Market {
                 }
             }
 
-
             // sell
-
 
             else if (choose == 2){
                 if (sizesmallCowAnimal>0){
@@ -1247,8 +1305,18 @@ public class Market {
                     System.out.println("You dont have Potato seed");
                 }
             }
-
             else if (choose == 20){
+                if (sizeAppleTreeSeed>0){
+                    tempAppleTreeSeed = -1;
+                    priceTempSell = priceTempSell + AppleTreeSeedsSELL;
+                    System.out.println("Congratulation you sell potato seed for: " + priceTempSell);
+
+                } else {
+                    System.out.println("You dont have Apple Tree seeds");
+                }
+            }
+
+            else if (choose == 22){
                 if (sizebigCowAnimal>0){
                     tempbigCowAnimal = -1;
                     priceTempSell = priceTempSell + bigCowSELL;
@@ -1258,7 +1326,7 @@ public class Market {
                     System.out.println("You dont have big cow.");
                 }
             }
-            else if (choose == 22){
+            else if (choose == 24){
                 if (sizebigHorseAnimal>0){
                     tempbigHorseAnimal = -1;
                     priceTempSell = priceTempSell + bigHorseSELL;
@@ -1268,7 +1336,7 @@ public class Market {
                     System.out.println("You dont have big horse");
                 }
             }
-            else if (choose == 24){
+            else if (choose == 26){
                 if (sizebigRabbitsAnimal>0){
                     tempbigRabbitAnimal = -1;
                     priceTempSell = priceTempSell + bigRabbitSELL;
@@ -1277,7 +1345,7 @@ public class Market {
                     System.out.println("You dont have big Rabbit");
                 }
             }
-            else if (choose == 26){
+            else if (choose == 28){
                 if (sizebigChickenAnimal>0){
                     tempbigChickenAnimal = -1;
                     priceTempSell = priceTempSell + bigChickenSELL;
@@ -1287,7 +1355,7 @@ public class Market {
                     System.out.println("You dont have big chicken");
                 }
             }
-            else if (choose == 28){
+            else if (choose == 30){
                 if (sizebigDogAnimal>0){
                     tempbigDogAnimal = -1;
                     priceTempSell = priceTempSell + bigDogSELL;
@@ -1298,7 +1366,7 @@ public class Market {
                 }
             }
 
-            else if (choose == 31){
+            else if (choose == 32){
                 if (actualfood>0){
                     tempFoodForAnimal = -1;
                     priceTempSell = priceTempSell + foodForAnimalSELL;
@@ -1306,8 +1374,8 @@ public class Market {
                 } else {
                     System.out.println("You dont have food for sell");
                 }
-
             }
+
 
             else if (choose == 0){
 
@@ -1365,6 +1433,7 @@ public class Market {
     public static int gettempOatSeed(){return  tempOatSeed;}
     public static int gettempCornSeed(){return  tempCornSeed;}
     public static int gettempPotatoSeed(){return  tempPotatoSeed;}
+    public static int gettempAppleTreeSeed(){return  tempAppleTreeSeed;}
 
     public static int gettempFoodForAnimal(){return  tempFoodForAnimal;}
 

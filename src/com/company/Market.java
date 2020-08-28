@@ -111,38 +111,43 @@ public class Market {
             //
             System.out.println("You saw these prices: ");
 
-            System.out.println("    BUY:  ****************************************   SELL:   ");
+            System.out.println("    BUY:  ****************************************        SELL:        ****************************************      INFO:");
             // sell and buy #1
             System.out.print("1. Small Cow: " + smallCowBUY);
             System.out.print("                                     ");
             System.out.print("2. Small Cow: " + smallCowSELL);
-
+            System.out.print("                                      ");
+            System.out.print("Time to grow up: 25 weeks");
             // sell and buy #2
             System.out.println("");
             System.out.print("3. Small Horse: " + smallHorseBUY);
             System.out.print("                                   ");
             System.out.print("4. Small Horse: " + smallHorseSELL);
-
+            System.out.print("                                    ");
+            System.out.print("Time to grow up: 15 weeks");
             // sell and buy #3
             System.out.println("");
             System.out.print("5. Small Rabbit: " + smallRabbitBUY);
             System.out.print("                                  ");
             System.out.print("6. Small Rabbit: " + smallRabbitSELL);
-
+            System.out.print("                                   ");
+            System.out.print("Time to grow up: 13 weeks");
             // sell and buy #4
             System.out.println("");
             System.out.print("7. Small Chicken: " + smallChickenBUY);
             System.out.print("                                 ");
             System.out.print("8. Small Chicken: " + smallChickenSELL);
-
+            System.out.print("                                  ");
+            System.out.print("Time to grow up: 20 weeks");
             // sell and buy #5
             System.out.println("");
             System.out.print("9. Small Dog: " + smallDogBUY);
             System.out.print("                                     ");
             System.out.print("10. Small Dog: " + smallDogSELL);
-
+            System.out.print("                                     ");
+            System.out.print("Time to grow up: 10 weeks");
             System.out.println("");
-            System.out.println("    ------------------------------------------------------   ");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
             // sell and buy #6
@@ -171,7 +176,7 @@ public class Market {
 
 
             System.out.println("");
-            System.out.println("    ------------------------------------------------------   ");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
             // sell and buy #10
@@ -179,33 +184,38 @@ public class Market {
             System.out.print("19. Big Cow: " + bigCowBUY);
             System.out.print("                                     ");
             System.out.print("20. Big Cow: " + bigCowSELL);
-
+            System.out.print("                                     ");
+            System.out.print("Chance to reproduce 30%");
             // sell and buy #11
             System.out.println("");
             System.out.print("21. Big Horse: " + bigHorseBUY);
             System.out.print("                                   ");
             System.out.print("22. Big Horse: " + bigHorseSELL);
-
+            System.out.print("                                    ");
+            System.out.print("Chance to reproduce 20%");
             // sell and buy #12
             System.out.println("");
             System.out.print("23. Big Rabbit: " + bigRabbitBUY);
             System.out.print("                                  ");
             System.out.print("24. Big Rabbit: " + bigRabbitSELL);
-
+            System.out.print("                                   ");
+            System.out.print("Chance to reproduce 60%");
             // sell and buy #13
             System.out.println("");
             System.out.print("25. Big Chicken: " + bigChickenBUY);
             System.out.print("                                 ");
             System.out.print("26. Big Chicken: " + bigChickenSELL);
-
+            System.out.print("                                  ");
+            System.out.print("Chance to reproduce 40%");
             // sell and buy #14
             System.out.println("");
             System.out.print("27. Big Dog: " + bigDogBUY);
             System.out.print("                                      ");
             System.out.print("28. Big Dog: " + bigDogSELL);
-
+            System.out.print("                                      ");
+            System.out.print("Chance to reproduce 40%");
             System.out.println("");
-            System.out.println("    ------------------------------------------------------   ");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
 
@@ -219,7 +229,7 @@ public class Market {
 
 
             System.out.println("");
-            System.out.println("*************************************************************");
+            System.out.println("**************************************************************************************************************************");
             System.out.println("0. Exit Marketplace");
 
             alreadyOpenShop = true;
@@ -743,38 +753,43 @@ public class Market {
             eggSELL = random.nextInt(10, 20);
 
 
-            System.out.println("    BUY:  ****************************************   SELL:   ");
+            System.out.println("    BUY:  ****************************************        SELL:        ****************************************      INFO:");
             // sell and buy #1
             System.out.print("1. Small Cow: " + smallCowBUY);
             System.out.print("                                     ");
             System.out.print("2. Small Cow: " + smallCowSELL);
-
+            System.out.print("                                      ");
+            System.out.print("Time to grow up: 25 weeks");
             // sell and buy #2
             System.out.println("");
             System.out.print("3. Small Horse: " + smallHorseBUY);
             System.out.print("                                   ");
             System.out.print("4. Small Horse: " + smallHorseSELL);
-
+            System.out.print("                                    ");
+            System.out.print("Time to grow up: 15 weeks");
             // sell and buy #3
             System.out.println("");
             System.out.print("5. Small Rabbit: " + smallRabbitBUY);
             System.out.print("                                  ");
             System.out.print("6. Small Rabbit: " + smallRabbitSELL);
-
+            System.out.print("                                   ");
+            System.out.print("Time to grow up: 13 weeks");
             // sell and buy #4
             System.out.println("");
             System.out.print("7. Small Chicken: " + smallChickenBUY);
             System.out.print("                                 ");
             System.out.print("8. Small Chicken: " + smallChickenSELL);
-
+            System.out.print("                                  ");
+            System.out.print("Time to grow up: 20 weeks");
             // sell and buy #5
             System.out.println("");
             System.out.print("9. Small Dog: " + smallDogBUY);
             System.out.print("                                     ");
             System.out.print("10. Small Dog: " + smallDogSELL);
-
+            System.out.print("                                     ");
+            System.out.print("Time to grow up: 10 weeks");
             System.out.println("");
-            System.out.println("    ------------------------------------------------------   ");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
             // sell and buy #6
@@ -803,7 +818,7 @@ public class Market {
 
 
             System.out.println("");
-            System.out.println("    ------------------------------------------------------   ");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
 
 
             // sell and buy #10
@@ -811,33 +826,39 @@ public class Market {
             System.out.print("19. Big Cow: " + bigCowBUY);
             System.out.print("                                     ");
             System.out.print("20. Big Cow: " + bigCowSELL);
-
+            System.out.print("                                     ");
+            System.out.print("Chance to reproduce 30%");
             // sell and buy #11
             System.out.println("");
             System.out.print("21. Big Horse: " + bigHorseBUY);
             System.out.print("                                   ");
             System.out.print("22. Big Horse: " + bigHorseSELL);
-
+            System.out.print("                                    ");
+            System.out.print("Chance to reproduce 20%");
             // sell and buy #12
             System.out.println("");
             System.out.print("23. Big Rabbit: " + bigRabbitBUY);
             System.out.print("                                  ");
             System.out.print("24. Big Rabbit: " + bigRabbitSELL);
-
+            System.out.print("                                   ");
+            System.out.print("Chance to reproduce 60%");
             // sell and buy #13
             System.out.println("");
             System.out.print("25. Big Chicken: " + bigChickenBUY);
             System.out.print("                                 ");
             System.out.print("26. Big Chicken: " + bigChickenSELL);
-
+            System.out.print("                                  ");
+            System.out.print("Chance to reproduce 40%");
             // sell and buy #14
             System.out.println("");
             System.out.print("27. Big Dog: " + bigDogBUY);
             System.out.print("                                      ");
             System.out.print("28. Big Dog: " + bigDogSELL);
-
+            System.out.print("                                      ");
+            System.out.print("Chance to reproduce 40%");
             System.out.println("");
-            System.out.println("    ------------------------------------------------------   ");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
+
 
 
             // sell and buy #16
@@ -848,10 +869,10 @@ public class Market {
 
 
 
-            System.out.println("");
-            System.out.println("*************************************************************");
-            System.out.println("0. Exit Marketplace");
 
+            System.out.println("");
+            System.out.println("**************************************************************************************************************************");
+            System.out.println("0. Exit Marketplace");
             alreadyOpenShop = true;
 
 

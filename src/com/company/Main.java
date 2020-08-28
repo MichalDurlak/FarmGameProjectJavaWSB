@@ -116,55 +116,55 @@ public class Main {
 
 //buy
                     if(gettempsmallCowAnimal()==1){
-                        int smallCowTimeGrowUp = 2;
+                        int smallCowTimeGrowUp = 25;
                         player.smallCowAnimal.add(smallCowTimeGrowUp);
                         player.animalsMaxSize -=1;
 //                        for ( int j=0; j<player.smallCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallCowAnimal.get(j) );
 
                     }
                     else if(gettempsmallChickenAnimal()==1){
-                        int smallChickenTimeGrowUp = 2;
+                        int smallChickenTimeGrowUp = 20;
                         player.smallChickenAnimal.add(smallChickenTimeGrowUp);
                         player.animalsMaxSize -=1;
 
                     }
                     else if(gettempsmallHorseAnimal()==1){
-                        int smallHorseTimeGrowUp = 2;
+                        int smallHorseTimeGrowUp = 15;
                         player.smallHorseAnimal.add(smallHorseTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempsmallDogAnimal()==1){
-                        int smallDogTimeGrowUp = 2;
+                        int smallDogTimeGrowUp = 10;
                         player.smallDogAnimal.add(smallDogTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempsmallRabbitAnimal()==1){
-                        int smallRabbitTimeGrowUp = 2;
+                        int smallRabbitTimeGrowUp = 13;
                         player.smallRabbitAnimal.add(smallRabbitTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempbigChickenAnimal()==1){
-                        int bigChickenTimeGrowUp = 2;
+                        int bigChickenTimeGrowUp = 20;
                         player.bigChickenAnimal.add(bigChickenTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempbigDogAnimal()==1){
-                        int bigDogTimeGrowUp = 2;
+                        int bigDogTimeGrowUp = 10;
                         player.bigDogAnimal.add(bigDogTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempbigCowAnimal()==1){
-                        int bigCowTimeGrowUp = 2;
+                        int bigCowTimeGrowUp = 25;
                         player.bigCowAnimal.add(bigCowTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempbigHorseAnimal()==1){
-                        int bigHorseTimeGrowUp = 2;
+                        int bigHorseTimeGrowUp = 15;
                         player.bigHorseAnimal.add(bigHorseTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
                     else if(gettempbigRabbitsAnimal()==1){
-                        int bigRabbitsTimeGrowUp = 2;
+                        int bigRabbitsTimeGrowUp = 13;
                         player.bigRabbitAnimal.add(bigRabbitsTimeGrowUp);
                         player.animalsMaxSize -=1;
                     }
@@ -377,38 +377,38 @@ public class Main {
                         player.setCash(player.getCash()+tempmoneyformilk+tempmoneyforegg);
 
             // rozmnazanie zwierzat
-                        if (player.bigChickenAnimal.size()>2){
+                        if (player.bigChickenAnimal.size()>=2){
                             int chanceForduplicateAnimal = 0;
                             chanceForduplicateAnimal = random.nextInt(1, 10);
-                            if (chanceForduplicateAnimal==6){
+                            if (chanceForduplicateAnimal<=4){
                                 player.bigChickenAnimal.add(player.bigChickenAnimal.size()+1);
                             }
                         }
-                        if (player.bigDogAnimal.size()>2){
+                        if (player.bigDogAnimal.size()>=2){
                             int chanceForduplicateAnimal = 0;
                             chanceForduplicateAnimal = random.nextInt(1, 10);
-                            if (chanceForduplicateAnimal==6){
+                            if (chanceForduplicateAnimal<=4){
                                 player.bigDogAnimal.add(player.bigDogAnimal.size()+1);
                             }
                         }
-                        if (player.bigCowAnimal.size()>2){
+                        if (player.bigCowAnimal.size()>=2){
                             int chanceForduplicateAnimal = 0;
                             chanceForduplicateAnimal = random.nextInt(1, 10);
-                            if (chanceForduplicateAnimal==6){
+                            if (chanceForduplicateAnimal<=3){
                                 player.bigCowAnimal.add(player.bigCowAnimal.size()+1);
                             }
                         }
-                        if (player.bigRabbitAnimal.size()>2){
+                        if (player.bigRabbitAnimal.size()>=2){
                             int chanceForduplicateAnimal = 0;
                             chanceForduplicateAnimal = random.nextInt(1, 10);
-                            if (chanceForduplicateAnimal==6){
+                            if (chanceForduplicateAnimal<=6){
                                 player.bigRabbitAnimal.add(player.bigRabbitAnimal.size()+1);
                             }
                         }
-                        if (player.bigHorseAnimal.size()>2){
+                        if (player.bigHorseAnimal.size()>=2){
                             int chanceForduplicateAnimal = 0;
                             chanceForduplicateAnimal = random.nextInt(1, 10);
-                            if (chanceForduplicateAnimal==6){
+                            if (chanceForduplicateAnimal<=2){
                                 player.bigHorseAnimal.add(player.bigHorseAnimal.size()+1);
                             }
                         }
@@ -550,11 +550,11 @@ public class Main {
 
 
  // Check wieku jesli 0 to dopisz do bigcowanimal
-                    for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){if(player.smallChickenAnimal.get(j) == 0){player.bigChickenAnimal.add(2);}}
-                    for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if(player.smallDogAnimal.get(j) == 0){player.bigDogAnimal.add(2);}}
-                    for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if(player.smallCowAnimal.get(j) == 0){player.bigCowAnimal.add(2);}}
-                    for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if(player.smallHorseAnimal.get(j) == 0){player.bigHorseAnimal.add(2);}}
-                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.bigRabbitAnimal.add(2);}}
+                    for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){if(player.smallChickenAnimal.get(j) == 0){player.bigChickenAnimal.add(20);}}
+                    for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if(player.smallDogAnimal.get(j) == 0){player.bigDogAnimal.add(10);}}
+                    for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if(player.smallCowAnimal.get(j) == 0){player.bigCowAnimal.add(25);}}
+                    for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if(player.smallHorseAnimal.get(j) == 0){player.bigHorseAnimal.add(15);}}
+                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.bigRabbitAnimal.add(13);}}
 // jesli 0 usun z array
                     for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){if (player.smallChickenAnimal.get(j) == 0) {player.smallChickenAnimal.remove(j);}}
                     for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if (player.smallDogAnimal.get(j) == 0) {player.smallDogAnimal.remove(j);}}

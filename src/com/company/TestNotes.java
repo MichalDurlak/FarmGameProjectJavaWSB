@@ -113,4 +113,138 @@ public class TestNotes {
 
 
 // title = stage 22 - end for 27.08 // 15:30
+
+
+
+    /*
+smallChickenAnimal.size()
+smallDogAnimal.size()
+smallCowAnimal.size()
+smallHorseAnimal.size()
+smallRabbitAnimal.size()
+
+bigChickenAnimal.size()
+bigDogAnimal.size()
+bigCowAnimal.size()
+bigHorseAnimal.size()
+bigRabbitAnimal.size()
+
+
+
+
+                if (noFoodNoAnimal > tempsizeofanimals) {
+                noFoodNoAnimaltemp = tempsizeofanimals;
+
+                if (noFoodNoAnimaltemp > 0) {
+                    if (smallChickenAnimal.size() > 0 || bigChickenAnimal.size() > 0) {
+                        smallChickenAnimal.remove(smallChickenAnimal.size() - 1);
+                        noFoodNoAnimaltemp -= 1;
+                        animals -= 1;
+                        animalsMaxSize += 1;
+                    } else {
+
+                        if (smallDogAnimal.size() > 0 || bigDogAnimal.size() > 0) {
+                            smallDogAnimal.remove(smallDogAnimal.size() - 1);
+                            noFoodNoAnimaltemp -= 1;
+                            animals -= 1;
+                            animalsMaxSize += 1;
+
+                        } else {
+
+                            if (smallCowAnimal.size() >= 0 || bigCowAnimal.size() >= 0) {
+                                smallCowAnimal.remove(smallCowAnimal.size() - 1);
+                                noFoodNoAnimaltemp -= 1;
+                                animals -= 1;
+                                animalsMaxSize += 1;
+
+                            } else {
+
+                                if (smallRabbitAnimal.size() >= 0 || bigRabbitAnimal.size() >= 0) {
+                                    smallRabbitAnimal.remove(smallRabbitAnimal.size() - 1);
+                                    noFoodNoAnimaltemp -= 1;
+                                    animals -= 1;
+                                    animalsMaxSize += 1;
+
+                                } else {
+                                    return;
+                                }
+                                return;
+                            }
+                            return;
+                        }
+                        return;
+                    }
+
+                } else {
+                    return;
+
+                }
+
+            } else {
+                this.noFoodNoAnimaltemp = noFoodNoAnimal;
+                if (noFoodNoAnimaltemp > 0) {
+                    if (smallChickenAnimal.size() > 0 || bigChickenAnimal.size() > 0) {
+                        smallChickenAnimal.remove(smallChickenAnimal.size() - 1);
+                        noFoodNoAnimaltemp -= 1;
+                        animals -= 1;
+                        animalsMaxSize += 1;
+
+                    } else {
+
+                        if (smallDogAnimal.size() > 0 || bigDogAnimal.size() > 0) {
+                            smallDogAnimal.remove(smallDogAnimal.size() - 1);
+                            noFoodNoAnimaltemp -= 1;
+                            animals -= 1;
+                            animalsMaxSize += 1;
+
+                        } else {
+
+                            if (smallCowAnimal.size() >= 0 || bigCowAnimal.size() >= 0) {
+                                smallCowAnimal.remove(smallCowAnimal.size() - 1);
+                                noFoodNoAnimaltemp -= 1;
+                                animals -= 1;
+                                animalsMaxSize += 1;
+
+                            } else {
+
+                                if (smallRabbitAnimal.size() >= 0 || bigRabbitAnimal.size() >= 0) {
+                                    smallRabbitAnimal.remove(smallRabbitAnimal.size() - 1);
+                                    noFoodNoAnimaltemp -= 1;
+                                    animals -= 1;
+                                    animalsMaxSize += 1;
+
+                                } else {
+                                    return;
+                                }
+                                return;
+                            }
+                            return;
+                        }
+                        return;
+                    }
+
+                } else {
+                    return;
+
+
+                }
+
+            }
+
+
+//
+            //noFoodNoAnimaltemp
+            //noFoodNoAnimal
+
+
+        } else {
+            foodForAnimals -=foodUsage;
+        }
+
+
+
+
+
+
+     */
 }

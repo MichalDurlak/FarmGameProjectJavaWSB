@@ -81,6 +81,13 @@ public class BuildBuildings {
 
     public static int buildBuildings(int cash, int tempPlayerMaxSizeBuildings){
 
+//        System.out.println("XYZ: "+tempPlayerMaxSizeBuildings);
+
+//        if (tempPlayerMaxSizeBuildings == 1){
+//            tempPlayerMaxSizeBuildings =1;
+//            System.out.println("zmiana: "+tempPlayerMaxSizeBuildings);
+//        }
+
         tempPriceBuilding = 0;
         tempSizeofCowshed = 0;
         tempSizeofStorage = 0;
@@ -100,17 +107,15 @@ public class BuildBuildings {
 
                 System.out.println("-------------------------------------------------------------------------------");
 
-                System.out.println("11. Small Cowshed: " + small1StorageBUY + ". Max animal: " + MAXsmall1StorageBUY + ". Size needed: "+Sizesmall1StorageBUY);
-                System.out.println("12. Small Cowshed: " + small2StorageBUY + ". Max animal: " + MAXsmall2StorageBUY + ". Size needed: "+Sizesmall2StorageBUY);
-                System.out.println("13. Small Cowshed: " + small3StorageBUY + ". Max animal: " + MAXsmall3StorageBUY + ". Size needed: "+Sizesmall3StorageBUY);
-                System.out.println("14. Medium Cowshed: " + medium1StorageBUY + ". Max animal: " + MAXmedium1StorageBUY + ". Size needed: "+Sizemedium1StorageBUY);
-                System.out.println("15. Medium Cowshed: " + medium2StorageBUY + ". Max animal: " + MAXmedium2StorageBUY + ". Size needed: "+Sizemedium2StorageBUY);
-                System.out.println("16. Big Cowshed: " + big1StorageBUY + ". Max animal: " + MAXbig1StorageBUY + ". Size needed: "+Sizebig1StorageBUY);
-                System.out.println("17. Big Cowshed: " + big2StorageBUY + ". Max animal: " + MAXbig2StorageBUY + ". Size needed: "+Sizebig2StorageBUY);
+                System.out.println("11. Small Storage: " + small1StorageBUY + ". Max food storage: " + MAXsmall1StorageBUY + ". Size needed: "+Sizesmall1StorageBUY);
+                System.out.println("12. Small Storage: " + small2StorageBUY + ". Max food storage: " + MAXsmall2StorageBUY + ". Size needed: "+Sizesmall2StorageBUY);
+                System.out.println("13. Small Storage: " + small3StorageBUY + ". Max food storage: " + MAXsmall3StorageBUY + ". Size needed: "+Sizesmall3StorageBUY);
+                System.out.println("14. Medium Storage: " + medium1StorageBUY + ". Max food storage: " + MAXmedium1StorageBUY + ". Size needed: "+Sizemedium1StorageBUY);
+                System.out.println("15. Medium Storage: " + medium2StorageBUY + ". Max food storage: " + MAXmedium2StorageBUY + ". Size needed: "+Sizemedium2StorageBUY);
+                System.out.println("16. Big Storage: " + big1StorageBUY + ". Max food storage: " + MAXbig1StorageBUY + ". Size needed: "+Sizebig1StorageBUY);
+                System.out.println("17. Big Storage: " + big2StorageBUY + ". Max food storage: " + MAXbig2StorageBUY + ". Size needed: "+Sizebig2StorageBUY);
                 System.out.println();
-
                 System.out.println("0. Exit");
-
 
                 System.out.println("I chose number: ");
                 Scanner in = new Scanner(System.in);
@@ -281,16 +286,16 @@ public class BuildBuildings {
 
                 else if (choose == 11) {
 
-                    if (cash > small1CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizesmall1CowshedBUY){
+                    if (cash > small1StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizesmall1StorageBUY){
                             System.out.println("You build it.");
-                            tempPriceBuilding += small1CowshedBUY;
-                            tempSizeofCowshed += MAXsmall1CowshedBUY;
-                            tempMaxSizeBuildings +=Sizesmall1CowshedBUY;
+                            tempPriceBuilding += small1StorageBUY;
+                            tempSizeofStorage += MAXsmall1StorageBUY;
+                            tempMaxSizeBuildings +=Sizesmall1StorageBUY;
 
-                            small1CowshedBUY = 0;
-                            MAXsmall1CowshedBUY = 0;
-                            Sizesmall1CowshedBUY = 0;
+                            small1StorageBUY = 0;
+                            MAXsmall1StorageBUY = 0;
+                            Sizesmall1StorageBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -304,16 +309,16 @@ public class BuildBuildings {
 
                 else if (choose == 12) {
 
-                    if (cash > small2CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizesmall2CowshedBUY){
+                    if (cash > small2StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizesmall2StorageBUY){
                             System.out.println("You build it.");
-                            tempPriceBuilding += small2CowshedBUY;
-                            tempSizeofCowshed += MAXsmall2CowshedBUY;
-                            tempMaxSizeBuildings +=Sizesmall2CowshedBUY;
+                            tempPriceBuilding += small2StorageBUY;
+                            tempSizeofStorage += MAXsmall2StorageBUY;
+                            tempMaxSizeBuildings +=Sizesmall2StorageBUY;
 
-                            small2CowshedBUY = 0;
-                            MAXsmall2CowshedBUY = 0;
-                            Sizesmall2CowshedBUY= 0;
+                            small2StorageBUY = 0;
+                            MAXsmall2StorageBUY = 0;
+                            Sizesmall2StorageBUY= 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -327,16 +332,16 @@ public class BuildBuildings {
 
                 else if (choose == 13) {
 
-                    if (cash > small3CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizesmall3CowshedBUY){
-                            System.out.println("You build cowshed");
-                            tempPriceBuilding += small3CowshedBUY;
-                            tempSizeofCowshed += MAXsmall3CowshedBUY;
-                            tempMaxSizeBuildings +=Sizesmall3CowshedBUY;
+                    if (cash > small3StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizesmall3StorageBUY){
+                            System.out.println("You build Storage");
+                            tempPriceBuilding += small3StorageBUY;
+                            tempSizeofStorage += MAXsmall3StorageBUY;
+                            tempMaxSizeBuildings +=Sizesmall3StorageBUY;
 
-                            small3CowshedBUY = 0;
-                            MAXsmall3CowshedBUY = 0;
-                            Sizesmall3CowshedBUY= 0;
+                            small3StorageBUY = 0;
+                            MAXsmall3StorageBUY = 0;
+                            Sizesmall3StorageBUY= 0;
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
 
@@ -350,16 +355,16 @@ public class BuildBuildings {
 
                 else if (choose == 14) {
 
-                    if (cash > medium1CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizemedium1CowshedBUY){
+                    if (cash > medium1StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizemedium1StorageBUY){
                             System.out.println("You build it.");
-                            tempPriceBuilding += medium1CowshedBUY;
-                            tempSizeofCowshed += MAXmedium1CowshedBUY;
-                            tempMaxSizeBuildings +=Sizemedium1CowshedBUY;
+                            tempPriceBuilding += medium1StorageBUY;
+                            tempSizeofStorage += MAXmedium1StorageBUY;
+                            tempMaxSizeBuildings +=Sizemedium1StorageBUY;
 
-                            medium1CowshedBUY = 0;
-                            MAXmedium1CowshedBUY = 0;
-                            Sizemedium1CowshedBUY = 0;
+                            medium1StorageBUY = 0;
+                            MAXmedium1StorageBUY = 0;
+                            Sizemedium1StorageBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -373,16 +378,16 @@ public class BuildBuildings {
 
                 else if (choose == 15) {
 
-                    if (cash > medium2CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizemedium2CowshedBUY){
+                    if (cash > medium2StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizemedium2StorageBUY){
                             System.out.println("You build it.");
-                            tempPriceBuilding += medium2CowshedBUY;
-                            tempSizeofCowshed += MAXmedium2CowshedBUY;
-                            tempMaxSizeBuildings +=Sizemedium2CowshedBUY;
+                            tempPriceBuilding += medium2StorageBUY;
+                            tempSizeofStorage += MAXmedium2StorageBUY;
+                            tempMaxSizeBuildings +=Sizemedium2StorageBUY;
 
-                            medium2CowshedBUY = 0;
-                            MAXmedium2CowshedBUY = 0;
-                            Sizemedium2CowshedBUY = 0;
+                            medium2StorageBUY = 0;
+                            MAXmedium2StorageBUY = 0;
+                            Sizemedium2StorageBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -396,16 +401,16 @@ public class BuildBuildings {
 
                 else if (choose == 16) {
 
-                    if (cash > big1CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizebig1CowshedBUY){
+                    if (cash > big1StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizebig1StorageBUY){
                             System.out.println("You build it.");
-                            tempPriceBuilding += big1CowshedBUY;
-                            tempSizeofCowshed += MAXbig1CowshedBUY;
-                            tempMaxSizeBuildings +=Sizebig1CowshedBUY;
+                            tempPriceBuilding += big1StorageBUY;
+                            tempSizeofStorage += MAXbig1StorageBUY;
+                            tempMaxSizeBuildings +=Sizebig1StorageBUY;
 
-                            big1CowshedBUY = 0;
-                            MAXbig1CowshedBUY = 0;
-                            Sizebig1CowshedBUY = 0;
+                            big1StorageBUY = 0;
+                            MAXbig1StorageBUY = 0;
+                            Sizebig1StorageBUY = 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");
@@ -419,16 +424,16 @@ public class BuildBuildings {
 
                 else if (choose == 17) {
 
-                    if (cash > big2CowshedBUY){
-                        if (tempPlayerMaxSizeBuildings >= Sizebig2CowshedBUY){
+                    if (cash > big2StorageBUY){
+                        if (tempPlayerMaxSizeBuildings >= Sizebig2StorageBUY){
                             System.out.println("You build it.");
-                            tempPriceBuilding += big2CowshedBUY;
-                            tempSizeofCowshed += MAXbig2CowshedBUY;
-                            tempMaxSizeBuildings +=Sizebig2CowshedBUY;
+                            tempPriceBuilding += big2StorageBUY;
+                            tempSizeofStorage += MAXbig2StorageBUY;
+                            tempMaxSizeBuildings +=Sizebig2StorageBUY;
 
-                            big2CowshedBUY = 0;
-                            MAXbig2CowshedBUY = 0;
-                            Sizebig2CowshedBUY= 0;
+                            big2StorageBUY = 0;
+                            MAXbig2StorageBUY = 0;
+                            Sizebig2StorageBUY= 0;
 
                         } else {
                             System.out.println("You cant build, because you dont have enough place for this.");

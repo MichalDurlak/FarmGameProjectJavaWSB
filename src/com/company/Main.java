@@ -321,7 +321,9 @@ public class Main {
 
                 case 9:
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
+                    // zabieranie jedzenia
                     player.animalsEatFood(player.getfoodForWeek());
+
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;
                         numberOfYear = numberOfYear +1;
@@ -559,6 +561,12 @@ public class Main {
                     for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if (player.smallCowAnimal.get(j) == 0) {player.smallCowAnimal.remove(j);}}
                     for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if (player.smallHorseAnimal.get(j) == 0) {player.smallHorseAnimal.remove(j);}}
                     for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.smallRabbitAnimal.remove(j);}}
+
+
+
+
+
+
                     break;
 
 
@@ -577,6 +585,23 @@ public class Main {
 
                     System.out.println("     ****************************************");
                     System.out.println();
+                    break;
+                case 98:
+                    System.out.println(player.noFoodNoAnimal);
+                    player.foodForAnimals = 10000;
+
+                    break;
+                case 99:
+                    System.out.println("new stats");
+                    player.setCash(100000000);
+                    player.maxStorageFoodForAnimals = 10000;
+                    player.buildingsMaxSize = 1000;
+                    player.animalsMaxSize = 1000;
+
+                    //
+                    player.foodForAnimals = 5;
+
+                    //
                     break;
             }
 

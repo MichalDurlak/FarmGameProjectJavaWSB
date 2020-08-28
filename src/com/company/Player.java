@@ -18,6 +18,7 @@ public class Player {
     private int foodForWeek, foodForYear;
 
     public int buildingsMaxSize, animalsMaxSize, seedsMaxSize;
+    public int noFoodNoAnimal, noFoodNoAnimaltemp;
 
     int chickenEndSize;
     int dogEndSize;
@@ -61,12 +62,13 @@ public class Player {
         this.cornSeedsPlayer = 0;
         this.potatoSeedsPlayer = 0;
 
-        this.chickenEndSize =0;
-        this.dogEndSize =0;
-        this.cowEndSize =0;
-        this.horseEndSize =0;
-        this.rabbitEndSize =0;
+        this.chickenEndSize = 0;
+        this.dogEndSize = 0;
+        this.cowEndSize = 0;
+        this.horseEndSize = 0;
+        this.rabbitEndSize = 0;
 
+        this.noFoodNoAnimal = 0;
     }
 
 
@@ -196,100 +198,393 @@ public class Player {
 
 
     public void setFoodForWeek(int foodsmallChickenAnimal, int foodsmallDogAnimal, int foodsmallCowAnimal, int foodsmallHorseAnimal, int foodsmallRabbitAnimal, int foodbigChickenAnimal, int foodbigDogAnimal, int foodbigCowAnimal, int foodbigHorseAnimal, int foodbigRabbitsAnimal) {
-        int finalFoodForWeek =0;
-        int finalFoodForYear =0;
+        int finalFoodForWeek = 0;
+        int finalFoodForYear = 0;
 
-        int foodForsmallchickens = 5*foodsmallChickenAnimal;
-        int foodForsmalldogs = 5*foodsmallDogAnimal;
-        int foodForsmallcows = 5*foodsmallCowAnimal;
-        int foodForsmallhorses = 5*foodsmallHorseAnimal;
-        int foodForsmallrabbits = 5*foodsmallRabbitAnimal;
-        int foodForbigchickens = 5*foodbigChickenAnimal;
-        int foodForbigdogs = 5*foodbigDogAnimal;
-        int foodForbigcows =5*foodbigCowAnimal;
-        int foodForbighorses = 5*foodbigHorseAnimal;
-        int foodForbigrabbits = 5*foodbigRabbitsAnimal;
+        int foodForsmallchickens = 5 * foodsmallChickenAnimal;
+        int foodForsmalldogs = 5 * foodsmallDogAnimal;
+        int foodForsmallcows = 5 * foodsmallCowAnimal;
+        int foodForsmallhorses = 5 * foodsmallHorseAnimal;
+        int foodForsmallrabbits = 5 * foodsmallRabbitAnimal;
+        int foodForbigchickens = 5 * foodbigChickenAnimal;
+        int foodForbigdogs = 5 * foodbigDogAnimal;
+        int foodForbigcows = 5 * foodbigCowAnimal;
+        int foodForbighorses = 5 * foodbigHorseAnimal;
+        int foodForbigrabbits = 5 * foodbigRabbitsAnimal;
 
-        finalFoodForWeek = foodForsmallchickens+foodForsmalldogs+foodForsmallcows+foodForsmallhorses+foodForsmallrabbits+foodForbigchickens+foodForbigdogs+foodForbigcows+foodForbighorses+foodForbigrabbits;
+        finalFoodForWeek = foodForsmallchickens + foodForsmalldogs + foodForsmallcows + foodForsmallhorses + foodForsmallrabbits + foodForbigchickens + foodForbigdogs + foodForbigcows + foodForbighorses + foodForbigrabbits;
 
         this.foodForWeek = finalFoodForWeek;
 
-        finalFoodForYear = finalFoodForWeek*52;
+        finalFoodForYear = finalFoodForWeek * 52;
         this.foodForYear = finalFoodForYear;
 
 
     }
 
-    public int getfoodForWeek() { return foodForWeek; }
+    public int getfoodForWeek() {
+        return foodForWeek;
+    }
 
 
-    public int getFoodForYear() { return foodForYear; }
+    public int getFoodForYear() {
+        return foodForYear;
+    }
 
 
-    public void countAnimals(){
-        if (this.chickenEndSize==0){
-            if (smallChickenAnimal.size()>0||bigChickenAnimal.size()>0) {
+    public void countAnimals() {
+        if (this.chickenEndSize == 0) {
+            if (smallChickenAnimal.size() > 0 || bigChickenAnimal.size() > 0) {
                 this.chickenEndSize += 1;
             }
-        } else if (this.chickenEndSize==1){
-            if (smallChickenAnimal.size()<=0 && bigChickenAnimal.size()<=0) {
+        } else if (this.chickenEndSize == 1) {
+            if (smallChickenAnimal.size() <= 0 && bigChickenAnimal.size() <= 0) {
                 this.chickenEndSize -= 1;
             }
         }
 
-        if (this.dogEndSize==0){
-            if (smallDogAnimal.size()>0||bigDogAnimal.size() >0){
-                this.dogEndSize+=1;
+        if (this.dogEndSize == 0) {
+            if (smallDogAnimal.size() > 0 || bigDogAnimal.size() > 0) {
+                this.dogEndSize += 1;
             }
-        } else if (this.dogEndSize==1){
-            if (smallDogAnimal.size()<=0 && bigDogAnimal.size()<=0){
-                this.dogEndSize-=1;
-            }
-        }
-
-        if (this.cowEndSize==0){
-            if (smallCowAnimal.size()>0||bigCowAnimal.size()>0){
-                this.cowEndSize+=1;
-            }
-        } else if (this.cowEndSize==1){
-            if (smallCowAnimal.size()<=0 && bigCowAnimal.size()<=0){
-                this.cowEndSize-=1;
+        } else if (this.dogEndSize == 1) {
+            if (smallDogAnimal.size() <= 0 && bigDogAnimal.size() <= 0) {
+                this.dogEndSize -= 1;
             }
         }
 
-        if (this.horseEndSize==0){
-            if (smallHorseAnimal.size()>0||bigHorseAnimal.size()>0){
-                this.horseEndSize +=1;
+        if (this.cowEndSize == 0) {
+            if (smallCowAnimal.size() > 0 || bigCowAnimal.size() > 0) {
+                this.cowEndSize += 1;
             }
-        } else if (this.horseEndSize==1){
-            if (smallHorseAnimal.size()<=0 && bigHorseAnimal.size()<=0){
-                this.horseEndSize -=1;
+        } else if (this.cowEndSize == 1) {
+            if (smallCowAnimal.size() <= 0 && bigCowAnimal.size() <= 0) {
+                this.cowEndSize -= 1;
             }
         }
 
-        if (this.rabbitEndSize==0){
-            if (smallRabbitAnimal.size()>0||bigRabbitAnimal.size()>0){
-                this.rabbitEndSize +=1;
+        if (this.horseEndSize == 0) {
+            if (smallHorseAnimal.size() > 0 || bigHorseAnimal.size() > 0) {
+                this.horseEndSize += 1;
             }
-        } else if (this.horseEndSize==1){
-            if (smallRabbitAnimal.size()<=0 && bigRabbitAnimal.size()<=0){
-                this.rabbitEndSize -=1;
+        } else if (this.horseEndSize == 1) {
+            if (smallHorseAnimal.size() <= 0 && bigHorseAnimal.size() <= 0) {
+                this.horseEndSize -= 1;
+            }
+        }
+
+        if (this.rabbitEndSize == 0) {
+            if (smallRabbitAnimal.size() > 0 || bigRabbitAnimal.size() > 0) {
+                this.rabbitEndSize += 1;
+            }
+        } else if (this.horseEndSize == 1) {
+            if (smallRabbitAnimal.size() <= 0 && bigRabbitAnimal.size() <= 0) {
+                this.rabbitEndSize -= 1;
             }
         }
     }
 
-public void animalsEatFood(int foodUsage){
+    public void animalsEatFood(int foodUsage) {
 
-        if (foodUsage > foodForAnimals){
 
-        } else {
-            this.foodForAnimals -= foodUsage;
+
+        if (foodUsage <= foodForAnimals) {
+            foodForAnimals -= foodUsage;
+
+            if (this.noFoodNoAnimal > 0 ){
+
+                this.noFoodNoAnimal -= 1;
+
+            } else {
+
+                return;
+            }
+        }
+
+        else {
+
+            this.noFoodNoAnimal+=1;
+            int tempsizeofanimals = smallCowAnimal.size() + bigChickenAnimal.size() + smallDogAnimal.size() + bigDogAnimal.size() + smallCowAnimal.size() + bigCowAnimal.size() + smallHorseAnimal.size() + bigHorseAnimal.size() + smallRabbitAnimal.size() + bigRabbitAnimal.size();
+
+
+            if (this.noFoodNoAnimal <= tempsizeofanimals){
+
+                for ( int j=0; j<this.noFoodNoAnimal; j++){
+                    // start
+
+
+                    if (smallChickenAnimal.size() > 0){
+
+                        smallChickenAnimal.remove(smallChickenAnimal.size() - 1);
+                        noFoodNoAnimaltemp -= 1;
+                        animals -= 1;
+                        animalsMaxSize += 1;
+
+
+                    } else {
+
+
+                        if (bigChickenAnimal.size()>0){
+                            bigChickenAnimal.remove(bigChickenAnimal.size() - 1);
+                            noFoodNoAnimaltemp -= 1;
+                            animals -= 1;
+                            animalsMaxSize += 1;
+
+                        } else {
+
+                            if (smallDogAnimal.size()>0) {
+                                smallDogAnimal.remove(smallDogAnimal.size() - 1);
+                                noFoodNoAnimaltemp -= 1;
+                                animals -= 1;
+                                animalsMaxSize += 1;
+
+                            }else{
+
+                                if (bigDogAnimal.size()>0) {
+                                    bigDogAnimal.remove(bigDogAnimal.size() - 1);
+                                    noFoodNoAnimaltemp -= 1;
+                                    animals -= 1;
+                                    animalsMaxSize += 1;
+
+                                } else{
+
+                                    if (smallCowAnimal.size()>0) {
+                                        smallCowAnimal.remove(smallCowAnimal.size() - 1);
+                                        noFoodNoAnimaltemp -= 1;
+                                        animals -= 1;
+                                        animalsMaxSize += 1;
+
+                                    } else {
+
+                                        if (bigCowAnimal.size()>0) {
+                                            bigCowAnimal.remove(bigCowAnimal.size() - 1);
+                                            noFoodNoAnimaltemp -= 1;
+                                            animals -= 1;
+                                            animalsMaxSize += 1;
+
+                                        } else {
+
+                                            if (smallHorseAnimal.size()>0) {
+                                                smallHorseAnimal.remove(smallHorseAnimal.size() - 1);
+                                                noFoodNoAnimaltemp -= 1;
+                                                animals -= 1;
+                                                animalsMaxSize += 1;
+
+                                            } else {
+
+                                                if (bigHorseAnimal.size()>0) {
+                                                    bigHorseAnimal.remove(bigHorseAnimal.size() - 1);
+                                                    noFoodNoAnimaltemp -= 1;
+                                                    animals -= 1;
+                                                    animalsMaxSize += 1;
+
+                                                } else {
+
+                                                    if (smallRabbitAnimal.size()>0) {
+                                                        smallRabbitAnimal.remove(smallRabbitAnimal.size() - 1);
+                                                        noFoodNoAnimaltemp -= 1;
+                                                        animals -= 1;
+                                                        animalsMaxSize += 1;
+
+                                                    } else {
+                                                        if (bigRabbitAnimal.size()>0) {
+                                                            bigRabbitAnimal.remove(bigRabbitAnimal.size() - 1);
+                                                            noFoodNoAnimaltemp -= 1;
+                                                            animals -= 1;
+                                                            animalsMaxSize += 1;
+
+                                                        } else{
+
+                                                            return;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                    }
+                                }
+
+                            }
+
+                        }
+
+
+
+                    }
+
+
+                    // stop
+
+
+                }
+
+
+            }
+
+
+
+
+            else {
+
+
+
+                noFoodNoAnimaltemp=tempsizeofanimals;
+                for ( int j=0; j<noFoodNoAnimaltemp; j++){
+
+
+                    // wklej to co u gory
+
+                    // start
+
+                    if (smallChickenAnimal.size() > 0){
+
+                        smallChickenAnimal.remove(smallChickenAnimal.size() - 1);
+                        noFoodNoAnimaltemp -= 1;
+                        animals -= 1;
+                        animalsMaxSize += 1;
+
+                    } else {
+
+
+                        if (bigChickenAnimal.size()>0){
+                            bigChickenAnimal.remove(bigChickenAnimal.size() - 1);
+                            noFoodNoAnimaltemp -= 1;
+                            animals -= 1;
+                            animalsMaxSize += 1;
+
+                        } else {
+
+                            if (smallDogAnimal.size()>0) {
+                                smallDogAnimal.remove(smallDogAnimal.size() - 1);
+                                noFoodNoAnimaltemp -= 1;
+                                animals -= 1;
+                                animalsMaxSize += 1;
+
+                            }else{
+
+                                if (bigDogAnimal.size()>0) {
+                                    bigDogAnimal.remove(bigDogAnimal.size() - 1);
+                                    noFoodNoAnimaltemp -= 1;
+                                    animals -= 1;
+                                    animalsMaxSize += 1;
+
+                                } else{
+
+                                    if (smallCowAnimal.size()>0) {
+                                        smallCowAnimal.remove(smallCowAnimal.size() - 1);
+                                        noFoodNoAnimaltemp -= 1;
+                                        animals -= 1;
+                                        animalsMaxSize += 1;
+
+                                    } else {
+
+                                        if (bigCowAnimal.size()>0) {
+                                            bigCowAnimal.remove(bigCowAnimal.size() - 1);
+                                            noFoodNoAnimaltemp -= 1;
+                                            animals -= 1;
+                                            animalsMaxSize += 1;
+
+                                        } else {
+
+                                            if (smallHorseAnimal.size()>0) {
+                                                smallHorseAnimal.remove(smallHorseAnimal.size() - 1);
+                                                noFoodNoAnimaltemp -= 1;
+                                                animals -= 1;
+                                                animalsMaxSize += 1;
+
+                                            } else {
+
+                                                if (bigHorseAnimal.size()>0) {
+                                                    bigHorseAnimal.remove(bigHorseAnimal.size() - 1);
+                                                    noFoodNoAnimaltemp -= 1;
+                                                    animals -= 1;
+                                                    animalsMaxSize += 1;
+
+                                                } else {
+
+                                                    if (smallRabbitAnimal.size()>0) {
+                                                        smallRabbitAnimal.remove(smallRabbitAnimal.size() - 1);
+                                                        noFoodNoAnimaltemp -= 1;
+                                                        animals -= 1;
+                                                        animalsMaxSize += 1;
+
+                                                    } else {
+                                                        if (bigRabbitAnimal.size()>0) {
+                                                            bigRabbitAnimal.remove(bigRabbitAnimal.size() - 1);
+                                                            noFoodNoAnimaltemp -= 1;
+                                                            animals -= 1;
+                                                            animalsMaxSize += 1;
+
+                                                        } else{
+
+                                                            return;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                    }
+                                }
+
+                            }
+
+                        }
+
+
+
+                    }
+
+
+                    // stop
+
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
-}
 
-    //
+
+    }
 }
 
 

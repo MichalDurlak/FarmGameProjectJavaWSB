@@ -55,6 +55,10 @@ public class Market {
     static int animalTempNumber = 0;
     static int seedsTempNumber = 0;
 
+    static int potatoBUY = 0;
+    static int potatoSELL  = 0;
+    static int appleBUY  = 0;
+    static int appleSELL  = 0;
 
     //
     static int tempsmallChickenAnimal = 0;
@@ -76,9 +80,14 @@ public class Market {
     static int tempAppleTreeSeed= 0;
 
     static int tempFoodForAnimal=0;
+
+    static int tempPotato;
+    static int tempApple;
+
+
 //
 
-    public static int Marketplace(int cash, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed,int sizeAppleTreeSeed,int sizesmallRabbitAnimal,int sizebigRabbitsAnimal, int sizestorage, int actualfood) {
+    public static int Marketplace(int cash, int maxAnimalsThatCanBuy,int sizesmallChickenAnimal,int sizesmallDogAnimal,int sizesmallCowAnimal,int sizesmallHorseAnimal,int sizebigChickenAnimal,int sizebigDogAnimal,int sizebigCowAnimal,int sizebigHorseAnimal,int sizeWheatSeed,int sizeOatSeed,int sizeCornSeed,int sizePotatoSeed,int sizeAppleTreeSeed,int sizesmallRabbitAnimal,int sizebigRabbitsAnimal, int sizestorage, int actualfood, int actualPotato, int actualApple) {
 
 
 
@@ -106,6 +115,9 @@ public class Market {
             tempCornSeed= 0;
             tempPotatoSeed= 0;
             tempFoodForAnimal=0;
+
+            tempPotato =0;
+            tempApple =0;
 
 //
 
@@ -159,31 +171,31 @@ public class Market {
             System.out.print("                                   ");
             System.out.print("12. Wheat Seed: " + WheatSeedsSELL);
             System.out.print("                                      ");
-            System.out.print("One seed needs - 0.5 hectares to plant it");
+            System.out.print("One seed needs - 0.18 hectares to plant it / Time growing up - 40 weeks / it gives you 8 animal food");
 
             // sell and buy #7
             System.out.println("");
-            System.out.print("13. Wheat Oat: " + OatSeedsBUY);
+            System.out.print("13. Oat Seed: " + OatSeedsBUY);
             System.out.print("                                    ");
-            System.out.print("14. Wheat Oat: " + OatSeedsSELL);
+            System.out.print("14. Oat Seed: " + OatSeedsSELL);
             System.out.print("                                      ");
-            System.out.print("One seed needs - 0.5 hectares to plant it");
+            System.out.print("One seed needs - 0.25 hectares to plant it / Time growing up - 25 weeks / it gives you 15 animal food");
 
             // sell and buy #8
             System.out.println("");
-            System.out.print("15. Wheat Corn: " + CornSeedsBUY);
+            System.out.print("15. Corn Seed: " + CornSeedsBUY);
             System.out.print("                                   ");
-            System.out.print("16. Wheat Corn: " + CornSeedsSELL);
+            System.out.print("16. Corn Seed: " + CornSeedsSELL);
             System.out.print("                                    ");
-            System.out.print("One seed needs - 0.5 hectares to plant it");
+            System.out.print("One seed needs - 0.39 hectares to plant it / Time growing up - 60 weeks / it gives you 6 animal food");
 
             // sell and buy #9
             System.out.println("");
-            System.out.print("17. Wheat Potato: " + PotatoSeedsBUY);
+            System.out.print("17. Potato Seed: " + PotatoSeedsBUY);
             System.out.print("                                 ");
-            System.out.print("18. Wheat Potato: " + PotatoSeedsSELL);
+            System.out.print("18. Potato Seed: " + PotatoSeedsSELL);
             System.out.print("                                 ");
-            System.out.print("One seed needs - 0.5 hectares to plant it");
+            System.out.print("One seed needs - 0.15 hectares to plant it / Time growing up - 80 weeks / it gives you 4 potatoes");
 
             // sell and buy #10
             System.out.println("");
@@ -191,7 +203,7 @@ public class Market {
             System.out.print("                                ");
             System.out.print("20. Apple Tree Seed: " + AppleTreeSeedsSELL);
             System.out.print("                                ");
-            System.out.print("One seed needs - 0.5 hectares to plant it");
+            System.out.print("One seed needs - 0.54 hectares to plant it / Time growing up - 120 weeks / it gives you 15 apples");
 
             System.out.println("");
 
@@ -245,20 +257,33 @@ public class Market {
             System.out.print("                              ");
             System.out.print("32. Food For Animal: " + foodForAnimalSELL);
 
+            System.out.println("");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
+
+            // sell and buy #17
+            System.out.println("");
+            System.out.print("33. Potato: " + potatoBUY );
+            System.out.print("                              ");
+            System.out.print("34. Potato: " + potatoSELL );
+
+            // sell and buy #18
+            System.out.println("");
+            System.out.print("35. Apple: " + appleBUY );
+            System.out.print("                              ");
+            System.out.print("36. Apple: " + appleSELL );
+
 
 
 
             System.out.println("");
             System.out.println("**************************************************************************************************************************");
             System.out.println("0. Exit Marketplace");
-
             alreadyOpenShop = true;
 
 
             System.out.println("I chose number: ");
             Scanner in = new Scanner(System.in);
             int choose = in.nextInt();
-
 
             // buy
             if (choose == 1) {
@@ -542,6 +567,38 @@ public class Market {
                 }
             }
 
+            //
+
+            else if (choose == 33) {
+
+                if (cash > appleBUY ) {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + potatoBUY  ;
+                    tempPotato = 1;
+
+                } else {
+                    System.out.println("Check your balance.");
+
+                    return choose;
+
+                }
+            }
+
+            else if (choose == 35) {
+
+                if (cash > appleBUY ) {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + appleBUY ;
+                    tempApple = 1;
+
+                } else {
+                    System.out.println("Check your balance.");
+                    return choose;
+
+                }
+
+            }
+
             // sell
 
             else if (choose == 2){
@@ -702,8 +759,29 @@ public class Market {
                 }
             }
 
+            //
+
+            else if (choose == 34){
+                if (actualPotato>0){
+                    tempPotato = -1;
+                    priceTempSell = priceTempSell + potatoSELL ;
+                    System.out.println("Congratulation you sell potato for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have food for sell");
+                }
+            }
 
 
+
+            else if (choose == 36){
+                if (actualApple>0){
+                    tempApple = -1;
+                    priceTempSell = priceTempSell + appleSELL ;
+                    System.out.println("Congratulation you sell apple for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have food for sell");
+                }
+            }
 
 
             else if (choose == 0){
@@ -711,8 +789,13 @@ public class Market {
                 return choose;
             }
             else {
-                System.out.println("Please dont brake the game! ");
+                System.out.println("Please dont brake the game.");
             }
+
+
+
+
+
 
 
 
@@ -789,6 +872,12 @@ public class Market {
             foodForAnimalSELL = random.nextInt(25, 50);
             eggSELL = random.nextInt(10, 20);
 
+            potatoBUY = random.nextInt(10, 20);
+            potatoSELL = random.nextInt(25, 50);
+            appleBUY = random.nextInt(15, 25);
+            appleSELL = random.nextInt(25, 80);
+
+
 
             System.out.println("    BUY:  ****************************************        SELL:        ****************************************      INFO:");
             // sell and buy #1
@@ -835,31 +924,31 @@ public class Market {
             System.out.print("                                   ");
             System.out.print("12. Wheat Seed: " + WheatSeedsSELL);
             System.out.print("                                      ");
-            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 40 weeks ");
+            System.out.print("One seed needs - 0.18 hectares to plant it / Time growing up - 40 weeks / it gives you 8 animal food");
 
             // sell and buy #7
             System.out.println("");
-            System.out.print("13. Wheat Oat: " + OatSeedsBUY);
+            System.out.print("13. Oat Seed: " + OatSeedsBUY);
             System.out.print("                                    ");
-            System.out.print("14. Wheat Oat: " + OatSeedsSELL);
+            System.out.print("14. Oat Seed: " + OatSeedsSELL);
             System.out.print("                                      ");
-            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 25 weeks ");
+            System.out.print("One seed needs - 0.25 hectares to plant it / Time growing up - 25 weeks / it gives you 15 animal food");
 
             // sell and buy #8
             System.out.println("");
-            System.out.print("15. Wheat Corn: " + CornSeedsBUY);
+            System.out.print("15. Corn Seed: " + CornSeedsBUY);
             System.out.print("                                   ");
-            System.out.print("16. Wheat Corn: " + CornSeedsSELL);
+            System.out.print("16. Corn Seed: " + CornSeedsSELL);
             System.out.print("                                    ");
-            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 60 weeks ");
+            System.out.print("One seed needs - 0.39 hectares to plant it / Time growing up - 60 weeks / it gives you 6 animal food");
 
             // sell and buy #9
             System.out.println("");
-            System.out.print("17. Wheat Potato: " + PotatoSeedsBUY);
+            System.out.print("17. Potato Seed: " + PotatoSeedsBUY);
             System.out.print("                                 ");
-            System.out.print("18. Wheat Potato: " + PotatoSeedsSELL);
+            System.out.print("18. Potato Seed: " + PotatoSeedsSELL);
             System.out.print("                                 ");
-            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 80 weeks ");
+            System.out.print("One seed needs - 0.15 hectares to plant it / Time growing up - 80 weeks / it gives you 4 potatoes");
 
             // sell and buy #10
             System.out.println("");
@@ -867,7 +956,7 @@ public class Market {
             System.out.print("                                ");
             System.out.print("20. Apple Tree Seed: " + AppleTreeSeedsSELL);
             System.out.print("                                ");
-            System.out.print("One seed needs - 0.5 hectares to plant it / Time growing up - 120 weeks ");
+            System.out.print("One seed needs - 0.54 hectares to plant it / Time growing up - 120 weeks / it gives you 15 apples");
 
             System.out.println("");
 
@@ -920,6 +1009,21 @@ public class Market {
             System.out.print("31. Food For Animal: " + foodForAnimalBUY);
             System.out.print("                              ");
             System.out.print("32. Food For Animal: " + foodForAnimalSELL);
+
+            System.out.println("");
+            System.out.println("    ------------------------------------------------------------------------------------------------------------   ");
+
+            // sell and buy #17
+            System.out.println("");
+            System.out.print("33. Potato: " + potatoBUY );
+            System.out.print("                              ");
+            System.out.print("34. Potato: " + potatoSELL );
+
+            // sell and buy #18
+            System.out.println("");
+            System.out.print("35. Apple: " + appleBUY );
+            System.out.print("                              ");
+            System.out.print("36. Apple: " + appleSELL );
 
 
 
@@ -1216,6 +1320,38 @@ public class Market {
                 }
             }
 
+            //
+
+            else if (choose == 33) {
+
+                    if (cash > appleBUY ) {
+                        System.out.println("Congratulations you bought it!");
+                        priceTempBuy = priceTempBuy + potatoBUY  ;
+                        tempPotato = 1;
+
+                    } else {
+                        System.out.println("Check your balance.");
+
+                return choose;
+
+            }
+            }
+
+            else if (choose == 35) {
+
+                if (cash > appleBUY ) {
+                    System.out.println("Congratulations you bought it!");
+                    priceTempBuy = priceTempBuy + appleBUY ;
+                    tempApple = 1;
+
+                } else {
+                    System.out.println("Check your balance.");
+                    return choose;
+
+                }
+
+            }
+
             // sell
 
             else if (choose == 2){
@@ -1376,6 +1512,30 @@ public class Market {
                 }
             }
 
+            //
+
+            else if (choose == 34){
+                if (actualPotato>0){
+                    tempPotato = -1;
+                    priceTempSell = priceTempSell + potatoSELL ;
+                    System.out.println("Congratulation you sell potato for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have food for sell");
+                }
+            }
+
+
+
+            else if (choose == 36){
+                if (actualApple>0){
+                    tempApple = -1;
+                    priceTempSell = priceTempSell + appleSELL ;
+                    System.out.println("Congratulation you sell apple for: " + priceTempSell);
+                } else {
+                    System.out.println("You dont have food for sell");
+                }
+            }
+
 
             else if (choose == 0){
 
@@ -1437,6 +1597,8 @@ public class Market {
 
     public static int gettempFoodForAnimal(){return  tempFoodForAnimal;}
 
+    public static int gettempPotato(){return tempPotato;}
+    public static int gettempApple(){return tempApple;}
     //
 
 

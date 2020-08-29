@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static com.company.BuildBuildings.*;
 import static com.company.Farmland.*;
-import static com.company.HarvestCrops.harvestCrops;
+import static com.company.HarvestCrops.*;
 import static com.company.Market.*;
 import static com.company.UseSeeds.*;
 
@@ -91,7 +91,7 @@ public class Main {
 
 
 
-                    Market.Marketplace(player.getCash(),maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,player.wheatSeedsPlayer,player.oatSeedsPlayer,player.cornSeedsPlayer,player.potatoSeedsPlayer,player.appleTreeSeedsPlayer,sizesmallRabbitAnimal,sizebigRabbitsAnimal,player.maxStorageFoodForAnimals,player.foodForAnimals);
+                    Market.Marketplace(player.getCash(),maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,player.wheatSeedsPlayer,player.oatSeedsPlayer,player.cornSeedsPlayer,player.potatoSeedsPlayer,player.appleTreeSeedsPlayer,sizesmallRabbitAnimal,sizebigRabbitsAnimal,player.maxStorageFoodForAnimals,player.foodForAnimals,player.potatoPlayer, player.applePlayer);
 
                   if(getPriceTempSell()>0){
                       System.out.println("SELL: ");
@@ -189,6 +189,15 @@ public class Main {
                         player.foodForAnimals +=1;
 
                     }
+                    else if(gettempPotato()==1){
+                        player.potatoPlayer +=1;
+
+                    }
+                    else if(gettempApple()==1){
+                        player.applePlayer += 1;
+
+                    }
+
 
 
 //sell
@@ -260,6 +269,15 @@ public class Main {
                     else if(gettempFoodForAnimal()==-1){
                         player.maxStorageFoodForAnimals +=1;
                         player.foodForAnimals -=1;
+
+                    }
+
+                    else if(gettempPotato()==-1){
+                        player.potatoPlayer -=1;
+
+                    }
+                    else if(gettempApple()==-1){
+                        player.applePlayer -= 1;
 
                     }
 
@@ -343,7 +361,6 @@ public class Main {
 
                         for (int j=0;j<=getHowManySeeds-1;j++){
                             int timeGrowingUpOat = 25;
-                            System.out.println("wpisywanie do tablicy");
                             player.oatNeedGrowUp.add(timeGrowingUpOat);
 
                         }
@@ -388,7 +405,54 @@ public class Main {
 
                     harvestCrops(player.wheatGrowedUp.size(),player.oatGrowedUp.size(),player.cornGrowedUp.size(),player.potatoGrowedUp.size(),player.appleGrowedUp.size());
 
+                    int getHowManyToHarvest = getHowManyToHarvest();
+                    int getfinalPriceforHarvest = getfinalPriceforHarvest();
 
+                    player.setCash(player.getCash()-getfinalPriceforHarvest);
+                    int getisitWheat = getisitWheat();
+                    int getisitOat = getisitOat();
+                    int getisitCorn = getisitCorn();
+                    int getisitPotato = getisitPotato();
+                    int getisitApple = getisitApple();
+
+                    if (getisitWheat == 1){
+                        int tempFoodForAnimal = getHowManyToHarvest*8;
+                        player.foodForAnimals += tempFoodForAnimal;
+                        double tempHectaresForThis = getHowManyToHarvest*0.18;
+                        player.MaxHectaresUsed -=  tempHectaresForThis;
+                    }
+
+                    if (getisitOat == 1){
+                        int tempFoodForAnimal = getHowManyToHarvest*15;
+                        player.foodForAnimals += tempFoodForAnimal;
+
+                        double tempHectaresForThis = getHowManyToHarvest*0.25;
+                        player.MaxHectaresUsed -=  tempHectaresForThis;
+                    }
+
+                    if (getisitCorn == 1){
+                        int tempFoodForAnimal = getHowManyToHarvest*12;
+                        player.foodForAnimals += tempFoodForAnimal;
+
+                        double tempHectaresForThis = getHowManyToHarvest*0.39;
+                        player.MaxHectaresUsed -=  tempHectaresForThis;
+                    }
+
+                    if (getisitPotato == 1){
+                        int tempPotato = getHowManyToHarvest*4;
+                        player.potatoPlayer += tempPotato;
+
+                        double tempHectaresForThis = getHowManyToHarvest*0.15;
+                        player.MaxHectaresUsed -=  tempHectaresForThis;
+                    }
+
+                    if (getisitApple == 1){
+                        int tempApple = getHowManyToHarvest*15;
+                        player.applePlayer += tempApple;
+
+                        double tempHectaresForThis = getHowManyToHarvest*0.54;
+                        player.MaxHectaresUsed -=  tempHectaresForThis;
+                    }
 
                     break;
 
@@ -408,6 +472,9 @@ public class Main {
                     System.out.println("Actual Oat Seeds: "+ player.potatoSeedsPlayer);
                     System.out.println("Actual Apple tree Seeds: "+ player.appleTreeSeedsPlayer);
 
+                    System.out.println();
+                    System.out.println("You have: "+ player.potatoPlayer + " potato.");
+                    System.out.println("You have: "+ player.applePlayer + " apple.");
                     System.out.println("     ****************************************");
 
 
@@ -819,17 +886,17 @@ public class Main {
                 case 99:
                     System.out.println("     ****************************************");
 
-                    for ( int j=0; j<player.wheatNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.wheatNeedGrowUp.get(j) );
-                    for ( int j=0; j<player.oatNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.oatNeedGrowUp.get(j) );
-                    for ( int j=0; j<player.cornNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.cornNeedGrowUp.get(j) );
-                    for ( int j=0; j<player.potatoNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.potatoNeedGrowUp.get(j) );
-                    for ( int j=0; j<player.appleNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.appleNeedGrowUp.get(j) );
+                    for ( int j=0; j<player.smallChickenAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallChickenAnimal.get(j) );
+                    for ( int j=0; j<player.smallDogAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallDogAnimal.get(j) );
+                    for ( int j=0; j<player.smallCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallCowAnimal.get(j) );
+                    for ( int j=0; j<player.smallHorseAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallHorseAnimal.get(j) );
+                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallRabbitAnimal.get(j) );
 
-                    for ( int j=0; j<player.wheatGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.wheatGrowedUp.get(j) );
-                    for ( int j=0; j<player.oatGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.oatGrowedUp.get(j) );
-                    for ( int j=0; j<player.cornGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.cornGrowedUp.get(j) );
-                    for ( int j=0; j<player.potatoGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.potatoGrowedUp.get(j) );
-                    for ( int j=0; j<player.appleGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.appleGrowedUp.get(j) );
+                    for ( int j=0; j<player.bigChickenAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigChickenAnimal.get(j) );
+                    for ( int j=0; j<player.bigDogAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigDogAnimal.get(j) );
+                    for ( int j=0; j<player.bigCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigCowAnimal.get(j) );
+                    for ( int j=0; j<player.bigHorseAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigHorseAnimal.get(j) );
+                    for ( int j=0; j<player.bigRabbitAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigRabbitAnimal.get(j) );
 
 
                     System.out.println("     ****************************************");

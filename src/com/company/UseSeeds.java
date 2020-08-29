@@ -21,11 +21,11 @@ static int AppleTreeSeedPlant;
         CornSeedPlant =0;
         PotatoSeedPlant= 0;
         AppleTreeSeedPlant =0;
-        double oneWheatSeedsPlaceNeeded = 0.5;
-        double oneOatSeedPlaceNeeded = 0.5;
-        double oneCornSeedPlaceNeeded = 0.5;
-        double onePotatoSeedPlaceNeeded = 0.5;
-        double oneAppleTreeSeedPlaceNeeded = 0.5;
+        double oneWheatSeedsPlaceNeeded = 0.18;
+        double oneOatSeedPlaceNeeded = 0.25;
+        double oneCornSeedPlaceNeeded = 0.39;
+        double onePotatoSeedPlaceNeeded = 0.15;
+        double oneAppleTreeSeedPlaceNeeded = 0.54;
 
 
         int priceoneWheatSeedsPlant = 7;

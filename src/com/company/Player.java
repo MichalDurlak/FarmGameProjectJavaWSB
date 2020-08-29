@@ -110,12 +110,13 @@ public class Player {
     public static void checkEndGame(double FarmlandSize, int fullAnimals, int endFoodForAnimals, int foodForAnimalsNOW, int seedsToEnd) {
 
 
-        if (FarmlandSize == endFarmlandSize) {
+        if (FarmlandSize >= endFarmlandSize) {
             if (fullAnimals == endAnimalsSize) {
-                if (endFoodForAnimals == foodForAnimalsNOW) {
+                if (endFoodForAnimals <= foodForAnimalsNOW) {
                     if (seedsToEnd == endSeedsSize){
                         System.out.println("     ****************************************");
                         System.out.println("!!!Congratulations you won the game!!!");
+                        System.out.println();
                         System.out.println("     ****************************************");
                         System.exit(0);
 

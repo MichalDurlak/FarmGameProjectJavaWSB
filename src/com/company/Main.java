@@ -331,7 +331,7 @@ public class Main {
 
                     if(getWheatSeedsPlant==1){
 
-                        for (int j=1;j<=getHowManySeeds;j++){
+                        for (int j=0;j<=getHowManySeeds-1;j++){
                             int timeGrowingUpWheat = 40;
                             player.wheatNeedGrowUp.add(timeGrowingUpWheat);
 
@@ -341,9 +341,9 @@ public class Main {
                     }
                     else if(getOatSeedPlant==1){
 
-                        for (int j=1;j<=getHowManySeeds;j++){
+                        for (int j=0;j<=getHowManySeeds-1;j++){
                             int timeGrowingUpOat = 25;
-
+                            System.out.println("wpisywanie do tablicy");
                             player.oatNeedGrowUp.add(timeGrowingUpOat);
 
                         }
@@ -351,7 +351,7 @@ public class Main {
                     }
                     else if(getCornSeedPlant==1){
 
-                        for (int j=1;j<=getHowManySeeds;j++){
+                        for (int j=0;j<=getHowManySeeds-1;j++){
                             int timeGrowingUpCorn = 60;
 
                             player.cornNeedGrowUp.add(timeGrowingUpCorn);
@@ -361,7 +361,7 @@ public class Main {
                     }
                     else if(getPotatoSeedPlant==1){
 
-                        for (int j=1;j<=getHowManySeeds;j++){
+                        for (int j=0;j<=getHowManySeeds-1;j++){
                             int timeGrowingUpPotato = 80;
 
                             player.potatoNeedGrowUp.add(timeGrowingUpPotato);
@@ -371,7 +371,7 @@ public class Main {
                     }
                     else if(getAppleTreeSeedPlant==1){
 
-                        for (int j=1;j<=getHowManySeeds;j++){
+                        for (int j=0;j<=getHowManySeeds-1;j++){
                             int timeGrowingUpAppleTree = 120;
 
                             player.appleNeedGrowUp.add(timeGrowingUpAppleTree);
@@ -654,32 +654,135 @@ public class Main {
                     }
 
 
- // Check wieku jesli 0 to dopisz do biganimal i GrowedUp
-                    for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){if(player.smallChickenAnimal.get(j) == 0){player.bigChickenAnimal.add(20);}}
-                    for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if(player.smallDogAnimal.get(j) == 0){player.bigDogAnimal.add(10);}}
-                    for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if(player.smallCowAnimal.get(j) == 0){player.bigCowAnimal.add(25);}}
-                    for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if(player.smallHorseAnimal.get(j) == 0){player.bigHorseAnimal.add(15);}}
-                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.bigRabbitAnimal.add(13);}}
+// jesli 0 usun z array + dodaj do biganimal i growedup
 
-                    for ( int j=0; j<player.wheatNeedGrowUp.size(); j++ ){if(player.wheatNeedGrowUp.get(j) == 0){player.wheatGrowedUp.add(1);}}
-                    for ( int j=0; j<player.oatNeedGrowUp.size(); j++ ){if(player.oatNeedGrowUp.get(j) == 0){player.oatGrowedUp.add(1);}}
-                    for ( int j=0; j<player.cornNeedGrowUp.size(); j++ ){if(player.cornNeedGrowUp.get(j) == 0){player.cornGrowedUp.add(1);}}
-                    for ( int j=0; j<player.potatoNeedGrowUp.size(); j++ ){if(player.potatoNeedGrowUp.get(j) == 0){player.potatoGrowedUp.add(1);}}
-                    for ( int j=0; j<player.appleNeedGrowUp.size(); j++ ){if(player.appleNeedGrowUp.get(j) == 0){player.appleGrowedUp.add(1);}}
-// jesli 0 usun z array
-                    for ( int j=0; j<player.smallChickenAnimal.size(); j++ ){if (player.smallChickenAnimal.get(j) == 0) {player.smallChickenAnimal.remove(j);}}
-                    for ( int j=0; j<player.smallDogAnimal.size(); j++ ){if (player.smallDogAnimal.get(j) == 0) {player.smallDogAnimal.remove(j);}}
-                    for ( int j=0; j<player.smallCowAnimal.size(); j++ ){if (player.smallCowAnimal.get(j) == 0) {player.smallCowAnimal.remove(j);}}
-                    for ( int j=0; j<player.smallHorseAnimal.size(); j++ ){if (player.smallHorseAnimal.get(j) == 0) {player.smallHorseAnimal.remove(j);}}
-                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ){if(player.smallRabbitAnimal.get(j) == 0){player.smallRabbitAnimal.remove(j);}}
+                    int tempToMinusFromLastchicken = player.smallChickenAnimal.size();
+                    int tempOatNeedGrowUpNumberchicken = player.smallChickenAnimal.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberchicken;j++ ){
+                        tempToMinusFromLastchicken -=1;
+                        if(player.smallChickenAnimal.get(tempToMinusFromLastchicken) == 0){
+                            player.smallChickenAnimal.remove(tempToMinusFromLastchicken);
+                            player.bigChickenAnimal.add(1);
 
-                    for ( int j=0; j<player.wheatNeedGrowUp.size(); j++ ){if(player.wheatNeedGrowUp.get(j) == 0){player.wheatNeedGrowUp.remove(j);}}
-                    for ( int j=0; j<player.oatNeedGrowUp.size(); j++ ){if(player.oatNeedGrowUp.get(j) == 0){player.oatNeedGrowUp.remove(j);}}
-                    for ( int j=0; j<player.cornNeedGrowUp.size(); j++ ){if(player.cornNeedGrowUp.get(j) == 0){player.cornNeedGrowUp.remove(j);}}
-                    for ( int j=0; j<player.potatoNeedGrowUp.size(); j++ ){if(player.potatoNeedGrowUp.get(j) == 0){player.potatoNeedGrowUp.remove(j);}}
-                    for ( int j=0; j<player.appleNeedGrowUp.size(); j++ ){if(player.appleNeedGrowUp.get(j) == 0){player.appleNeedGrowUp.remove(j);}}
+                        }
+
+                    }
+
+                    int tempToMinusFromLastdog = player.smallDogAnimal.size();
+                    int tempOatNeedGrowUpNumberdog = player.smallDogAnimal.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberdog;j++ ){
+                        tempToMinusFromLastdog -=1;
+                        if(player.smallDogAnimal.get(tempToMinusFromLastdog) == 0){
+                            player.smallDogAnimal.remove(tempToMinusFromLastdog);
+                            player.bigDogAnimal.add(1);
+
+                        }
+
+                    }
 
 
+                    int tempToMinusFromLastcow = player.smallCowAnimal.size();
+                    int tempOatNeedGrowUpNumbercow = player.smallCowAnimal.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumbercow;j++ ){
+                        tempToMinusFromLastcow -=1;
+                        if(player.smallCowAnimal.get(tempToMinusFromLastcow) == 0){
+                            player.smallCowAnimal.remove(tempToMinusFromLastcow);
+                            player.bigCowAnimal.add(1);
+
+                        }
+
+                    }
+
+
+
+                    int tempToMinusFromLasthorse = player.smallHorseAnimal.size();
+                    int tempOatNeedGrowUpNumberhorse = player.smallHorseAnimal.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberhorse;j++ ){
+                        tempToMinusFromLasthorse -=1;
+                        if(player.smallHorseAnimal.get(tempToMinusFromLasthorse) == 0){
+                            player.smallHorseAnimal.remove(tempToMinusFromLasthorse);
+                            player.bigHorseAnimal.add(1);
+
+                        }
+
+                    }
+
+                    int tempToMinusFromLastrabbit = player.smallRabbitAnimal.size();
+                    int tempOatNeedGrowUpNumberrabbit = player.smallRabbitAnimal.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberrabbit;j++ ){
+                        tempToMinusFromLastrabbit -=1;
+                        if(player.smallRabbitAnimal.get(tempToMinusFromLastrabbit) == 0){
+                            player.smallRabbitAnimal.remove(tempToMinusFromLastrabbit);
+                            player.bigRabbitAnimal.add(1);
+
+                        }
+
+                    }
+
+
+                    int tempToMinusFromLastwheat = player.wheatNeedGrowUp.size();
+                    int tempOatNeedGrowUpNumberwheat = player.wheatNeedGrowUp.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberwheat;j++ ){
+                        tempToMinusFromLastwheat -=1;
+                        if(player.wheatNeedGrowUp.get(tempToMinusFromLastwheat) == 0){
+                            player.wheatNeedGrowUp.remove(tempToMinusFromLastwheat);
+                            player.wheatGrowedUp.add(1);
+
+                        }
+
+                    }
+
+                    int tempToMinusFromLast = player.oatNeedGrowUp.size();
+                    int tempOatNeedGrowUpNumber = player.oatNeedGrowUp.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumber;j++ ){
+                        tempToMinusFromLast -=1;
+                        if(player.oatNeedGrowUp.get(tempToMinusFromLast) == 0){
+                            player.oatNeedGrowUp.remove(tempToMinusFromLast);
+                            player.oatGrowedUp.add(1);
+
+                        }
+
+                    }
+
+
+
+                    int tempToMinusFromLastcorn = player.cornNeedGrowUp.size();
+                    int tempOatNeedGrowUpNumbercorn = player.cornNeedGrowUp.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumbercorn;j++ ){
+                        tempToMinusFromLastcorn -=1;
+                        if(player.cornNeedGrowUp.get(tempToMinusFromLastcorn) == 0){
+                            player.cornNeedGrowUp.remove(tempToMinusFromLastcorn);
+                            player.cornGrowedUp.add(1);
+
+                        }
+
+                    }
+
+
+                    int tempToMinusFromLastpotato = player.potatoNeedGrowUp.size();
+                    int tempOatNeedGrowUpNumberpotato = player.potatoNeedGrowUp.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberpotato;j++ ){
+                        tempToMinusFromLastpotato -=1;
+                        if(player.potatoNeedGrowUp.get(tempToMinusFromLastpotato) == 0){
+                            player.potatoNeedGrowUp.remove(tempToMinusFromLastpotato);
+                            player.potatoGrowedUp.add(1);
+
+                        }
+
+                    }
+
+
+                    int tempToMinusFromLastapple = player.appleNeedGrowUp.size();
+                    int tempOatNeedGrowUpNumberapple = player.appleNeedGrowUp.size();
+                    for ( int j=0;j<tempOatNeedGrowUpNumberapple;j++ ){
+                        tempToMinusFromLastapple -=1;
+                        if(player.appleNeedGrowUp.get(tempToMinusFromLastapple) == 0){
+                            player.appleNeedGrowUp.remove(tempToMinusFromLastapple);
+                            player.appleGrowedUp.add(1);
+
+                        }
+
+                    }
 
 
                     break;
@@ -701,6 +804,7 @@ public class Main {
                     System.out.println("Seeds size: " +player.endSeedsSize+" (You have "+endSeedsNumber1+" at this moment)");
 
                     System.out.println("     ****************************************");
+
                     System.out.println();
                     break;
                 case 98:
@@ -713,16 +817,23 @@ public class Main {
                     player.setCash(100000000);
                     break;
                 case 99:
-                    System.out.println("new stats");
-                    player.setCash(100000000);
-                    player.maxStorageFoodForAnimals = 10000;
-                    player.buildingsMaxSize = 1000;
-                    player.animalsMaxSize = 1000;
+                    System.out.println("     ****************************************");
 
-                    //
-                    player.foodForAnimals = 5;
+                    for ( int j=0; j<player.wheatNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.wheatNeedGrowUp.get(j) );
+                    for ( int j=0; j<player.oatNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.oatNeedGrowUp.get(j) );
+                    for ( int j=0; j<player.cornNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.cornNeedGrowUp.get(j) );
+                    for ( int j=0; j<player.potatoNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.potatoNeedGrowUp.get(j) );
+                    for ( int j=0; j<player.appleNeedGrowUp.size(); j++ ) System.out.println("element " + j + ": " + player.appleNeedGrowUp.get(j) );
 
-                    //
+                    for ( int j=0; j<player.wheatGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.wheatGrowedUp.get(j) );
+                    for ( int j=0; j<player.oatGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.oatGrowedUp.get(j) );
+                    for ( int j=0; j<player.cornGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.cornGrowedUp.get(j) );
+                    for ( int j=0; j<player.potatoGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.potatoGrowedUp.get(j) );
+                    for ( int j=0; j<player.appleGrowedUp.size(); j++ ) System.out.println("element " + j + ": " + player.appleGrowedUp.get(j) );
+
+
+                    System.out.println("     ****************************************");
+                    System.out.println();
                     break;
             }
 

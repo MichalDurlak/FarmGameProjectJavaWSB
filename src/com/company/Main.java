@@ -47,6 +47,9 @@ public class Main {
                 case 1:
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
                     player.countAnimals();
+                    //set price defense
+                    player.setpriceForDefenseHectares(player.MaxHectaresUsed);
+
 
                     System.out.println("     ****************************************");
                     System.out.println("Your balance: "+ player.getCash()+"$");
@@ -69,6 +72,8 @@ public class Main {
                     System.out.println("You have: "+player.bigHorseAnimal.size()+" big horses");
                     System.out.println("You have: "+player.bigRabbitAnimal.size()+" big rabbits");
 
+                    System.out.println("     ****************************************");
+                    System.out.println("Price for defense your farmland "+player.getPriceForDefenseHectares()+" (We will take it automatically to protect your farmland.)");
                     System.out.println("     ****************************************");
                     break;
 
@@ -94,15 +99,15 @@ public class Main {
                     Market.Marketplace(player.getCash(),maxAnimalsThatCanBuy,sizesmallChickenAnimal,sizesmallDogAnimal,sizesmallCowAnimal,sizesmallHorseAnimal,sizebigChickenAnimal,sizebigDogAnimal,sizebigCowAnimal,sizebigHorseAnimal,player.wheatSeedsPlayer,player.oatSeedsPlayer,player.cornSeedsPlayer,player.potatoSeedsPlayer,player.appleTreeSeedsPlayer,sizesmallRabbitAnimal,sizebigRabbitsAnimal,player.maxStorageFoodForAnimals,player.foodForAnimals,player.potatoPlayer, player.applePlayer);
 
                   if(getPriceTempSell()>0){
-                      System.out.println("SELL: ");
-                      System.out.println(player.getCash());
+//                      System.out.println("SELL: ");
+//                      System.out.println(player.getCash());
                       player.setCash(player.getCash()+getPriceTempSell());
-                      System.out.println(player.getCash());
+//                      System.out.println(player.getCash());
                  } else if (getpriceTempBuy()>0){
-                      System.out.println("BUY: ");
-                      System.out.println(player.getCash());
+//                      System.out.println("BUY: ");
+//                      System.out.println(player.getCash());
                      player.setCash(player.getCash()-getpriceTempBuy());
-                     System.out.println(player.getCash());
+//                     System.out.println(player.getCash());
                  }
 
 
@@ -296,6 +301,8 @@ public class Main {
 //                    player.animalsMaxSize = player.animalsMaxSize +placeForAnimalTemp;
 
 
+                    //set price defense
+                    player.setpriceForDefenseHectares(player.MaxHectaresUsed);
 
 
 
@@ -484,7 +491,8 @@ public class Main {
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
                     // zabieranie jedzenia
                     player.animalsEatFood(player.getfoodForWeek());
-
+                    //set price defense
+                    player.setpriceForDefenseHectares(player.MaxHectaresUsed);
                     if (numberOfWeek >= 52){
                         numberOfWeek = 1;
                         numberOfYear = numberOfYear +1;
@@ -506,18 +514,35 @@ public class Main {
                     Player.checkEndGame(player.getFarmland(),endAnimalNumber,player.getFoodForYear(),player.foodForAnimals,endSeedsNumber);
 
 
+                    //defense
+                    player.defenseHectares(player.getCash(),player.getPriceForDefenseHectares());
+                    if(player.defenseHectaresonoff == 1){
+                        player.setCash(player.getCash()-player.getPriceForDefenseHectares());
+                    }
+
+                    // attack
+                    player.attackHectares(player.defenseHectaresonoff);
+                    double getHowManyHectaresItWillTake = player.getHowManyHectaresItWillTake();
+                    if (getHowManyHectaresItWillTake == 0){
+
+                    } else {
+//                        player.setFarmland(player.getFarmland()-getHowManyHectaresItWillTake);
+                        player.MaxHectaresUsed -= getHowManyHectaresItWillTake;
+                    }
+
+
 
 
                     Farmland.setAlreadyOpenShopFarmland();
                     Market.setAlreadyOpenShop();
                     BuildBuildings.setAlreadyOpenBuildBuildings();
 
-            // Dodawanie dla gracza $$
+//            // Dodawanie dla gracza $$
                     ThreadLocalRandom random = ThreadLocalRandom.current();
-                    int additionalToPlayerCash = 0;
-                    additionalToPlayerCash = random.nextInt(1, 300);
-                    additionalToPlayerCash += player.getCash();
-                    player.setCash(additionalToPlayerCash);
+//                    int additionalToPlayerCash = 0;
+//                    additionalToPlayerCash = random.nextInt(1, 300);
+//                    additionalToPlayerCash += player.getCash();
+//                    player.setCash(additionalToPlayerCash);
 
             // Dodawanie dla gracza $$ za jajka i mleko
 
@@ -850,6 +875,10 @@ public class Main {
                         }
 
                     }
+
+
+
+
 
 
                     break;

@@ -30,6 +30,13 @@ public class Player {
 
     int wheatEndSize,oatEndSize,cornEndSize,potatoEndSize,appleEndSize;
 
+    public int defenseHectaresonoff;
+    public int priceForDefenseHectares;
+    public double howManyHectaresItWillTake;
+
+
+    private double oldhowManyHectaresPlayer;
+
     public List<Integer> smallChickenAnimal = new ArrayList<>();
     public List<Integer> smallDogAnimal = new ArrayList<>();
     public List<Integer> smallCowAnimal = new ArrayList<>();
@@ -94,6 +101,12 @@ public class Player {
         this.appleEndSize = 0;
 
         this.noFoodNoAnimal = 0;
+
+        this.defenseHectaresonoff =0;
+        this.priceForDefenseHectares =0;
+        this.howManyHectaresItWillTake = 0;
+
+        this.oldhowManyHectaresPlayer = 0;
     }
 
 
@@ -614,6 +627,92 @@ public class Player {
         System.out.println("appleGrowedUp   -> "+appleGrowedUp  .size() );
         System.out.println("------------------------------------------------------------------");
     }
+
+    public void defenseHectares(int playerMoney, int priceForDefenseHectares){
+
+
+
+        if (playerMoney >= priceForDefenseHectares){
+            this.defenseHectaresonoff = 1;
+
+            if (MaxHectaresUsed == 0.0){
+
+            } else {
+
+                System.out.println("___________________________________________________________");
+                System.out.println();
+                System.out.println("Your farmland is defensed.");
+                System.out.println();
+                System.out.println("___________________________________________________________");
+
+            }
+        }
+        else {
+            this.defenseHectaresonoff = 0;
+            System.out.println("___________________________________________________________");
+            System.out.println();
+            System.out.println("Sorry you dont have enough money for defense your farmland.");
+            System.out.println();
+            System.out.println("___________________________________________________________");
+
+        }
+
+    }
+
+    //set price of defense
+    public void setpriceForDefenseHectares(double howManyHectaresPlayer){
+
+        if (howManyHectaresPlayer == this.oldhowManyHectaresPlayer){
+
+
+        } else {
+            ThreadLocalRandom random = ThreadLocalRandom.current();
+            int tempPriceForDefense = random.nextInt(100, 200);
+            double doublepriceForDefenseHectares = howManyHectaresPlayer*tempPriceForDefense;
+
+            this.priceForDefenseHectares = (int) doublepriceForDefenseHectares;
+            this.oldhowManyHectaresPlayer = howManyHectaresPlayer;
+        }
+
+    }
+
+
+// get price of defense
+    public int getPriceForDefenseHectares(){return priceForDefenseHectares;};
+
+
+// attack
+    public void attackHectares(int isSetDefenseHectares){
+
+        if (isSetDefenseHectares == 1 ){
+
+            defenseHectaresonoff = 0;
+
+        } else if (isSetDefenseHectares == 0){
+
+            ThreadLocalRandom random = ThreadLocalRandom.current();
+            int chanseToDestroyYourFarmland = random.nextInt(1, 10);
+            this.howManyHectaresItWillTake = 0;
+
+            if (chanseToDestroyYourFarmland<=2){
+                System.out.println("Unlucky someone destroyed your farmland");
+
+                this.howManyHectaresItWillTake = random.nextDouble(0.01, MaxHectaresUsed);
+                this.howManyHectaresItWillTake = Math.round(this.howManyHectaresItWillTake * 100);
+                this.howManyHectaresItWillTake = this.howManyHectaresItWillTake/100;
+            } else {
+                System.out.println("This week nobody destroyed your farmland");
+                this.howManyHectaresItWillTake = 0;
+            }
+
+
+            defenseHectaresonoff = 0;
+
+        }
+    }
+
+    public double getHowManyHectaresItWillTake(){return howManyHectaresItWillTake;};
+
 }
 
 

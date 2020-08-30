@@ -18,7 +18,6 @@ public class Farmland {
     static int place1Price,place2Price,place3Price,place4Price,place5Price,place6Price,place7Price,place8Price,place9Price;
 
 
-
     public static int buyFarmland(int cash){
         placeForAnimalTemp = 0;
         placeForSeedsTemp = 0;
@@ -29,15 +28,15 @@ public class Farmland {
         if (getAlreadyOpenShopFarmland() == true) {
             System.out.println("You saw these prices: ");
             System.out.println("BUY: ");
-            System.out.println("1. Place Size: "+placeSize1 +" Place for seeds: "+placeForSeeds1+" Place for buildings: "+placeForBuildings1+" PRICE: "+ place1Price);
-            System.out.println("2. Place Size: "+placeSize2 +" Place for seeds: "+placeForSeeds2+" Place for buildings: "+placeForBuildings2+" PRICE: "+ place2Price);
-            System.out.println("3. Place Size: "+placeSize3 +" Place for seeds: "+placeForSeeds3+" Place for buildings: "+placeForBuildings3+" PRICE: "+ place3Price);
-            System.out.println("4. Place Size: "+placeSize4 +" Place for seeds: "+placeForSeeds4+" Place for buildings: "+placeForBuildings4+" PRICE: "+ place4Price);
-            System.out.println("5. Place Size: "+placeSize5 +" Place for seeds: "+placeForSeeds5+" Place for buildings: "+placeForBuildings5+" PRICE: "+ place5Price);
-            System.out.println("6. Place Size: "+placeSize6 +" Place for seeds: "+placeForSeeds6+" Place for buildings: "+placeForBuildings6+" PRICE: "+ place6Price);
-            System.out.println("7. Place Size: "+placeSize7 +" Place for seeds: "+placeForSeeds7+" Place for buildings: "+placeForBuildings7+" PRICE: "+ place7Price);
-            System.out.println("8. Place Size: "+placeSize8 +" Place for seeds: "+placeForSeeds8+" Place for buildings: "+placeForBuildings8+" PRICE: "+ place8Price);
-            System.out.println("9. Place Size: "+placeSize9 +" Place for seeds: "+placeForSeeds9+" Place for buildings: "+placeForBuildings9+" PRICE: "+ place9Price);
+            System.out.println("1. Place Size: "+placeSize1 +" Place for buildings: "+placeForBuildings1+" PRICE: "+ place1Price);
+            System.out.println("2. Place Size: "+placeSize2 +" Place for buildings: "+placeForBuildings2+" PRICE: "+ place2Price);
+            System.out.println("3. Place Size: "+placeSize3 +" Place for buildings: "+placeForBuildings3+" PRICE: "+ place3Price);
+            System.out.println("4. Place Size: "+placeSize4 +" Place for buildings: "+placeForBuildings4+" PRICE: "+ place4Price);
+            System.out.println("5. Place Size: "+placeSize5 +" Place for buildings: "+placeForBuildings5+" PRICE: "+ place5Price);
+            System.out.println("6. Place Size: "+placeSize6 +" Place for buildings: "+placeForBuildings6+" PRICE: "+ place6Price);
+            System.out.println("7. Place Size: "+placeSize7 +" Place for buildings: "+placeForBuildings7+" PRICE: "+ place7Price);
+            System.out.println("8. Place Size: "+placeSize8 +" Place for buildings: "+placeForBuildings8+" PRICE: "+ place8Price);
+            System.out.println("9. Place Size: "+placeSize9 +" Place for buildings: "+placeForBuildings9+" PRICE: "+ place9Price);
             System.out.println("0. Exit.");
 
             System.out.println("I chose number: ");
@@ -352,15 +351,15 @@ public class Farmland {
             place9Price = random.nextInt(2000,3000);
 
 
-            System.out.println("1. Place Size: "+placeSize1 +" Place for seeds: "+placeForSeeds1+" Place for buildings: "+placeForBuildings1+" PRICE: "+ place1Price);
-            System.out.println("2. Place Size: "+placeSize2 +" Place for seeds: "+placeForSeeds2+" Place for buildings: "+placeForBuildings2+" PRICE: "+ place2Price);
-            System.out.println("3. Place Size: "+placeSize3 +" Place for seeds: "+placeForSeeds3+" Place for buildings: "+placeForBuildings3+" PRICE: "+ place3Price);
-            System.out.println("4. Place Size: "+placeSize4 +" Place for seeds: "+placeForSeeds4+" Place for buildings: "+placeForBuildings4+" PRICE: "+ place4Price);
-            System.out.println("5. Place Size: "+placeSize5 +" Place for seeds: "+placeForSeeds5+" Place for buildings: "+placeForBuildings5+" PRICE: "+ place5Price);
-            System.out.println("6. Place Size: "+placeSize6 +" Place for seeds: "+placeForSeeds6+" Place for buildings: "+placeForBuildings6+" PRICE: "+ place6Price);
-            System.out.println("7. Place Size: "+placeSize7 +" Place for seeds: "+placeForSeeds7+" Place for buildings: "+placeForBuildings7+" PRICE: "+ place7Price);
-            System.out.println("8. Place Size: "+placeSize8 +" Place for seeds: "+placeForSeeds8+" Place for buildings: "+placeForBuildings8+" PRICE: "+ place8Price);
-            System.out.println("9. Place Size: "+placeSize9 +" Place for seeds: "+placeForSeeds9+" Place for buildings: "+placeForBuildings9+" PRICE: "+ place9Price);
+            System.out.println("1. Place Size: "+placeSize1 +" Place for buildings: "+placeForBuildings1+" PRICE: "+ place1Price);
+            System.out.println("2. Place Size: "+placeSize2 +" Place for buildings: "+placeForBuildings2+" PRICE: "+ place2Price);
+            System.out.println("3. Place Size: "+placeSize3 +" Place for buildings: "+placeForBuildings3+" PRICE: "+ place3Price);
+            System.out.println("4. Place Size: "+placeSize4 +" Place for buildings: "+placeForBuildings4+" PRICE: "+ place4Price);
+            System.out.println("5. Place Size: "+placeSize5 +" Place for buildings: "+placeForBuildings5+" PRICE: "+ place5Price);
+            System.out.println("6. Place Size: "+placeSize6 +" Place for buildings: "+placeForBuildings6+" PRICE: "+ place6Price);
+            System.out.println("7. Place Size: "+placeSize7 +" Place for buildings: "+placeForBuildings7+" PRICE: "+ place7Price);
+            System.out.println("8. Place Size: "+placeSize8 +" Place for buildings: "+placeForBuildings8+" PRICE: "+ place8Price);
+            System.out.println("9. Place Size: "+placeSize9 +" Place for buildings: "+placeForBuildings9+" PRICE: "+ place9Price);
             System.out.println("0. Exit.");
 
 
@@ -561,9 +560,9 @@ public class Farmland {
 
 
             else if (choose == 0) {
-                    return choose;
+                return choose;
 
-                }
+            }
 
             else {
                 System.out.println("Please dont brake the game.");
@@ -595,5 +594,7 @@ public class Farmland {
     public static void setAlreadyOpenShopFarmland(){
         alreadyOpenShopFarmland = false;
     }
+
+
 
 }

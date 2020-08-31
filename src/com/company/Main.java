@@ -51,6 +51,12 @@ public class Main {
                     player.setpriceForDefenseHectares(player.MaxHectaresUsed);
 
 
+                    double tempToChange = player.getFarmland();
+                    tempToChange = Math.round(tempToChange * 100);
+                    tempToChange = tempToChange/100;
+                    player.setFarmland(tempToChange);
+
+
                     System.out.println("     ****************************************");
                     System.out.println("Your balance: "+ player.getCash()+"$");
                     System.out.println("Your farmland: "+ player.getFarmland()+" hectare" + "("+ player.MaxHectaresUsed + " hectares used)");
@@ -284,6 +290,26 @@ public class Main {
                     else if(gettempApple()==-1){
                         player.applePlayer -= 1;
 
+
+                    }
+                    else if(gettempWheatSeed()==-1){
+                        player.wheatSeedsPlayer -=1;
+                        player.seeds -=1;
+
+                    }
+                    else if(gettempOatSeed()==-1){
+                        player.oatSeedsPlayer -=1;
+                        player.seeds -=1;
+
+                    }
+                    else if(gettempCornSeed()==-1){
+                        player.cornSeedsPlayer -=1;
+                        player.seeds -=1;
+
+                    }
+                    else if(gettempPotatoSeed()==-1){
+                        player.potatoSeedsPlayer -=1;
+                        player.seeds -=1;
                     }
 
                     player.setFoodForWeek(player.smallChickenAnimal.size(),player.smallDogAnimal.size(),player.smallCowAnimal.size(),player.smallHorseAnimal.size(),player.smallRabbitAnimal.size(),player.bigChickenAnimal.size(),player.bigDogAnimal.size(),player.bigCowAnimal.size(),player.bigHorseAnimal.size(),player.bigRabbitAnimal.size());
@@ -475,8 +501,8 @@ public class Main {
                     System.out.println("Actual Wheat Seeds: "+ player.wheatSeedsPlayer);
                     System.out.println("Actual Oat Seeds: "+ player.oatSeedsPlayer);
 
-                    System.out.println("Actual Oat Seeds: "+ player.cornSeedsPlayer);
-                    System.out.println("Actual Oat Seeds: "+ player.potatoSeedsPlayer);
+                    System.out.println("Actual Corn Seeds: "+ player.cornSeedsPlayer);
+                    System.out.println("Actual Potato Seeds: "+ player.potatoSeedsPlayer);
                     System.out.println("Actual Apple tree Seeds: "+ player.appleTreeSeedsPlayer);
 
                     System.out.println();
@@ -520,102 +546,153 @@ public class Main {
                         player.setCash(player.getCash()-player.getPriceForDefenseHectares());
                     }
 
+                    int getwheatNeedGrowUpAttack = 0;
+                    int getoatNeedGrowUpAttack = 0;
+                    int getcornNeedGrowUpAttack = 0;
+                    int getpotatoNeedGrowUpAttack = 0;
+                    int getappleNeedGrowUpAttack = 0;
+
+                    int getwheatGrowedUpAttack = 0;
+                    int getoatGrowedUpAttack = 0;
+                    int getcornGrowedUpAttack = 0;
+                    int getpotatoGrowedUpAttack = 0;
+                    int getappleGrowedUpAttack = 0;
 
                     // attack
 
+if (player.defenseHectaresonoff ==1){
+} else if (player.defenseHectaresonoff == 0){
+    player.attackHectares(player.wheatNeedGrowUp.size(),player.oatNeedGrowUp.size(),player.cornNeedGrowUp.size(),player.potatoNeedGrowUp.size(),player.appleNeedGrowUp.size(),player.wheatGrowedUp.size(),player.oatGrowedUp.size(),player.cornGrowedUp.size(),player.potatoGrowedUp.size(),player.appleGrowedUp.size());
 
 
-                    player.attackHectares(player.defenseHectaresonoff,player.wheatNeedGrowUp.size(),player.oatNeedGrowUp.size(),player.cornNeedGrowUp.size(),player.potatoNeedGrowUp.size(),player.appleNeedGrowUp.size(),player.wheatGrowedUp.size(),player.oatGrowedUp.size(),player.cornGrowedUp.size(),player.potatoGrowedUp.size(),player.appleGrowedUp.size());
 
 
-                    int getwheatNeedGrowUpAttack = player.getwheatNeedGrowUpAttack();
-                    int getoatNeedGrowUpAttack = player.getoatNeedGrowUpAttack();
-                    int getcornNeedGrowUpAttack = player.getcornNeedGrowUpAttack();
-                    int getpotatoNeedGrowUpAttack = player.getpotatoNeedGrowUpAttack();
-                    int getappleNeedGrowUpAttack = player.getappleNeedGrowUpAttack();
+                    getwheatNeedGrowUpAttack = player.getwheatNeedGrowUpAttack();
+                    getoatNeedGrowUpAttack = player.getoatNeedGrowUpAttack();
+                    getcornNeedGrowUpAttack = player.getcornNeedGrowUpAttack();
+                    getpotatoNeedGrowUpAttack = player.getpotatoNeedGrowUpAttack();
+                    getappleNeedGrowUpAttack = player.getappleNeedGrowUpAttack();
 
-                    int getwheatGrowedUpAttack = player.getwheatGrowedUpAttack();
-                    int getoatGrowedUpAttack = player.getoatGrowedUpAttack();
-                    int getcornGrowedUpAttack = player.getcornGrowedUpAttack();
-                    int getpotatoGrowedUpAttack = player.getpotatoGrowedUpAttack();
-                    int getappleGrowedUpAttack = player.getappleGrowedUpAttack();
+                    getwheatGrowedUpAttack = player.getwheatGrowedUpAttack();
+                    getoatGrowedUpAttack = player.getoatGrowedUpAttack();
+                    getcornGrowedUpAttack = player.getcornGrowedUpAttack();
+                    getpotatoGrowedUpAttack = player.getpotatoGrowedUpAttack();
+                    getappleGrowedUpAttack = player.getappleGrowedUpAttack();
+                    System.out.println("MAIN - getwheatNeedGrowUpAttack" + getwheatNeedGrowUpAttack);
+                    if (getappleGrowedUpAttack>0){
+                        for ( int j=0; j<getappleGrowedUpAttack; j++ ){player.appleGrowedUp.remove(j);}
+                        player.MaxHectaresUsed -= getappleGrowedUpAttack*0.54;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getappleGrowedUpAttack=0;
 
-if (getappleGrowedUpAttack==0){
-
-} else {
-    for ( int j=0; j<getappleGrowedUpAttack; j++ ){player.appleGrowedUp.remove(j);}
-    player.MaxHectaresUsed -= getappleGrowedUpAttack*0.54;
+                    } else {
 
 }
-                    if (getpotatoGrowedUpAttack==0){
-
-                    } else {
+                    if (getpotatoGrowedUpAttack>0){
                         for ( int j=0; j<getpotatoGrowedUpAttack; j++ ){player.potatoGrowedUp.remove(j);}
                         player.MaxHectaresUsed -= getpotatoGrowedUpAttack*0.15;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getpotatoGrowedUpAttack=0;
+                    } else {
+
+
                     }
 
-                    if (getcornGrowedUpAttack==0){
-
-                    } else {
+                    if (getcornGrowedUpAttack>0){
                         for ( int j=0; j<getcornGrowedUpAttack; j++ ){player.cornGrowedUp.remove(j);}
                         player.MaxHectaresUsed -= getcornGrowedUpAttack*0.39;
-                    }
-                    if (getoatGrowedUpAttack==0){
-
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getcornGrowedUpAttack=0;
                     } else {
+
+
+                    }
+                    if (getoatGrowedUpAttack>0){
                         for ( int j=0; j<getoatGrowedUpAttack; j++ ){player.oatGrowedUp.remove(j);}
                         player.MaxHectaresUsed -= getoatGrowedUpAttack*0.25;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getoatGrowedUpAttack=0;
+                    } else {
+
+
 
                     }
-                    if (getwheatGrowedUpAttack==0){
-
-                    } else {
+                    if (getwheatGrowedUpAttack>0){
                         for ( int j=0; j<getwheatGrowedUpAttack; j++ ){player.wheatGrowedUp.remove(j);}
                         player.MaxHectaresUsed -= getwheatGrowedUpAttack*0.18;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getwheatGrowedUpAttack=0;
+                    } else {
+
+
 
                     }
 
-                    if (getappleNeedGrowUpAttack==0){
-
-                    } else {
+                    if (getappleNeedGrowUpAttack>0){
                         for ( int j=0; j<getappleNeedGrowUpAttack; j++ ){player.appleNeedGrowUp.remove(j);}
                         player.MaxHectaresUsed -= getappleNeedGrowUpAttack*0.54;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getappleNeedGrowUpAttack=0;
+                    } else {
+
+
 
                     }
-                    if (getpotatoNeedGrowUpAttack==0){
-
-                    } else {
+                    if (getpotatoNeedGrowUpAttack>0){
                         for ( int j=0; j<getpotatoNeedGrowUpAttack; j++ ){player.potatoNeedGrowUp.remove(j);}
                         player.MaxHectaresUsed -= getpotatoNeedGrowUpAttack*0.15;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getpotatoNeedGrowUpAttack=0;
+                    } else {
+
+
 
                     }
-                    if (getcornNeedGrowUpAttack==0){
-
-                    } else {
+                    if (getcornNeedGrowUpAttack>0){
                         for ( int j=0; j<getcornNeedGrowUpAttack; j++ ){player.cornNeedGrowUp.remove(j);}
                         player.MaxHectaresUsed -= getcornNeedGrowUpAttack*0.39;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getcornNeedGrowUpAttack=0;
+                    } else {
+
+
 
                     }
-                    if (getoatNeedGrowUpAttack==0){
-
-                    } else {
+                    if (getoatNeedGrowUpAttack>0){
                         for ( int j=0; j<getoatNeedGrowUpAttack; j++ ){player.oatNeedGrowUp.remove(j);}
                         player.MaxHectaresUsed -= getoatNeedGrowUpAttack*0.25;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getoatNeedGrowUpAttack=0;
+                    } else {
+
+
 
                     }
-                    if (getwheatNeedGrowUpAttack==0){
-
-                    } else {
-                        System.out.println("pred usunieciem" + player.wheatNeedGrowUp.size());
+                    if (getwheatNeedGrowUpAttack>0){
                         for ( int j=0; j<getwheatNeedGrowUpAttack; j++ ){player.wheatNeedGrowUp.remove(j);}
                         player.MaxHectaresUsed -= getwheatNeedGrowUpAttack*0.18;
+                        player.MaxHectaresUsed = Math.round(player.MaxHectaresUsed * 100);
+                        player.MaxHectaresUsed = player.MaxHectaresUsed/100;
+                        getwheatNeedGrowUpAttack=0;
+                    } else {
+
+
 
 
                     }
 
 
 
-
+}
 
 
 
@@ -992,34 +1069,9 @@ if (getappleGrowedUpAttack==0){
 
                     System.out.println();
                     break;
-                case 98:
-//                    System.out.println("Just buy seeds and animals");
-//                    player.setFarmland(25.0);
-//                    player.foodForAnimals=100000;
-//                    player.maxStorageFoodForAnimals = 10000;
-//                    player.buildingsMaxSize = 1000;
-//                    player.animalsMaxSize = 1000;
-                    player.setCash(0);
-                    break;
-                case 99:
-                    System.out.println("     ****************************************");
-
-                    for ( int j=0; j<player.smallChickenAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallChickenAnimal.get(j) );
-                    for ( int j=0; j<player.smallDogAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallDogAnimal.get(j) );
-                    for ( int j=0; j<player.smallCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallCowAnimal.get(j) );
-                    for ( int j=0; j<player.smallHorseAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallHorseAnimal.get(j) );
-                    for ( int j=0; j<player.smallRabbitAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.smallRabbitAnimal.get(j) );
-
-                    for ( int j=0; j<player.bigChickenAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigChickenAnimal.get(j) );
-                    for ( int j=0; j<player.bigDogAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigDogAnimal.get(j) );
-                    for ( int j=0; j<player.bigCowAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigCowAnimal.get(j) );
-                    for ( int j=0; j<player.bigHorseAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigHorseAnimal.get(j) );
-                    for ( int j=0; j<player.bigRabbitAnimal.size(); j++ ) System.out.println("element " + j + ": " + player.bigRabbitAnimal.get(j) );
 
 
-                    System.out.println("     ****************************************");
-                    System.out.println();
-                    break;
+
             }
 
             playerChose = menu(numberOfWeek,numberOfYear);
@@ -1051,8 +1103,6 @@ if (getappleGrowedUpAttack==0){
         System.out.println("     8. Check backpack. ");
         System.out.println("     9. Next week.");
         System.out.println("     10. End game tasks.");
-        System.out.println("     99. Add ultra bonus stats.");
-        System.out.println("     98. Add food for animals.");
         System.out.println("     0. Exit Game.");
         System.out.println("My Choice: ");
         Scanner in = new Scanner(System.in);

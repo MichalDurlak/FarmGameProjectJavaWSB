@@ -30,12 +30,16 @@ public class Player {
 
     int wheatEndSize,oatEndSize,cornEndSize,potatoEndSize,appleEndSize;
 
+    public int tempwheatNeedGrowUp,tempoatNeedGrowUp,tempcornNeedGrowUp,temppotatoNeedGrowUp,tempappleNeedGrowUp,tempwheatGrowedUp,tempoatGrowedUp,tempcornGrowedUp,temppotatoGrowedUp,tempappleGrowedUp;
+
     public int defenseHectaresonoff;
     public int priceForDefenseHectares;
     public double howManyHectaresItWillTake;
 
 
     private double oldhowManyHectaresPlayer;
+    public int howManyDestroyallPlus;
+    public int howManyDestroyallPlustemp;
 
     public List<Integer> smallChickenAnimal = new ArrayList<>();
     public List<Integer> smallDogAnimal = new ArrayList<>();
@@ -107,6 +111,8 @@ public class Player {
         this.howManyHectaresItWillTake = 0;
 
         this.oldhowManyHectaresPlayer = 0;
+        this.howManyDestroyallPlus = 0;
+        this.howManyDestroyallPlustemp=0;
     }
 
 
@@ -522,35 +528,7 @@ public class Player {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
-
 
 
 
@@ -682,36 +660,228 @@ public class Player {
 
 
 // attack
-    public void attackHectares(int isSetDefenseHectares){
 
-        if (isSetDefenseHectares == 1 ){
 
-            defenseHectaresonoff = 0;
+    public void attackHectares(int isSetDefenseHectares,int wheatNeedGrowUp,int oatNeedGrowUp,int cornNeedGrowUp,int potatoNeedGrowUp,int appleNeedGrowUp,int wheatGrowedUp,int oatGrowedUp,int cornGrowedUp,int potatoGrowedUp,int appleGrowedUp){
 
-        } else if (isSetDefenseHectares == 0){
+        int allPlus =0 ;
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        howManyDestroyallPlus =0;
+        howManyDestroyallPlustemp=0;
 
-            ThreadLocalRandom random = ThreadLocalRandom.current();
-            int chanseToDestroyYourFarmland = random.nextInt(1, 10);
-            this.howManyHectaresItWillTake = 0;
+        tempwheatNeedGrowUp =0;
+        tempoatNeedGrowUp =0;
+        tempcornNeedGrowUp =0;
+        temppotatoNeedGrowUp =0;
+        tempappleNeedGrowUp=0;
 
-            if (chanseToDestroyYourFarmland<=2){
+        tempwheatGrowedUp=0;
+        tempoatGrowedUp=0;
+        tempcornGrowedUp=0;
+        temppotatoGrowedUp=0;
+        tempappleGrowedUp=0;
+
+// do zmiany na bound 10
+        int chanceToDestroy = random.nextInt(1, 2);
+        int toSetUpValue =0;
+
+        if (isSetDefenseHectares==1){
+            System.out.println("Your farmland was protected.");
+        } else if (isSetDefenseHectares==0){             // defense is set to 0 (so its turned off)
+                if (chanceToDestroy == 1 ){
+                    // someone destroyed farmland
+
+
                 System.out.println("Unlucky someone destroyed your farmland");
+                allPlus = wheatNeedGrowUp+oatNeedGrowUp+cornNeedGrowUp+potatoNeedGrowUp+appleNeedGrowUp+wheatGrowedUp+oatGrowedUp+cornGrowedUp+potatoGrowedUp+appleGrowedUp;
 
-                this.howManyHectaresItWillTake = random.nextDouble(0.01, MaxHectaresUsed);
-                this.howManyHectaresItWillTake = Math.round(this.howManyHectaresItWillTake * 100);
-                this.howManyHectaresItWillTake = this.howManyHectaresItWillTake/100;
-            } else {
+                if (allPlus == 1){
+                    howManyDestroyallPlus = 1;
+                } else {
+                    howManyDestroyallPlus = random.nextInt(1, allPlus);
+
+                }
+
+                if ( howManyDestroyallPlus == 0 ){
+
+                } else {
+                    this.howManyDestroyallPlustemp = howManyDestroyallPlus;
+
+
+                    this.howManyDestroyallPlustemp -= appleGrowedUp;
+
+
+                    if (this.howManyDestroyallPlustemp > 0){
+                        this.howManyDestroyallPlustemp -= potatoGrowedUp;
+
+                        if (this.howManyDestroyallPlustemp > 0){
+                            this.howManyDestroyallPlustemp -= oatGrowedUp;
+
+                            if (this.howManyDestroyallPlustemp > 0){
+                                this.howManyDestroyallPlustemp -= wheatGrowedUp;
+
+
+                                if (this.howManyDestroyallPlustemp > 0){
+
+
+                                    this.howManyDestroyallPlustemp -= appleNeedGrowUp;
+
+
+                                    if (this.howManyDestroyallPlustemp > 0){
+                                        this.howManyDestroyallPlustemp -= potatoNeedGrowUp;
+
+                                        if (this.howManyDestroyallPlustemp > 0) {
+                                            this.howManyDestroyallPlustemp -= cornNeedGrowUp;
+
+                                            if (this.howManyDestroyallPlustemp > 0) {
+                                                this.howManyDestroyallPlustemp -= oatNeedGrowUp;
+
+                                                if (this.howManyDestroyallPlustemp > 0){
+
+                                                    if (this.howManyDestroyallPlustemp > 0){
+// +wheat
+                                                        this.   tempappleGrowedUp = appleGrowedUp;
+                                                        this.   temppotatoGrowedUp = potatoGrowedUp;
+                                                        this.  tempoatGrowedUp = oatGrowedUp;
+                                                        this. tempwheatGrowedUp = wheatGrowedUp;
+                                                        this. tempappleNeedGrowUp = appleNeedGrowUp;
+                                                        this.temppotatoNeedGrowUp = potatoNeedGrowUp;
+                                                        this.tempcornNeedGrowUp = cornNeedGrowUp;
+                                                        this.tempoatNeedGrowUp = oatNeedGrowUp;
+                                                        System.out.println("wheatNeedGrowUp: " + wheatNeedGrowUp);
+                                                        this.tempwheatNeedGrowUp = howManyDestroyallPlustemp;
+                                                        System.out.println("temp " + this.tempwheatNeedGrowUp);
+
+                                                    } else {
+
+
+
+
+                                                    }
+                                                } else {
+                                                    // + oat
+                                                    this. tempappleGrowedUp = appleGrowedUp;
+                                                    this.  temppotatoGrowedUp = potatoGrowedUp;
+                                                    this.  tempoatGrowedUp = oatGrowedUp;
+                                                    this.   tempwheatGrowedUp = wheatGrowedUp;
+                                                    this.   tempappleNeedGrowUp = appleNeedGrowUp;
+                                                    this.   temppotatoNeedGrowUp = potatoNeedGrowUp;
+                                                    this.   tempcornNeedGrowUp = cornNeedGrowUp;
+                                                    this.   tempoatNeedGrowUp = howManyDestroyallPlustemp;
+                                                }
+
+                                            } else {
+                                                // +corn
+
+                                                this.  tempappleGrowedUp = appleGrowedUp;
+                                                this.  temppotatoGrowedUp = potatoGrowedUp;
+                                                this.   tempoatGrowedUp = oatGrowedUp;
+                                                this.   tempwheatGrowedUp = wheatGrowedUp;
+                                                this.   tempappleNeedGrowUp = appleNeedGrowUp;
+                                                this.   temppotatoNeedGrowUp = potatoNeedGrowUp;
+                                                this.   tempcornNeedGrowUp = howManyDestroyallPlustemp;
+
+
+                                            }
+
+                                        } else {
+                                            // + potato
+                                            this.  tempappleGrowedUp = appleGrowedUp;
+                                            this.  temppotatoGrowedUp = potatoGrowedUp;
+                                            this.  tempoatGrowedUp = oatGrowedUp;
+                                            this.  tempwheatGrowedUp = wheatGrowedUp;
+                                            this.  tempappleNeedGrowUp = appleNeedGrowUp;
+                                            this.  temppotatoNeedGrowUp = howManyDestroyallPlustemp;
+
+                                        }
+
+                                    } else {
+                                        // + apple
+
+                                        this.  tempappleGrowedUp = appleGrowedUp;
+                                        this. temppotatoGrowedUp = potatoGrowedUp;
+                                        this. tempoatGrowedUp = oatGrowedUp;
+                                        this. tempwheatGrowedUp = wheatGrowedUp;
+                                        this. tempappleNeedGrowUp = this.howManyDestroyallPlustemp;
+
+
+
+                                    }
+
+                                } else {
+                                    // + wheat
+                                    this. tempappleGrowedUp = appleGrowedUp;
+                                    this. temppotatoGrowedUp = potatoGrowedUp;
+                                    this.  tempoatGrowedUp = oatGrowedUp;
+                                    this.  tempwheatGrowedUp =this. howManyDestroyallPlustemp;
+
+
+
+                                }
+
+                            } else {
+                                // + oat
+
+                                this.  tempappleGrowedUp = appleGrowedUp;
+                                this.  temppotatoGrowedUp = oatGrowedUp;
+                                this.   tempoatGrowedUp = this.howManyDestroyallPlustemp;
+
+                            }
+
+                        } else {
+                            // wpisz jablka i potato
+                            this. tempappleGrowedUp = appleGrowedUp;
+                            this.  temppotatoGrowedUp = this.howManyDestroyallPlustemp;
+
+                        }
+
+
+                    } else {
+                        // wpisz tylko jablka
+                        this. tempappleGrowedUp = this.howManyDestroyallPlus;
+
+                    }
+
+                }
+
+
+
+                 }
+                else {
+                    // nobody destroyed farmland
                 System.out.println("This week nobody destroyed your farmland");
-                this.howManyHectaresItWillTake = 0;
-            }
+
+                }
 
 
-            defenseHectaresonoff = 0;
 
-        }
+
+
     }
 
+        this.defenseHectaresonoff = 0;
+
+
+    }
+
+
     public double getHowManyHectaresItWillTake(){return howManyHectaresItWillTake;};
+
+
+    public int getwheatNeedGrowUpAttack(){return tempwheatNeedGrowUp;}
+    public int getoatNeedGrowUpAttack(){return tempoatNeedGrowUp;}
+    public int getcornNeedGrowUpAttack(){return tempcornNeedGrowUp;}
+    public int getpotatoNeedGrowUpAttack(){return temppotatoNeedGrowUp;}
+    public int getappleNeedGrowUpAttack(){return tempappleNeedGrowUp;}
+
+    public int getwheatGrowedUpAttack(){return tempwheatGrowedUp;}
+    public int getoatGrowedUpAttack(){return tempoatGrowedUp;}
+    public int getcornGrowedUpAttack(){return tempcornGrowedUp;}
+    public int getpotatoGrowedUpAttack(){return temppotatoGrowedUp;}
+    public int getappleGrowedUpAttack(){return tempappleGrowedUp;}
+
+
+
 
 }
 
